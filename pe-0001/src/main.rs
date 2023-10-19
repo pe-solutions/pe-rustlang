@@ -1,3 +1,5 @@
+// https://projecteuler.net/problem=1
+
 use std::time::Instant;
 use gcd::Gcd;
 
