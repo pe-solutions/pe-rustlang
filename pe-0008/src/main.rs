@@ -1,5 +1,5 @@
 // Largest Product in a Series
-// https://projecteuler.net/problem=5
+// https://projecteuler.net/problem=8
 
 use std::time::Instant;
 
