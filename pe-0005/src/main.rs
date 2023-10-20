@@ -1,8 +1,6 @@
 // Smallest Multiple
 // https://projecteuler.net/problem=5
 
-// extern crate num;
-
 use std::time::Instant;
 use num::integer::lcm;
 
