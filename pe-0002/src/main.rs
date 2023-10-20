@@ -1,3 +1,4 @@
+// Even Fibonacci Numbers
 // https://projecteuler.net/problem=2
 
 use std::time::Instant;
