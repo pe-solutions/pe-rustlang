@@ -1,0 +1,11 @@
+[package]
+name = "pe-0020"
+version = "0.1.0"
+edition = "2021"
+authors = ["menjaraz"]
+
+
+[dependencies]
+num = "0.4.1"
+num-bigint = "0.4.4"
+num-traits = "0.2.17"
