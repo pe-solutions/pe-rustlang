@@ -26,8 +26,7 @@ fn calculate_highly_composite_number(target_divisors: u64) -> u64 {
 fn main() {
     let start = std::time::Instant::now();
 
-    let target_divisors = 500;
-    let answer = calculate_highly_composite_number(target_divisors);
+    let answer = calculate_highly_composite_number(500);
 
     let duration = start.elapsed();
 
