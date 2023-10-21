@@ -1,0 +1,8 @@
+[package]
+name = "pe-0016"
+version = "0.1.0"
+edition = "2021"
+authors = ["menjaraz"]
+
+[dependencies]
+num-bigint = "0.4.4"
