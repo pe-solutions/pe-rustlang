@@ -1,0 +1,9 @@
+[package]
+name = "pe-0015"
+version = "0.1.0"
+edition = "2021"
+authors = ["menjaraz"]
+
+
+[dependencies]
+num = "0.4.1"
