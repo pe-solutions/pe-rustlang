@@ -5,6 +5,7 @@ use num_bigint::BigInt;
 use num_traits::{Num, Pow};
 
 fn g_m(m: BigInt) -> BigInt {
+    // Polynomial interpolation
     let numerator = BigInt::from(81) * m.clone().pow(5u32) + BigInt::from(153*5) * m.pow(4u32);
     let result = numerator / BigInt::from(40);
     
