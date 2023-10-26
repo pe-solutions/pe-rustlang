@@ -2,6 +2,7 @@
 name = "pe-0808"
 version = "0.1.0"
 edition = "2021"
+authors = ["menjaraz"]
 
 [dependencies]
 
