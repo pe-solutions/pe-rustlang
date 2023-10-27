@@ -2,4 +2,4 @@
 
 <p align="center"><img src="logo.png"></p>
 
-Each folder is a full App solution, along with its proper Cargo.toml.
+Each folder is a Standalone full App Solution, along with its proper Cargo.toml. Enjoy!
