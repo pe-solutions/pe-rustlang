@@ -53,8 +53,8 @@ fn main() {
     let primes = prime_list(1_488, 10_000);
     let result = prime_permutations(&primes);
 
-    println!("{}", result.iter().map(|&n| n.to_string()).collect::<String>());
+    println!("\nProject Euler #49\nAnswer:{}", result.iter().map(|&n| n.to_string()).collect::<String>());
 
     let duration = start.elapsed();
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+    println!("Elapsed time: {} milliseconds.", duration.as_millis());
 }
