@@ -56,5 +56,5 @@ fn main() {
     println!("{}", result.iter().map(|&n| n.to_string()).collect::<String>());
 
     let duration = start.elapsed();
-    println!("Elapsed time: {} milliseconds.", duration.as_millis());
+    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
 }
