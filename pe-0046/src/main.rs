@@ -63,7 +63,7 @@
      let result = (35..6_000).step_by(2).filter(|&x| is_composite(x) && is_goldbach_busted(x)).min();
  
      match result {
-         Some(min) => println!("\nProject Euler #43\nAnswer:{}", min),
+         Some(min) => println!("\nProject Euler #48\nAnswer:{}", min),
          None => println!("No solution found"),
      }
  
