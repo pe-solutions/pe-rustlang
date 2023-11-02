@@ -33,7 +33,7 @@
 
      let duration = start.elapsed();
  
-     println!("\nProject Euler #48\nAnswer:{}", last_10_digits); // println!("{}", last_10_digits);
+     println!("\nProject Euler #48\nAnswer:{}", last_10_digits);
  
      println!("Elapsed time: {} milliseconds.", duration.as_millis());
  }
