@@ -1,7 +1,6 @@
 // Consecutive prime sum
 // https://projecteuler.net/problem=50
 
-
 use std::vec::Vec;
 
 fn is_prime(n: i64) -> bool {
