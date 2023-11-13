@@ -1,54 +1,44 @@
 // Distinct Primes Factors
 // https://projecteuler.net/problem=47
 
-fn omega(mut n: u64) -> u64 {
-    let mut count = 0;
-    let mut factor = 2;
-    
-    while n > 1 {
-        if n % factor == 0 {
-            count += 1;
+ fn generate_omega_sieve(limit: usize) -> Vec<usize> {
+    let mut omega_sieve = vec![0; limit];
 
-            while n % factor == 0 {
-                n /= factor;
+    for i in 2..limit {
+        if omega_sieve[i] == 0 {
+            for j in (i..limit).step_by(i) {
+                omega_sieve[j] += 1;
             }
         }
-
-        factor += 1;
     }
-    
-    count
+
+    omega_sieve
 }
 
-fn find_first_number() -> u64 {
-    let mut n2 = 1;
+fn find_first_number() -> usize {
+    let limit = 200_000; // Adjust this limit based on your needs
+    let required_factors = 4; // Set the required number of distinct prime factors
 
-    while omega(n2) < 2 || omega(n2 + 1) < 2 {
-        n2 += 1;
-    }
-    
-    let mut n3 = n2 + 1;
+    let omega_sieve = generate_omega_sieve(limit);
 
-    while omega(n3) < 3 || omega(n3 + 1) < 3 || omega(n3 + 2) < 3 {
-        n3 += 1;
-    }
-    
-    let mut n4 = n3 + 2;
+    for i in 1..limit - required_factors {
+        let found = (0..required_factors).all(|j| omega_sieve[i + j] == required_factors);
 
-    while omega(n4) < 4 || omega(n4 + 1) < 4 || omega(n4 + 2) < 4 || omega(n4 + 3) < 4 {
-        n4 += 1;
+        if found {
+            return i;
+        }
     }
-    
-    n4
+
+    0 // If no such number is found
 }
 
 fn main() {
     let start = std::time::Instant::now();
-    
+
     let answer = find_first_number();
 
     let duration = start.elapsed();
- 
-    println!("\nProject Euler #48\nAnswer:{}", answer);
+
+    println!("\nProject Euler #47\nAnswer: {}", answer);
     println!("Elapsed time: {} milliseconds.", duration.as_millis());
 }
