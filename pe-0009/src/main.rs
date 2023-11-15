@@ -1,8 +1,6 @@
 // Special Pythagorean Triplet
 // https://projecteuler.net/problem=9
 
-use std::time::Instant;
-
 fn find_special_pythagorean_triplet() -> Option<u32> {
     for a in 1..=1000 {
         for b in a + 1..=1000 {
@@ -20,7 +18,7 @@ fn find_special_pythagorean_triplet() -> Option<u32> {
 }
 
 fn main() {
-    let start = Instant::now();
+    let start = std::time::Instant::now();
     //
     
     match find_special_pythagorean_triplet() {
