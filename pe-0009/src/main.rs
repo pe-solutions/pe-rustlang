@@ -1,24 +1,28 @@
 // Special Pythagorean Triplet
 // https://projecteuler.net/problem=9
 
-fn find_triplet() -> Option<(u32, u32, u32)> {
-    for a in 1..334 {
-        for b in a + 1..(1000 - a) / 2 {
-            let c = 1000 - a - b;
-            //
-            if a * a + b * b == c * c {
-                return Some((a, b, c));
-            }
+const P: u32 = 1_000u32;
+
+fn find_sp_triplet() -> Option<(u32, u32, u32)> {
+    for a in 1..P / 3 {
+        let n = P.pow(2) - 2 * P * a;
+        let d = 2 * P - 2 * a;
+		
+        if d != 0 && n % d == 0 {
+            let b = n / d;
+            let c = P - a - b;
+			
+            return Some((a, b, c));
         }
     }
-
-    None
+	
+	None
 }
 
 fn main() {
     let start = std::time::Instant::now();
 
-    match find_triplet() {
+    match find_sp_triplet() {
         Some((a, b, c)) => {
             println!("\nProject Euler #9\nAnswer: {}", a*b*c);
         }
