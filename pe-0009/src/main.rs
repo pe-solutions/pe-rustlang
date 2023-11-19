@@ -15,8 +15,8 @@ fn find_sp_triplet() -> Option<(u32, u32, u32)> {
             return Some((a, b, c));
         }
     }
-	
-	None
+    
+    None
 }
 
 fn main() {
