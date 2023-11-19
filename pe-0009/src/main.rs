@@ -7,7 +7,7 @@ fn find_sp_triplet() -> Option<(u32, u32, u32)> {
     for a in 1..P / 3 {
         let n = P.pow(2) - 2 * P * a;
         let d = 2 * P - 2 * a;
-		
+        
         if d != 0 && n % d == 0 {
             let b = n / d;
             let c = P - a - b;
