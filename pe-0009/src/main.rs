@@ -11,7 +11,7 @@ fn find_sp_triplet() -> Option<(u32, u32, u32)> {
         if d != 0 && n % d == 0 {
             let b = n / d;
             let c = P - a - b;
-			
+            
             return Some((a, b, c));
         }
     }
