@@ -25,8 +25,6 @@ fn main() {
     let duration = start.elapsed();
     println!("\nProject Euler #36\nAnswer: {}", answer);
     println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
-
-    // println!("The sum of palindromic numbers in both base 10 and base 2 below 1,000,000 is: {}", sum);
 }
 
 
