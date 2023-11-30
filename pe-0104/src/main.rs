@@ -38,7 +38,7 @@ fn main() {
 
             if is_pandigital(&fib_str[0..9]) {
                 let answer = index;
-                println!("\nProject Euler #124\nAnswer: {}", answer);
+                println!("\nProject Euler #104\nAnswer: {}", answer);
 
                 break;
             }
