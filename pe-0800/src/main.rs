@@ -1,12 +1,12 @@
 // Hybrid Integers
 // https://projecteuler.net/problem=800
 
+const BASE: usize = 800_800;
+const EXP: usize = 800_800;
+const LOG_2: f64 = 2.0;
 
 fn sieve(n: usize) -> Vec<usize> {
     let mut is_prime = vec![true; n + 1];
-
-    is_prime[2..].iter_mut().for_each(|p| *p = true);
-
     let sqrt_n = (n as f64).sqrt() as usize + 1;
 
     for i in 2..sqrt_n {
@@ -17,49 +17,50 @@ fn sieve(n: usize) -> Vec<usize> {
         }
     }
 
-    let mut primes = Vec::new();
-
-    for i in 2..=n {
-        if is_prime[i] {
-            primes.push(i);
-        }
-    }
-
-    primes
+    (2..=n).filter(|&i| is_prime[i]).collect()
 }
 
-fn is_valid(p: f64, q: f64, b: f64, e: f64) -> bool {
-    p*q.log2()+q*p.log2() <= b*e.log2()
+struct Parameters {
+    p: f64,
+    q: f64,
+    b: f64,
+    e: f64,
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-    
-    const BASE: usize = 800_800;
-    const EXP: usize = 800_800;
+fn is_valid(params: &Parameters) -> bool {
+    params.p * params.q.log2() + params.q * params.p.log2() <= params.b * params.e.log2()
+}
 
-    let primes = sieve((800_800_f64 * 800_800_f64.log2()) as usize);
+fn count_valid_combinations(primes: &Vec<usize>) -> usize {
+    let mut valid_combinations = 0;
 
-    let mut answer = 0;
-
-    for p in 0..primes.len() - 1 {
-        for q in p + 1..primes.len() {
-            if is_valid(primes[p] as f64, primes[q] as f64, BASE as f64, EXP as f64) {
-                answer += 1;
+    for (p, &prime_p) in primes.iter().enumerate().take(primes.len() - 1) {
+        for &prime_q in primes.iter().skip(p + 1) {
+            if is_valid(&Parameters { p: prime_p as f64, q: prime_q as f64, b: BASE as f64, e: EXP as f64 }) {
+                valid_combinations += 1;
             } else {
                 // Inner loop bound
                 break;
             }
         }
 
-        if !is_valid(primes[p] as f64, 2.0, BASE as f64, EXP as f64) {
+        if !is_valid(&Parameters { p: prime_p as f64, q: LOG_2, b: BASE as f64, e: EXP as f64 }) {
             // Outer loop bound
             break;
         }
     }
 
+    valid_combinations
+}
+
+fn main() {
+    let start = std::time::Instant::now();
+
+    let primes = sieve((800_800_f64 * 800_800_f64.log2()) as usize);
+    let answer = count_valid_combinations(&primes);
+
     let duration = start.elapsed();
 
-    println!("\nProject Euler #800\nAnswer: {}", answer); // println!("\n{}", total);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis()); 
+    println!("\nProject Euler #800\nAnswer: {}", answer);
+    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
 }
