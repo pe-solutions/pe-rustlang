@@ -1,8 +1,8 @@
 // Factorial Trailing Digits
 // https://projecteuler.net/problem=160
 
-fn f(n: u128) -> u128 {
-    let mut result = 1u128;
+fn f(n: u64) -> u64 {
+    let mut result: u64 = 1u64;
 
     for i in 1..=n {
         result *= i;
@@ -20,8 +20,30 @@ fn f(n: u128) -> u128 {
 fn main() {
     let start = std::time::Instant::now();
 
-    println!("\nProject Euler #160\nAnswer: {}", f(2_560_000));
+    let answer = f(2_560_000);
 
     let duration = start.elapsed();
+
+    println!("\nProject Euler #160\nAnswer: {}", answer);
     println!("Elapsed time: {} milliseconds.", duration.as_millis());
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_f_9() {
+        assert_eq!(f(9), 36288);
+    }
+
+    #[test]
+    fn test_f_10() {
+        assert_eq!(f(10), 36288);
+    }
+
+    #[test]
+    fn test_f_20() {
+        assert_eq!(f(20), 17664);
+    }
 }
