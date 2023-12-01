@@ -79,13 +79,13 @@
  }
  
  fn main() {
-     let start = std::time::Instant::now();
+    let start = std::time::Instant::now();
  
-     let answer = sum_of_rev_prime(50);
- 
-    println!("\nProject Euler #808\nAnswer: {}", answer);
+    let answer = sum_of_rev_prime(50);
  
     let duration = start.elapsed();
+ 
+    println!("\nProject Euler #808\nAnswer: {}", answer);
     println!("Elapsed time: {} milliseconds.\n", duration.as_millis()); 
 
 }
