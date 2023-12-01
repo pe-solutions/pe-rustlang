@@ -1,4 +1,5 @@
 // Reversible Prime Squares
+// https://projecteuler.net/problem=808
 
  fn is_prime(u: u64) -> bool {
      if u <= 1 {
