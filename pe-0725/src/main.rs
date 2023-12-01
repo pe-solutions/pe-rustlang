@@ -5,11 +5,10 @@
 //     [t1]$S(n) = \left(2\binom{n+8}{8} - \binom{10}{2}\right) \cdot (n-1) \cdot \frac{10^n-1}{9}$
 
 use num_bigint::BigUint;
-use num_traits::Pow;
-use num_traits::One;
+use num_traits::{Pow, One};
 
 fn binomial(n: u32, k: u32) -> BigUint {
-    let mut res:BigUint = BigUint::one();
+    let mut res: BigUint = BigUint::one();
 
     for i in 0..k {
         let n_minus_i: BigUint = (n - i).into();
@@ -29,19 +28,21 @@ fn s(n: u32) -> BigUint {
     let term2 = BigUint::from(n - 1);
     let term3 = BigUint::from(10u32).pow(n) - BigUint::from(1u32);
 
-    let result = &term1 * &term2 * term3 / BigUint::from(9u32);
+    &term1 * &term2 * term3 / BigUint::from(9u32)
+}
 
-    result
+fn calculate_digit_sum_modulo() -> BigUint {
+    let s_2020 = s(2020);
+    s_2020 % BigUint::from(10u32).pow(16u32)
 }
 
 fn main() {
     let start = std::time::Instant::now();
-    
-    let s_2020 = s(2020);
-    let answer = s_2020 % BigUint::from(10u32).pow(16u32);
+
+    let answer = calculate_digit_sum_modulo();
 
     let duration = start.elapsed();
-    
+
     println!("\nProject Euler #725\nAnswer: {}", answer);
     println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
 }
