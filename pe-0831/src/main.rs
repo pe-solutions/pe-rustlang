@@ -30,9 +30,8 @@ fn main() {
 
     let answer = pe0831();
 
-    println!("\nProject Euler #831\nAnswer: {}", answer);
-
     let duration = start.elapsed();
 
+    println!("\nProject Euler #831\nAnswer: {}", answer);
     println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
 }
