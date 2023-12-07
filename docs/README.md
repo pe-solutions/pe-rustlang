@@ -4,4 +4,4 @@
 
 Each folder is a Standalone full App Solution, along with its proper Cargo.toml. Enjoy!
 
-You can also see my other Dlang solutions in the repository here: [pe-dlang](https://github.com/pe-solutions/pe-dlang).
+You can also by the way see my other Dlang solutions in the repository here: [pe-dlang](https://github.com/pe-solutions/pe-dlang).
