@@ -6,4 +6,3 @@ authors = ["menjaraz"]
 
 
 [dependencies]
-gcd = "2.3.0"
