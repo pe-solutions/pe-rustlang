@@ -2,12 +2,19 @@
 // https://projecteuler.net/problem=1
 
 use std::time::Instant;
-use gcd::Gcd;
+
+fn gcd(m: u64, n: u64) -> u64 {
+   if m == 0 {
+      n
+   } else {
+      gcd(n % m, m)
+   }
+}
 
 fn main() {
     let start = Instant::now();
     //
-    let answer: u64 = (1..=999).filter(|&a| a.gcd(3 * 5) > 1).sum();
+    let answer: u64 = (1u64..=999).filter(|&a| gcd(3u64 * 5u64, a) > 1u64).sum();
     //
     let duration = start.elapsed();
 
