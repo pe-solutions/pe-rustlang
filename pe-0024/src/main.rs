@@ -3,24 +3,20 @@
 
 use itertools::Itertools;
 
-fn find_millionth_permutation() -> Result<String, &'static str> {
-    let permutation = (0..10)
-        .permutations(10)
-        .nth(1_000_000 - 1) // 1-based indexing, so subtract 1
-        .ok_or("Error: Could not find the millionth lexicographic permutation.")?;
-
-    let permutation_str = permutation.into_iter().map(|x| x.to_string()).collect::<String>();
-    
-    Ok(permutation_str)
+ fn get_millionth_permutation() -> Option<String> {
+    if let Some(permutation) = (0..10_usize).permutations(10).nth(999_999) {
+        Some(permutation.into_iter().map(|c| c.to_string()).collect())
+    } else {
+        None
+    }
 }
 
 fn main() {
-    let start_time = std::time::Instant::now();
+    let start = std::time::Instant::now();
     
-    let answer = find_millionth_permutation().unwrap_or_default();
-    
-    let duration = start_time.elapsed();
-    
-    println!("\nProject Euler #24\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+    println!(
+        "\nProject Euler #24\nAnswer: {:?}\nElapsed time: {:?} milliseconds.",
+        get_millionth_permutation(),
+        start.elapsed().as_millis()
+    );
 }
