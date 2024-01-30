@@ -1,29 +1,32 @@
 // Even Fibonacci Numbers
 // https://projecteuler.net/problem=2
 
-use std::time::Instant;
+import std.stdio: writefln;
+import std.datetime.stopwatch: StopWatch;
+import std.range: recurrence;
+import std.algorithm.searching : until;
+import std.algorithm: sum;
 
-fn main() {
-    let start = Instant::now();
-    //
-    let mut answer: u64 = 0;
+ulong calculateSumOfEvenFibo(ulong limit)
+{
+    auto evenNumberedTermFib = recurrence!("4*a[n-1] + a[n-2]")(2uL, 8uL);
+    
+    return evenNumberedTermFib
+        .until!(x => x >= limit)
+        .sum;
+}
 
-    let mut a: u64 = 1;
-    let mut b: u64 = 1;
-
-    while b < 4_000_000 {
-        if b % 2 == 0 {
-            answer += b;
-        }
-
-        let next = a + b;
-        
-        a = b;
-        b = next;
-    }
-    //
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #2\nAnswer: {}", answer);
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
+void main()
+{
+    StopWatch timer;
+    timer.start();
+    
+    const ulong UPPER_LIMIT = 4_000_000uL;
+    
+    auto answer = calculateSumOfEvenFibo(UPPER_LIMIT);
+    
+    timer.stop();
+    
+    writefln("\nProject Euler #2\nAnswer: %s", answer);
+    writefln("Elapsed time: %s milliseconds.\n", timer.peek.total!"msecs"());
 }
