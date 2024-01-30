@@ -1,27 +1,42 @@
 // Even Fibonacci Numbers
 // https://projecteuler.net/problem=2
 
-use std::time::Instant;
+struct EvenFibonacci {
+    a: u64,
+    b: u64,
+}
+
+impl EvenFibonacci {
+    fn new() -> Self {
+        EvenFibonacci { a: 2, b: 8 }
+    }
+}
+
+impl Iterator for EvenFibonacci {
+    type Item = u64;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        let next = 4 * self.b + self.a;
+
+        self.a = self.b;
+        self.b = next;
+        
+        Some(next)
+    }
+}
+
+fn calculate_sum_of_even_fibo(limit: u64) -> u64 {
+    let even_fibonacci = EvenFibonacci::new();
+
+    even_fibonacci.take_while(|&x| x < limit).sum()
+}
 
 fn main() {
-    let start = Instant::now();
-    //
-    let mut answer: u64 = 0;
+    let start = std::time::Instant::now();
 
-    let mut a: u64 = 1;
-    let mut b: u64 = 1;
+    const UPPER_LIMIT: u64 = 4_000_000;
+    let answer = calculate_sum_of_even_fibo(UPPER_LIMIT);
 
-    while b < 4_000_000 {
-        if b % 2 == 0 {
-            answer += b;
-        }
-
-        let next = a + b;
-        
-        a = b;
-        b = next;
-    }
-    //
     let duration = start.elapsed();
 
     println!("\nProject Euler #2\nAnswer: {}", answer);
