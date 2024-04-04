@@ -5,5 +5,4 @@ edition = "2021"
 authors = ["menjaraz"]
 
 [dependencies]
-num-prime = "0.4.3"
 
