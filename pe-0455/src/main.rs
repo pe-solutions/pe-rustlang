@@ -40,6 +40,6 @@ fn main() {
     
     let duration = start.elapsed();
 
-    println!("\nProject Euler #800\nAnswer: {}", sum);
+    println!("\nProject Euler #455\nAnswer: {}", sum);
     println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
 }
