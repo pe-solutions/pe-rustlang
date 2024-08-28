@@ -25,7 +25,6 @@ fn main() {
     
     let duration = start.elapsed();
 
-    // println!("Result: {}", results.len());
     println!("\nProject Euler #87\nAnswer: {}", results.len());
     println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
 }
