@@ -1,0 +1,7 @@
+[package]
+name = "pe-0659"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+primal = "0.3.3"
