@@ -2,7 +2,7 @@
 name = "pe-0019"
 version = "0.1.0"
 edition = "2021"
-authors = ["menjaraz"]
 
 [dependencies]
-chrono = "0.4.31"
+chrono = "0.4.38"
+itertools = "0.13.0"
