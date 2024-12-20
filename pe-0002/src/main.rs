@@ -16,29 +16,26 @@ impl Iterator for EvenFibonacci {
     type Item = u64;
 
     fn next(&mut self) -> Option<Self::Item> {
-        let next = 4 * self.b + self.a;
-
+        let next_value = self.a;
+        let new_b = self.a + 4*self.b;
         self.a = self.b;
-        self.b = next;
-        
-        Some(next)
+        self.b = new_b;
+        Some(next_value)
     }
 }
 
-fn calculate_sum_of_even_fibo(limit: u64) -> u64 {
-    let even_fibonacci = EvenFibonacci::new();
-
-    even_fibonacci.take_while(|&x| x < limit).sum()
+fn sum_of_even_fibo(limit: u64) -> u64 {
+    EvenFibonacci::new().take_while(|&x| x < limit).sum()
 }
 
 fn main() {
-    let start = std::time::Instant::now();
+    let start = std::time::Instant::now();    
 
-    const UPPER_LIMIT: u64 = 4_000_000;
-    let answer = calculate_sum_of_even_fibo(UPPER_LIMIT);
+    // Calculate and Print the sum
+    println!("\nProject Euler #2\nAnswer: {}", sum_of_even_fibo(4_000_000));
 
     let duration = start.elapsed();
 
-    println!("\nProject Euler #2\nAnswer: {}", answer);
+    // Print the Elapsed time    
     println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
 }
