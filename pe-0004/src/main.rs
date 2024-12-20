@@ -26,8 +26,7 @@ fn find_largest_palindrome_product(range: std::ops::RangeInclusive<i32>) -> Opti
 }
 
 fn main() {
-    let start = std::time::Instant::now(); // let start = Instant::now();
-    //
+    let start = std::time::Instant::now();
     
     let range = 899..=999;
 
