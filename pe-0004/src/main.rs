@@ -1,8 +1,6 @@
 // Largest Palindrome Product
 // https://projecteuler.net/problem=4
 
-use std::time::Instant;
-
 fn is_palindrome(n: i32) -> bool {
     let s = n.to_string();
     s == s.chars().rev().collect::<String>()
@@ -28,7 +26,7 @@ fn find_largest_palindrome_product(range: std::ops::RangeInclusive<i32>) -> Opti
 }
 
 fn main() {
-    let start = Instant::now();
+    let start = std::time::Instant::now(); // let start = Instant::now();
     //
     
     let range = 899..=999;
