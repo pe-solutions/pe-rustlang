@@ -2,7 +2,7 @@
 // https://projecteuler.net/problem=1
 
 
-fn multiples(factors: &[i32], limit: i32) -> i32 {
+fn multiples(factors: &[i64], limit: i64) ->i64 {
     (1..limit)
         .filter(|&n| factors.iter().any(|&m| n % m == 0))
         .sum()
