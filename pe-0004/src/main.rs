@@ -29,6 +29,4 @@ fn solve() -> i32 {
     find_largest_palindrome_product(899..=999).expect("no palindrome found")
 }
 
-fn main() {
-    pe_utils::run(4, solve);
-}
+pe_utils::pe_main!();

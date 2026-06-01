@@ -10,9 +10,7 @@ fn solve() -> usize {
     find_nth_prime(&primes, 10001).expect("not enough primes")
 }
 
-fn main() {
-    pe_utils::run(7, solve);
-}
+pe_utils::pe_main!();
 fn sieve_of_eratosthenes(primes: &mut Vec<bool>, upper_limit: usize, max_prime: usize) {
     for number in 2..=max_prime {
         if primes[number] {

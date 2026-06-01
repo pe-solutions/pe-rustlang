@@ -19,6 +19,4 @@ fn solve() -> i32 {
     panic!("no pandigital found")
 }
 
-fn main() {
-    pe_utils::run(38, solve);
-}
+pe_utils::pe_main!();

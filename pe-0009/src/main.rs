@@ -22,6 +22,4 @@ fn solve() -> i32 {
     a * b * c
 }
 
-fn main() {
-    pe_utils::run(9, solve);
-}
+pe_utils::pe_main!();

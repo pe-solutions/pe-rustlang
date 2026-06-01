@@ -79,6 +79,4 @@ fn solve() -> u64 {
     sieve.iter().map(|&(a, b)| a.max(b)).fold(0u64, |acc, v| (acc + v) % MOD)
 }
 
-fn main() {
-    pe_utils::run(659, solve);
-}
+pe_utils::pe_main!();

@@ -15,6 +15,4 @@ fn solve() -> String {
     get_millionth_permutation().expect("no permutation found")
 }
 
-fn main() {
-    pe_utils::run(24, solve);
-}
+pe_utils::pe_main!();

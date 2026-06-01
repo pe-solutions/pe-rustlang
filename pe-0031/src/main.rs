@@ -13,6 +13,4 @@ fn solve() -> usize {
     ways[TARGET]
 }
 
-fn main() {
-    pe_utils::run(31, solve);
-}
+pe_utils::pe_main!();

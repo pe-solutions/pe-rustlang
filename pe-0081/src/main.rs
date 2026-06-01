@@ -88,9 +88,7 @@ fn solve() -> u32 {
     min_path_sum(&matrix)
 }
 
-fn main() {
-    pe_utils::run(81, solve);
-}
+pe_utils::pe_main!();
 #[cfg(test)]
 mod tests {
     use super::*;

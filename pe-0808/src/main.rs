@@ -83,6 +83,4 @@ fn solve() -> u64 {
     sum_of_rev_prime(50)
 }
 
-fn main() {
-    pe_utils::run(808, solve);
-}
+pe_utils::pe_main!();

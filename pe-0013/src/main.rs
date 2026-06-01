@@ -20,6 +20,4 @@ fn solve() -> u64 {
     sum.to_string()[..10].parse::<u64>().unwrap()
 }
 
-fn main() {
-    pe_utils::run(13, solve);
-}
+pe_utils::pe_main!();

@@ -9,6 +9,4 @@ fn solve() -> u64 {
     find_prime_set().expect("no prime set found").iter().sum()
 }
 
-fn main() {
-    pe_utils::run(60, solve);
-}
+pe_utils::pe_main!();

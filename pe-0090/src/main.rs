@@ -74,6 +74,4 @@ fn solve() -> usize {
     count_valid_pairs()
 }
 
-fn main() {
-    pe_utils::run(90, solve);
-}
+pe_utils::pe_main!();

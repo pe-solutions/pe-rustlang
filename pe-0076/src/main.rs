@@ -22,6 +22,4 @@ fn solve() -> usize {
     n_partitions(100)
 }
 
-fn main() {
-    pe_utils::run(76, solve);
-}
+pe_utils::pe_main!();

@@ -12,6 +12,4 @@ fn solve() -> i64 {
     answer
 }
 
-fn main() {
-    pe_utils::run(97, solve);
-}
+pe_utils::pe_main!();

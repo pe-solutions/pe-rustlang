@@ -79,6 +79,4 @@ fn solve() -> usize {
     find_n(10_000_000)
 }
 
-fn main() {
-    pe_utils::run(70, solve);
-}
+pe_utils::pe_main!();

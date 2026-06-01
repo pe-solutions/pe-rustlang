@@ -16,6 +16,4 @@ fn solve() -> u64 {
     largest_prime_factor(600_851_475_143)
 }
 
-fn main() {
-    pe_utils::run(3, solve);
-}
+pe_utils::pe_main!();

@@ -40,6 +40,4 @@ fn solve() -> num_bigint::BigUint {
     calculate_digit_sum_modulo()
 }
 
-fn main() {
-    pe_utils::run(725, solve);
-}
+pe_utils::pe_main!();

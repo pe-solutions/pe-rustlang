@@ -27,6 +27,4 @@ fn solve() -> u64 {
     calculate_highly_composite_number(500)
 }
 
-fn main() {
-    pe_utils::run(12, solve);
-}
+pe_utils::pe_main!();

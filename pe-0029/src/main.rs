@@ -15,6 +15,4 @@ fn solve() -> usize {
     arr.len()
 }
 
-fn main() {
-    pe_utils::run(29, solve);
-}
+pe_utils::pe_main!();

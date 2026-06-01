@@ -37,6 +37,4 @@ fn solve() -> u32 {
     lychrel_total
 }
 
-fn main() {
-    pe_utils::run(55, solve);
-}
+pe_utils::pe_main!();

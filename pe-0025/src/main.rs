@@ -17,6 +17,4 @@ fn solve() -> u32 {
     answer
 }
 
-fn main() {
-    pe_utils::run(25, solve);
-}
+pe_utils::pe_main!();

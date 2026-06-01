@@ -30,6 +30,4 @@ fn solve() -> u64 {
     sum_primes_below_limit(2_000_000)
 }
 
-fn main() {
-    pe_utils::run(10, solve);
-}
+pe_utils::pe_main!();

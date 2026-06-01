@@ -8,6 +8,4 @@ fn solve() -> u64 {
     c[0] * c[9] * c[99] * c[999] * c[9999] * c[99999] * c[999999]
 }
 
-fn main() {
-    pe_utils::run(40, solve);
-}
+pe_utils::pe_main!();

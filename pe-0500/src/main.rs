@@ -36,6 +36,4 @@ fn solve() -> usize {
     answer
 }
 
-fn main() {
-    pe_utils::run(500, solve);
-}
+pe_utils::pe_main!();

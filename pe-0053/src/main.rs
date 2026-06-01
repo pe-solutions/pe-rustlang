@@ -19,6 +19,4 @@ fn solve() -> u32 {
         .sum()
 }
 
-fn main() {
-    pe_utils::run(53, solve);
-}
+pe_utils::pe_main!();

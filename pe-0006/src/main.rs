@@ -13,6 +13,4 @@ fn solve() -> i64 {
     sum_square_difference(100)
 }
 
-fn main() {
-    pe_utils::run(6, solve);
-}
+pe_utils::pe_main!();

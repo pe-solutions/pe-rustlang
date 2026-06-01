@@ -30,6 +30,4 @@ fn solve() -> u64 {
     folding_sum(&mut triangle)
 }
 
-fn main() {
-    pe_utils::run(18, solve);
-}
+pe_utils::pe_main!();

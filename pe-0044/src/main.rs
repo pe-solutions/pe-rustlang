@@ -33,6 +33,4 @@ fn solve() -> u32 {
     panic!("no answer found")
 }
 
-fn main() {
-    pe_utils::run(44, solve);
-}
+pe_utils::pe_main!();

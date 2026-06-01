@@ -12,6 +12,4 @@ fn solve() -> u32 {
         .unwrap()
 }
 
-fn main() {
-    pe_utils::run(56, solve);
-}
+pe_utils::pe_main!();

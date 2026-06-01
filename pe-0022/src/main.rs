@@ -29,6 +29,4 @@ fn solve() -> u32 {
     all_name_score(&names)
 }
 
-fn main() {
-    pe_utils::run(22, solve);
-}
+pe_utils::pe_main!();

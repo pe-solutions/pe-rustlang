@@ -24,6 +24,4 @@ fn solve() -> u64 {
     calculate_nth_digit_sum(10_000_000)
 }
 
-fn main() {
-    pe_utils::run(820, solve);
-}
+pe_utils::pe_main!();

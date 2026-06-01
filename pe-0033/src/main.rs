@@ -141,6 +141,4 @@ fn solve() -> i64 {
     answer.denominator
 }
 
-fn main() {
-    pe_utils::run(33, solve);
-}
+pe_utils::pe_main!();

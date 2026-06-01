@@ -58,6 +58,4 @@ fn solve() -> usize {
     count_valid_combinations(&primes)
 }
 
-fn main() {
-    pe_utils::run(800, solve);
-}
+pe_utils::pe_main!();

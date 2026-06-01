@@ -35,9 +35,7 @@ fn solve() -> u64 {
     calculate_digit_power_sums(30)
 }
 
-fn main() {
-    pe_utils::run(119, solve);
-}
+pe_utils::pe_main!();
 #[cfg(test)]
 mod tests {
     use super::*;

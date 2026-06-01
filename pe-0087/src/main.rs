@@ -18,6 +18,4 @@ fn solve() -> usize {
     results.len()
 }
 
-fn main() {
-    pe_utils::run(87, solve);
-}
+pe_utils::pe_main!();

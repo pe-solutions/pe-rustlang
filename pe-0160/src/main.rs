@@ -21,9 +21,7 @@ fn solve() -> u64 {
     f(2_560_000)
 }
 
-fn main() {
-    pe_utils::run(160, solve);
-}
+pe_utils::pe_main!();
 #[cfg(test)]
 mod tests {
     use super::*;

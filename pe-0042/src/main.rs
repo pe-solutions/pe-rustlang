@@ -26,6 +26,4 @@ fn solve() -> usize {
     words.iter().filter(|w| is_triangle_word(w)).count()
 }
 
-fn main() {
-    pe_utils::run(42, solve);
-}
+pe_utils::pe_main!();

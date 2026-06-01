@@ -32,6 +32,4 @@ fn solve() -> u64 {
     sum_of_even_fibo(4_000_000)
 }
 
-fn main() {
-    pe_utils::run(2, solve);
-}
+pe_utils::pe_main!();

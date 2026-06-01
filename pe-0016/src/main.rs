@@ -21,6 +21,4 @@ fn solve() -> u32 {
     calculate_sum_of_digits_of_power(1000)
 }
 
-fn main() {
-    pe_utils::run(16, solve);
-}
+pe_utils::pe_main!();

@@ -89,6 +89,4 @@ fn solve() -> u128 {
     sum % MOD
 }
 
-fn main() {
-    pe_utils::run(304, solve);
-}
+pe_utils::pe_main!();

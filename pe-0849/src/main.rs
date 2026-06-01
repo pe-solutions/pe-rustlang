@@ -27,6 +27,4 @@ fn solve() -> usize {
     f_alternate(100)
 }
 
-fn main() {
-    pe_utils::run(849, solve);
-}
+pe_utils::pe_main!();

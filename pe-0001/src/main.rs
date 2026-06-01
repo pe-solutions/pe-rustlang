@@ -12,6 +12,4 @@ fn solve() -> i64 {
     multiples(&[3, 5], 1000)
 }
 
-fn main() {
-    pe_utils::run(1, solve);
-}
+pe_utils::pe_main!();

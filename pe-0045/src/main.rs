@@ -31,6 +31,4 @@ fn solve() -> i32 {
     find_next_tph()
 }
 
-fn main() {
-    pe_utils::run(45, solve);
-}
+pe_utils::pe_main!();

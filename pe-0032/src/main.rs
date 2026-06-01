@@ -26,6 +26,4 @@ fn solve() -> i32 {
     products.iter().sum()
 }
 
-fn main() {
-    pe_utils::run(32, solve);
-}
+pe_utils::pe_main!();

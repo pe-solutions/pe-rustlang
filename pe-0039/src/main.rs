@@ -11,6 +11,4 @@ fn solve() -> usize {
     max_perimeter
 }
 
-fn main() {
-    pe_utils::run(39, solve);
-}
+pe_utils::pe_main!();

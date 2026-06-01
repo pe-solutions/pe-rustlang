@@ -9,6 +9,4 @@ fn solve() -> BigInt {
     &sum % &modulus
 }
 
-fn main() {
-    pe_utils::run(48, solve);
-}
+pe_utils::pe_main!();

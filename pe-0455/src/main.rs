@@ -37,6 +37,4 @@ fn solve() -> u64 {
     (2..=1_000_000).map(|n| f(n, md)).sum()
 }
 
-fn main() {
-    pe_utils::run(455, solve);
-}
+pe_utils::pe_main!();

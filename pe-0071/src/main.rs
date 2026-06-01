@@ -133,6 +133,4 @@ fn solve() -> i64 {
     panic!("no answer found")
 }
 
-fn main() {
-    pe_utils::run(71, solve);
-}
+pe_utils::pe_main!();

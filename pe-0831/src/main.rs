@@ -29,6 +29,4 @@ fn solve() -> num_bigint::BigInt {
     pe0831()
 }
 
-fn main() {
-    pe_utils::run(831, solve);
-}
+pe_utils::pe_main!();

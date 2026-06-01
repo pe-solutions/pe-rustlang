@@ -18,6 +18,4 @@ fn solve() -> i32 {
     count_triangles(50)
 }
 
-fn main() {
-    pe_utils::run(91, solve);
-}
+pe_utils::pe_main!();

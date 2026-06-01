@@ -50,6 +50,4 @@ fn solve() -> i32 {
     d_max
 }
 
-fn main() {
-    pe_utils::run(26, solve);
-}
+pe_utils::pe_main!();

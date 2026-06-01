@@ -12,6 +12,4 @@ fn solve() -> i32 {
     total_count
 }
 
-fn main() {
-    pe_utils::run(63, solve);
-}
+pe_utils::pe_main!();

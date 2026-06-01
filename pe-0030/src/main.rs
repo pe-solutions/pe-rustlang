@@ -11,6 +11,4 @@ fn solve() -> u32 {
         .sum()
 }
 
-fn main() {
-    pe_utils::run(30, solve);
-}
+pe_utils::pe_main!();

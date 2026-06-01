@@ -39,6 +39,4 @@ fn solve() -> i32 {
     dp[N][N2 - 1]
 }
 
-fn main() {
-    pe_utils::run(345, solve);
-}
+pe_utils::pe_main!();

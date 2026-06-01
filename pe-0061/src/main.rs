@@ -109,6 +109,4 @@ fn solve() -> i32 {
     ).expect("no cyclic sequence found")
 }
 
-fn main() {
-    pe_utils::run(61, solve);
-}
+pe_utils::pe_main!();

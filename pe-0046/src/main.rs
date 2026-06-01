@@ -64,6 +64,4 @@ fn solve() -> i32 {
         .expect("no solution found")
 }
 
-fn main() {
-    pe_utils::run(46, solve);
-}
+pe_utils::pe_main!();

@@ -10,6 +10,4 @@ fn solve() -> i64 {
     sum_of_spiral_diagonals(1_001)
 }
 
-fn main() {
-    pe_utils::run(28, solve);
-}
+pe_utils::pe_main!();

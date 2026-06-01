@@ -41,6 +41,4 @@ fn solve() -> u32 {
     count
 }
 
-fn main() {
-    pe_utils::run(92, solve);
-}
+pe_utils::pe_main!();

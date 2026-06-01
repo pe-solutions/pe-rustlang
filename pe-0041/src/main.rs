@@ -36,6 +36,4 @@ fn solve() -> u64 {
         .expect("no prime permutation found")
 }
 
-fn main() {
-    pe_utils::run(41, solve);
-}
+pe_utils::pe_main!();

@@ -36,6 +36,4 @@ fn solve() -> usize {
     find_first_number()
 }
 
-fn main() {
-    pe_utils::run(47, solve);
-}
+pe_utils::pe_main!();

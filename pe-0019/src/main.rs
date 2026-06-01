@@ -19,6 +19,4 @@ fn solve() -> usize {
     pe0019()
 }
 
-fn main() {
-    pe_utils::run(19, solve);
-}
+pe_utils::pe_main!();

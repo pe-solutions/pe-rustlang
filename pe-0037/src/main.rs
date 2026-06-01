@@ -28,6 +28,4 @@ fn solve() -> usize {
         .sum::<usize>()
 }
 
-fn main() {
-    pe_utils::run(37, solve);
-}
+pe_utils::pe_main!();

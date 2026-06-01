@@ -53,6 +53,4 @@ fn solve() -> String {
     result.iter().map(|&n| n.to_string()).collect()
 }
 
-fn main() {
-    pe_utils::run(49, solve);
-}
+pe_utils::pe_main!();

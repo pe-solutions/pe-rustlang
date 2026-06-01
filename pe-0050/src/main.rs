@@ -39,6 +39,4 @@ fn solve() -> i64 {
     max_sum
 }
 
-fn main() {
-    pe_utils::run(50, solve);
-}
+pe_utils::pe_main!();

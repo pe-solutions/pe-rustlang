@@ -18,6 +18,4 @@ fn solve() -> u64 {
     (1..=20u64).fold(1, |acc, x| lcm(acc, x))
 }
 
-fn main() {
-    pe_utils::run(5, solve);
-}
+pe_utils::pe_main!();

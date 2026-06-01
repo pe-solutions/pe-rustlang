@@ -41,6 +41,4 @@ fn solve() -> u64 {
     find_concealed_square()
 }
 
-fn main() {
-    pe_utils::run(206, solve);
-}
+pe_utils::pe_main!();

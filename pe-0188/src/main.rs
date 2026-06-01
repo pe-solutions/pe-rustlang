@@ -32,6 +32,4 @@ fn solve() -> u64 {
     tetra_mod(1777, 1855, 10u64.pow(8))
 }
 
-fn main() {
-    pe_utils::run(188, solve);
-}
+pe_utils::pe_main!();

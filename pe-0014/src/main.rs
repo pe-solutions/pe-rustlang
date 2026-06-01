@@ -27,6 +27,4 @@ fn solve() -> u64 {
     find_max_start(1_000_000)
 }
 
-fn main() {
-    pe_utils::run(14, solve);
-}
+pe_utils::pe_main!();
