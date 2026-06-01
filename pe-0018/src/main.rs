@@ -1,4 +1,3 @@
-use std::time::Instant;
 
 fn folding_sum(numbers: &mut Vec<Vec<u64>>) -> u64 {
     for i in (0..numbers.len() - 1).rev() {
@@ -10,7 +9,7 @@ fn folding_sum(numbers: &mut Vec<Vec<u64>>) -> u64 {
     numbers[0][0]
 }
 
-fn main() {
+fn solve() -> u64 {
     let mut triangle: Vec<Vec<u64>> = vec![
         vec![75],
         vec![95, 64],
@@ -28,14 +27,9 @@ fn main() {
         vec![63, 66, 4, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31],
         vec![4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23],
     ];
+    folding_sum(&mut triangle)
+}
 
-    let start = Instant::now();
-
-    let answer = folding_sum(&mut triangle);
-
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #18\nAnswer: {}", answer);
-
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
+fn main() {
+    pe_utils::run(18, solve);
 }

@@ -40,24 +40,17 @@ fn test_rotation_prime(mut n: u32) -> bool {
     true
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-    
+fn solve() -> u32 {
     const UPPERBOUND: u32 = 1_000_000;
-    
     let mut i: u32 = 2;
     let mut answer = 0;
-
     while i < UPPERBOUND {
-        if test_rotation_prime(i) {
-            answer += 1;
-        }
+        if test_rotation_prime(i) { answer += 1; }
         i += 1;
     }
-
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #35\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+    answer
 }
 
+fn main() {
+    pe_utils::run(35, solve);
+}

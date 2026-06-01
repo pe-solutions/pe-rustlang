@@ -7,24 +7,18 @@
          .sum()
  }
  
- fn main() {
-     let start = std::time::Instant::now();
- 
-     const RANGE_MAX: i32 = 10_000;
- 
-     let mut answer = 0;
- 
-     for n in 1..RANGE_MAX {
-         let sum_n = sum_of_proper_divisors(n);
-         
-         if n < sum_n && sum_n <= RANGE_MAX && sum_of_proper_divisors(sum_n) == n {
-             answer += n + sum_n;
-         }
-     }
- 
-     let duration = start.elapsed();
-    
-     println!("\nProject Euler #21\nAnswer: {}", answer);
-     println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
-  }
- 
+fn solve() -> i32 {
+    const RANGE_MAX: i32 = 10_000;
+    let mut answer = 0;
+    for n in 1..RANGE_MAX {
+        let sum_n = sum_of_proper_divisors(n);
+        if n < sum_n && sum_n <= RANGE_MAX && sum_of_proper_divisors(sum_n) == n {
+            answer += n + sum_n;
+        }
+    }
+    answer
+}
+
+fn main() {
+    pe_utils::run(21, solve);
+}

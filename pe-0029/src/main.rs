@@ -3,24 +3,18 @@
 
 use num_bigint::BigUint;
 
-fn main() {
-    let start = std::time::Instant::now();
-    
+fn solve() -> usize {
     let mut arr = Vec::new();
-
     for i in 2..=100 {
         for j in 2..=100 {
             arr.push(BigUint::from(i as u32).pow(j));
         }
     }
-
     arr.sort();
     arr.dedup();
+    arr.len()
+}
 
-    let answer = arr.len();
-
-    let duration = start.elapsed();
-    
-    println!("\nProject Euler #29\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+fn main() {
+    pe_utils::run(29, solve);
 }

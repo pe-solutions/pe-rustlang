@@ -1,7 +1,6 @@
 // Matrix Sum
 // https://projecteuler.net/problem=345
 
-use std::time::Instant;
 
 const N: usize = 15;
 const N2: usize = 1 << N;
@@ -24,29 +23,22 @@ const A: [[i32; N]; N] = [
     [813, 883, 451, 509, 615, 77, 281, 613, 459, 205, 380, 274, 302, 35, 805],
 ];
 
-fn main() {
-    let start = Instant::now();
-    
+fn solve() -> i32 {
     let mut dp = vec![[0; N2]; N + 1];
-
     for n in 0..N {
         for c in 0..N2 {
             dp[n + 1][c] = dp[n][c];
             for x in 0..N {
                 if (1 << x) & c != 0 {
                     let r = A[n][x] + dp[n][c - (1 << x)];
-                    if dp[n + 1][c] < r {
-                        dp[n + 1][c] = r;
-                    }
+                    if dp[n + 1][c] < r { dp[n + 1][c] = r; }
                 }
             }
         }
     }
-    
-    let answer = dp[N][N2 - 1];
-    
-    let duration = start.elapsed();
+    dp[N][N2 - 1]
+}
 
-    println!("\nProject Euler #345\nAnswer: {}", answer);
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
+fn main() {
+    pe_utils::run(345, solve);
 }

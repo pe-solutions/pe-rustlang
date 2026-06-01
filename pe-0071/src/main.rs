@@ -122,25 +122,17 @@ impl<T: Into<i64>> From<T> for Rational {
     }
 }
 
-fn main() {
-     let start = std::time::Instant::now();
-     
-     println!();
-     
-     for d in (1..=1_000_000).rev() {
-         let f = Rational::new(3, 7) - Rational::new(1, 7 * d);
-         let n = f.numerator;
-         
-         if Rational::new(n, d) < Rational::new(3, 7) {
-            let answer = n;
-            println!("\nProject Euler #71\nAnswer: {}", answer);
-
-            break;
-         }
-     }
-     
-    let duration = start.elapsed();
-
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+fn solve() -> i64 {
+    for d in (1..=1_000_000).rev() {
+        let f = Rational::new(3, 7) - Rational::new(1, 7 * d);
+        let n = f.numerator;
+        if Rational::new(n, d) < Rational::new(3, 7) {
+            return n;
+        }
+    }
+    panic!("no answer found")
 }
- 
+
+fn main() {
+    pe_utils::run(71, solve);
+}

@@ -17,16 +17,10 @@ fn calculate_sum_of_digits_of_power(exponent: u32) -> u32 {
     result
 }
 
+fn solve() -> u32 {
+    calculate_sum_of_digits_of_power(1000)
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-    //
-
-    let exponent = 1000;
-    let answer = calculate_sum_of_digits_of_power(exponent);
-
-    //
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #16\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());   
+    pe_utils::run(16, solve);
 }

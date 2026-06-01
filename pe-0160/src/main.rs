@@ -17,17 +17,13 @@ fn f(n: u64) -> u64 {
     result % 100_000
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-
-    let answer = f(2_560_000);
-
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #160\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.", duration.as_millis());
+fn solve() -> u64 {
+    f(2_560_000)
 }
 
+fn main() {
+    pe_utils::run(160, solve);
+}
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -47,3 +43,4 @@ mod tests {
         assert_eq!(f(20), 17664);
     }
 }
+

@@ -25,23 +25,10 @@ fn find_largest_palindrome_product(range: std::ops::RangeInclusive<i32>) -> Opti
     }
 }
 
+fn solve() -> i32 {
+    find_largest_palindrome_product(899..=999).expect("no palindrome found")
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-    
-    let range = 899..=999;
-
-    match find_largest_palindrome_product(range) {
-        Some(ans) => {
-            println!("\nProject Euler #4");
-            println!("Answer: {}", ans);
-        }
-        None => {
-            println!("No palindrome found in the specified range.");
-        }
-    }
-
-    //
-    let duration = start.elapsed();
-    
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis()); 
+    pe_utils::run(4, solve);
 }

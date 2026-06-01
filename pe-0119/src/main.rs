@@ -31,17 +31,13 @@ fn calculate_digit_power_sums(n: usize) -> u64 {
     results[n - 1]
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-
-    let answer = calculate_digit_power_sums(30);
-
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #119\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+fn solve() -> u64 {
+    calculate_digit_power_sums(30)
 }
 
+fn main() {
+    pe_utils::run(119, solve);
+}
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -56,3 +52,4 @@ mod tests {
         assert_eq!(calculate_digit_power_sums(10), 614656);
     }
 }
+

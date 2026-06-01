@@ -24,36 +24,18 @@ fn is_prime(n: u64) -> bool {
     }
     true}
 
-fn main() {
-    let start = std::time::Instant::now();
-    
+fn solve() -> u64 {
     let digits = vec!['7', '6', '5', '4', '3', '2', '1'];
     let permutations = digits.iter().permutations(digits.len());
-
-    let largest_prime = permutations
-        .map(|perm| {
-            let perm_str: String = perm.into_iter().collect();
-            let perm_num = perm_str.parse::<u64>().unwrap();
-            if is_prime(perm_num) {
-                Some(perm_num)
-            } else {
-                None
-            }
+    permutations
+        .filter_map(|perm| {
+            let n: u64 = perm.into_iter().collect::<String>().parse().unwrap();
+            if is_prime(n) { Some(n) } else { None }
         })
-        .filter(|x| x.is_some())
-        .max();
-
-    match largest_prime {
-        Some(prime) => {
-            println!("\nProject Euler #41\nAnswer: {}", prime.unwrap());
-        }
-        None => {
-            println!("No prime number found among permutations.");
-        }
-    }
-
-    let duration = start.elapsed();
-
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+        .max()
+        .expect("no prime permutation found")
 }
 
+fn main() {
+    pe_utils::run(41, solve);
+}

@@ -83,10 +83,12 @@ members = [
     "pe-0831",
     "pe-0849",
     "pe-0940",
+    "pe-utils",
 ]
 resolver = "2"
 
 [workspace.dependencies]
+pe-utils = { path = "pe-utils" }
 chrono = "0.4.38"
 csv = "1.3.0"
 itertools = "0.13.0"

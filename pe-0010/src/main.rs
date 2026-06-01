@@ -1,7 +1,6 @@
 // Summation of primes
 // https://projecteuler.net/problem/10
 
-use std::time::Instant;
 
 fn is_prime(n: u64) -> bool {
     if n < 2 {
@@ -27,14 +26,10 @@ fn sum_primes_below_limit(limit: u64) -> u64 {
     sum
 }
 
-fn main() {
-    let start = Instant::now();
-    
-    let limit = 2_000_000;
-    let answer = sum_primes_below_limit(limit);
-    
-    let duration = start.elapsed();
+fn solve() -> u64 {
+    sum_primes_below_limit(2_000_000)
+}
 
-    println!("\nProject Euler #10\nAnswer: {}", answer);
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
+fn main() {
+    pe_utils::run(10, solve);
 }

@@ -1,7 +1,6 @@
 // Number Letter Counts
 // https://projecteuler.net/problem=17
 
-use std::time::Instant;
 
 fn number_to_english(n: u64) -> &'static str {
     match n {
@@ -39,47 +38,34 @@ fn number_to_english(n: u64) -> &'static str {
     }
 }
 
-fn main() {
-    let start = Instant::now();
-    // 
-
+fn solve() -> usize {
     let mut answer = 0;
-
     for num in 1..=1000 {
         let mut num = num;
-
         if num / 1000 > 0 {
             answer += number_to_english(num / 1000).len() + number_to_english(1000).len();
             num %= 1000;
         }
-
         if num / 100 > 0 {
             answer += number_to_english(num / 100).len() + number_to_english(100).len();
             num %= 100;
-
             if num % 100 != 0 {
                 answer += "AND".len();
             }
         }
-
         if num >= 21 && num <= 99 {
             answer += number_to_english(num / 10 * 10).len();
-
             if num % 10 != 0 {
                 answer += number_to_english(num % 10).len();
             }
         }
-
         if num >= 1 && num <= 20 {
             answer += number_to_english(num).len();
         }
     }
-
-    let duration = start.elapsed();
-    // 
-
-    println!("\nProject Euler #17\nAnswer: {}", answer);
-
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
+    answer
 }
 
+fn main() {
+    pe_utils::run(17, solve);
+}

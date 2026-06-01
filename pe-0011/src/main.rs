@@ -1,10 +1,7 @@
 // Largest Product in a Grid
 // https://projecteuler.net/problem=11
 
-fn main() {
-    let start = std::time::Instant::now();
-    // 
-
+fn solve() -> i32 {
     let grid = vec![
         vec![8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
         vec![49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 0],
@@ -27,54 +24,30 @@ fn main() {
         vec![20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
         vec![1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48],
     ];
-
-    let mut answer = 0; // max product
-
+    let mut answer = 0;
     for i in 0..20 {
         for j in 0..20 {
-            // Check horizontally
             if j + 3 < 20 {
-                let product = grid[i][j] * grid[i][j + 1] * grid[i][j + 2] * grid[i][j + 3];
-
-                if product > answer {
-                    answer = product;
-                }
+                let p = grid[i][j] * grid[i][j+1] * grid[i][j+2] * grid[i][j+3];
+                if p > answer { answer = p; }
             }
-
-            // Check vertically
             if i + 3 < 20 {
-                let product = grid[i][j] * grid[i + 1][j] * grid[i + 2][j] * grid[i + 3][j];
-
-                if product > answer {
-                    answer = product;
-                }
+                let p = grid[i][j] * grid[i+1][j] * grid[i+2][j] * grid[i+3][j];
+                if p > answer { answer = p; }
             }
-
-            // Check diagonally (down-right)
             if i + 3 < 20 && j + 3 < 20 {
-                let product = grid[i][j] * grid[i + 1][j + 1] * grid[i + 2][j + 2] * grid[i + 3][j + 3];
-
-                if product > answer {
-                    answer = product;
-                }
+                let p = grid[i][j] * grid[i+1][j+1] * grid[i+2][j+2] * grid[i+3][j+3];
+                if p > answer { answer = p; }
             }
-
-            // Check diagonally (down-left)
             if i + 3 < 20 && j >= 3 {
-                let product = grid[i][j] * grid[i + 1][j - 1] * grid[i + 2][j - 2] * grid[i + 3][j - 3];
-
-                if product > answer {
-                    answer = product;
-                }
+                let p = grid[i][j] * grid[i+1][j-1] * grid[i+2][j-2] * grid[i+3][j-3];
+                if p > answer { answer = p; }
             }
         }
     }
-    
-    let duration = start.elapsed();
-    // 
+    answer
+}
 
-    println!("\nProject Euler #11\nAnswer: {}", answer);
-
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
-
+fn main() {
+    pe_utils::run(11, solve);
 }

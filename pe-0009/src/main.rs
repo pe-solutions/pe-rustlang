@@ -17,15 +17,11 @@ fn find_pythagorean_triplet() -> Option<(i32, i32, i32)> {
     None
 }
 
+fn solve() -> i32 {
+    let (a, b, c) = find_pythagorean_triplet().expect("no triplet found");
+    a * b * c
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-    
-    match find_pythagorean_triplet() {
-        Some((a, b, c)) => println!("\nProject Euler #9\nAnswer: {}", a * b * c),
-        None => println!("No triplet found!"),
-    }
-    
-    let duration = start.elapsed();
-    
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis()); 
+    pe_utils::run(9, solve);
 }

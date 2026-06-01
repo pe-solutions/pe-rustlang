@@ -23,13 +23,10 @@ fn find_max_start(limit: u64) -> u64 {
     max_start
 }
 
-fn main() {
-    const LIMIT: u64 = 1_000_000;
-    
-    let start = std::time::Instant::now();
-    let answer = find_max_start(LIMIT);
-    let duration = start.elapsed();
+fn solve() -> u64 {
+    find_max_start(1_000_000)
+}
 
-    println!("\nProject Euler #14\nAnswer: {}", answer);
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
+fn main() {
+    pe_utils::run(14, solve);
 }

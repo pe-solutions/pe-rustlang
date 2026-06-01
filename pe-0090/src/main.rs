@@ -70,13 +70,10 @@ fn count_valid_pairs() -> usize {
     valid_pairs.len()
 }
 
+fn solve() -> usize {
+    count_valid_pairs()
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-    //
-    let result = count_valid_pairs();
-    //
-    let duration = start.elapsed();
-    
-    println!("\nProject Euler #90\nAnswer: {}", result);
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
+    pe_utils::run(90, solve);
 }

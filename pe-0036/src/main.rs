@@ -7,24 +7,18 @@ fn is_palindrome(s: &str) -> bool {
     s == s_rev
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-    
-    let limit = 1_000_000;
+fn solve() -> i32 {
     let mut answer = 0;
-
-    for i in 1..limit {
+    for i in 1..1_000_000 {
         let decimal_str = i.to_string();
         let binary_str = format!("{:b}", i);
-
         if is_palindrome(&decimal_str) && is_palindrome(&binary_str) {
             answer += i;
         }
     }
-
-    let duration = start.elapsed();
-    println!("\nProject Euler #36\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+    answer
 }
 
-
+fn main() {
+    pe_utils::run(36, solve);
+}

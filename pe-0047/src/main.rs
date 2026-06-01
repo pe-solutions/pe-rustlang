@@ -32,13 +32,10 @@ fn find_first_number() -> usize {
     0 // If no such number is found
 }
 
+fn solve() -> usize {
+    find_first_number()
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-
-    let answer = find_first_number();
-
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #47\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.", duration.as_millis());
+    pe_utils::run(47, solve);
 }

@@ -1,7 +1,6 @@
 // Counting Sundays
 // https://projecteuler.net/problem=19
 
-use std::time::Instant;
 use itertools::iproduct;
 use chrono::{Datelike, NaiveDate, Weekday};
 
@@ -16,11 +15,10 @@ fn pe0019() -> usize {
         .count()
 }
 
+fn solve() -> usize {
+    pe0019()
+}
+
 fn main() {
-    let start = Instant::now();
-    let answer = pe0019();
-    let duration = start.elapsed();
-    
-    println!("\nProject Euler #19\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+    pe_utils::run(19, solve);
 }

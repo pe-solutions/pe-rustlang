@@ -28,11 +28,10 @@ fn tetra_mod(base: u64, exponent: u64, modulus: u64) -> u64 {
     x
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-    let answer = tetra_mod(1777, 1855, 10u64.pow(8));
-    let duration = start.elapsed();
+fn solve() -> u64 {
+    tetra_mod(1777, 1855, 10u64.pow(8))
+}
 
-    println!("\nProject Euler #188\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+fn main() {
+    pe_utils::run(188, solve);
 }

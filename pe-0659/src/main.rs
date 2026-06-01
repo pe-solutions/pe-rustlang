@@ -55,40 +55,30 @@ fn fp_square_root(n: u64, p: u64) -> Option<u64> {
     Some(r)
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-    
+fn solve() -> u64 {
     let n = 10_000_000;
     let mut sieve = (0..n)
         .map(|i| (4 * (i + 1) as u64 * (i + 1) as u64 + 1, 1u64))
         .collect::<Vec<_>>();
-
     for p in primal::Primes::all().take_while(|&p| p <= 2 * n).filter(|&p| p % 4 == 1) {
         let p = p as u64;
         if let Some(sr) = fp_square_root(p - 1, p) {
             let s = if sr & 1 == 0 { sr / 2 } else { (sr + p) / 2 };
             let offsets = [(s - 1) as usize, (p - s - 1) as usize];
-
             for i in (0..n).step_by(p as usize) {
                 for &offset in &offsets {
                     if i + offset < n {
                         let (mut q, _prime) = sieve[i + offset];
-                        while q % p == 0 {
-                            q /= p;
-                        }
+                        while q % p == 0 { q /= p; }
                         sieve[i + offset] = (q, p);
                     }
                 }
             }
         }
     }
+    sieve.iter().map(|&(a, b)| a.max(b)).fold(0u64, |acc, v| (acc + v) % MOD)
+}
 
-    let result = sieve.iter()
-        .map(|&(a, b)| a.max(b as u64))
-        .fold(0u64, |acc, v| (acc + v) % MOD);
-
-    let duration = start.elapsed();
-    
-    println!("\nProject Euler #659\nAnswer: {}", result);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+fn main() {
+    pe_utils::run(659, solve);
 }

@@ -37,13 +37,10 @@ fn find_concealed_square() -> u64 {
     0 // Default return if no concealed square is found
 }
 
+fn solve() -> u64 {
+    find_concealed_square()
+}
+
 fn main() {
-    let timer = std::time::Instant::now();
-
-    let answer = find_concealed_square();
-
-    let elapsed_time = timer.elapsed();
-
-    println!("\nProject Euler #206\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", elapsed_time.as_millis());
+    pe_utils::run(206, solve);
 }

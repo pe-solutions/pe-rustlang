@@ -23,14 +23,10 @@ fn calculate_highly_composite_number(target_divisors: u64) -> u64 {
     result
 }
 
+fn solve() -> u64 {
+    calculate_highly_composite_number(500)
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-
-    let answer = calculate_highly_composite_number(500);
-
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #12");
-    println!("Answer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+    pe_utils::run(12, solve);
 }

@@ -25,13 +25,10 @@ fn pe0831() -> BigInt {
     result
 }
 
+fn solve() -> num_bigint::BigInt {
+    pe0831()
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-
-    let answer = pe0831();
-
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #831\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+    pe_utils::run(831, solve);
 }

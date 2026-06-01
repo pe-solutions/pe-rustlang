@@ -27,29 +27,24 @@ fn is_prime(n: i32) -> bool {
     true
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-    
+fn solve() -> i32 {
     let mut max_primes = 0;
     let mut answer = 0;
-
     for a in -999..=1000 {
         for b in -1000..=1000 {
             let mut n = 0;
-
             while is_prime(n * n + a * n + b) {
                 n += 1;
             }
-
             if n > max_primes {
                 max_primes = n;
                 answer = a * b;
             }
         }
     }
+    answer
+}
 
-    let duration = start.elapsed();
-    
-    println!("\nProject Euler #27\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+fn main() {
+    pe_utils::run(27, solve);
 }

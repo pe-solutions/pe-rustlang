@@ -23,14 +23,10 @@ fn f_alternate(n: usize) -> usize {
     dp[n][maxs]
 }
 
+fn solve() -> usize {
+    f_alternate(100)
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-    
-    const N: usize = 100;
-    let answer = f_alternate(N);
-
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #849\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis()); 
+    pe_utils::run(849, solve);
 }

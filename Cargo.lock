@@ -272,67 +272,108 @@ checksum = "9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50"
 [[package]]
 name = "pe-0001"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0002"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0003"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0004"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0005"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0006"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0007"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0008"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0009"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0010"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0011"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0012"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0013"
 version = "0.1.0"
 dependencies = [
  "num-bigint",
+ "pe-utils",
 ]
 
 [[package]]
 name = "pe-0014"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0015"
 version = "0.1.0"
 dependencies = [
  "num",
+ "pe-utils",
 ]
 
 [[package]]
@@ -340,15 +381,22 @@ name = "pe-0016"
 version = "0.1.0"
 dependencies = [
  "num-bigint",
+ "pe-utils",
 ]
 
 [[package]]
 name = "pe-0017"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0018"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0019"
@@ -356,6 +404,7 @@ version = "0.1.0"
 dependencies = [
  "chrono",
  "itertools",
+ "pe-utils",
 ]
 
 [[package]]
@@ -365,11 +414,15 @@ dependencies = [
  "num",
  "num-bigint",
  "num-traits",
+ "pe-utils",
 ]
 
 [[package]]
 name = "pe-0021"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0022"
@@ -377,17 +430,22 @@ version = "0.1.0"
 dependencies = [
  "csv",
  "itertools",
+ "pe-utils",
 ]
 
 [[package]]
 name = "pe-0023"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0024"
 version = "0.1.0"
 dependencies = [
  "itertools",
+ "pe-utils",
 ]
 
 [[package]]
@@ -396,19 +454,29 @@ version = "0.1.0"
 dependencies = [
  "num-bigint",
  "num-traits",
+ "pe-utils",
 ]
 
 [[package]]
 name = "pe-0026"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0027"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0028"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0029"
@@ -416,105 +484,171 @@ version = "0.1.0"
 dependencies = [
  "num-bigint",
  "num-traits",
+ "pe-utils",
 ]
 
 [[package]]
 name = "pe-0030"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0031"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0032"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0033"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0034"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0035"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0036"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0037"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0038"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0039"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0040"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0041"
 version = "0.1.0"
 dependencies = [
  "itertools",
+ "pe-utils",
 ]
 
 [[package]]
 name = "pe-0042"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0043"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0044"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0045"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0046"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0047"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0048"
 version = "0.1.0"
 dependencies = [
  "num-bigint",
+ "pe-utils",
 ]
 
 [[package]]
 name = "pe-0049"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0050"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0053"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0055"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0056"
@@ -522,19 +656,29 @@ version = "0.1.0"
 dependencies = [
  "num-bigint",
  "num-traits",
+ "pe-utils",
 ]
 
 [[package]]
 name = "pe-0060"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0061"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0063"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0066"
@@ -542,93 +686,143 @@ version = "0.1.0"
 dependencies = [
  "num-bigint",
  "num-traits",
+ "pe-utils",
 ]
 
 [[package]]
 name = "pe-0070"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0071"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0076"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0081"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0087"
 version = "0.1.0"
 dependencies = [
+ "pe-utils",
  "primes",
 ]
 
 [[package]]
 name = "pe-0090"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0091"
 version = "0.1.0"
 dependencies = [
  "itertools",
+ "pe-utils",
 ]
 
 [[package]]
 name = "pe-0092"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0097"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0104"
 version = "0.1.0"
 dependencies = [
  "num",
+ "pe-utils",
 ]
 
 [[package]]
 name = "pe-0119"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0160"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0188"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0206"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0304"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0345"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0455"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0500"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0659"
 version = "0.1.0"
 dependencies = [
+ "pe-utils",
  "primal",
 ]
 
@@ -638,19 +832,29 @@ version = "0.1.0"
 dependencies = [
  "num-bigint",
  "num-traits",
+ "pe-utils",
 ]
 
 [[package]]
 name = "pe-0800"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0808"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0820"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0831"
@@ -659,14 +863,25 @@ dependencies = [
  "num-bigint",
  "num-rational",
  "num-traits",
+ "pe-utils",
 ]
 
 [[package]]
 name = "pe-0849"
 version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
 
 [[package]]
 name = "pe-0940"
+version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-utils"
 version = "0.1.0"
 
 [[package]]

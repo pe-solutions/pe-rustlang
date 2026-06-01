@@ -2,7 +2,6 @@
 // https://projecteuler.net/problem=22
 
 use std::fs;
-use std::io;
 
 fn name_value(name: &str) -> u32 {
     name.chars().map(|c| c as u32 - 'A' as u32 + 1).sum()
@@ -20,22 +19,16 @@ fn all_name_score(names: &Vec<String>) -> u32 {
     sum
 }
 
-fn main() -> io::Result<()> {
-    let start = std::time::Instant::now();
-
-    let mut names: Vec<String> = fs::read_to_string("./data/0022_names.txt")?
+fn solve() -> u32 {
+    let mut names: Vec<String> = fs::read_to_string("./data/0022_names.txt")
+        .expect("failed to read ./data/0022_names.txt")
         .split(',')
         .map(|s| s.trim_matches('"').to_string())
         .collect();
-
     names.sort();
+    all_name_score(&names)
+}
 
-    let answer = all_name_score(&names);
-
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #22\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
-
-    Ok(())
+fn main() {
+    pe_utils::run(22, solve);
 }

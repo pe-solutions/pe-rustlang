@@ -1,12 +1,8 @@
 // Largest Product in a Series
 // https://projecteuler.net/problem=8
 
-use std::time::Instant;
 
-fn main() {
-    let start = Instant::now();
-    //
-    
+fn solve() -> i64 {
     let data = format!(
         "{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}",
         "73167176531330624919225119674426574742355349194934",
@@ -30,22 +26,17 @@ fn main() {
         "05886116467109405077541002256983155200055935729725",
         "71636269561882670428252483600823257530420752963450",
     );
-
     let digits: Vec<i64> = data.chars().map(|c| c.to_digit(10).unwrap() as i64).collect();
-
     let mut answer = 0;
-
     for start in 0..(digits.len() - 12) {
         let product = digits[start..(start + 13)].iter().product();
-
         if product > answer {
             answer = product;
         }
-    }  
+    }
+    answer
+}
 
-    //
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #8\nAnswer: {}", answer);
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis()); 
+fn main() {
+    pe_utils::run(8, solve);
 }

@@ -52,27 +52,18 @@ fn compute_a(n: u64, m: u64) -> i64 {
     solve_recurrence(f0, f1, 1, 3, m)
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-    
-    // >>>
-    
-    let mut total = 0;
-
+fn solve() -> i64 {
+    let mut total = 0i64;
     for i in 2..=MAX_K {
         let fi = fibonacci(i);
-        
         for j in 2..=MAX_K {
             let fj = fibonacci(j);
-            
-            total = (total + compute_a(fi, fj)) % MOD;
+            total = (total + compute_a(fi, fj)) % MOD as i64;
         }
     }
-    
-    // <<<
-    
-    let duration = start.elapsed();
+    total
+}
 
-    println!("\nProject Euler #940\nAnswer: {}", total);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis()); 
+fn main() {
+    pe_utils::run(940, solve);
 }

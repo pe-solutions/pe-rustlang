@@ -32,14 +32,11 @@ fn mod_exp(base: u64, mut exp: u64, modulus: u64) -> u64 {
     result
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-    
+fn solve() -> u64 {
     let md = 1_000_000_000;
-    let sum: u64 = (2..=1_000_000).map(|n| f(n, md)).sum();
-    
-    let duration = start.elapsed();
+    (2..=1_000_000).map(|n| f(n, md)).sum()
+}
 
-    println!("\nProject Euler #455\nAnswer: {}", sum);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+fn main() {
+    pe_utils::run(455, solve);
 }

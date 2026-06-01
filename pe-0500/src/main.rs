@@ -21,32 +21,21 @@ fn generate_primes(n: usize) -> Vec<usize> {
     primes
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-    
+fn solve() -> usize {
     const N: usize = 500500;
     const MOD: usize = 500500507;
-
-    // prime(500500) = 7376507 - Pari/GP's nth prime
     let primes = generate_primes(7376507);
-
     let mut pq = BinaryHeap::new();
-    for &prime in &primes {
-        pq.push(Reverse(prime));
-    }
-
+    for &prime in &primes { pq.push(Reverse(prime)); }
     let mut answer = 1;
     for _ in 0..N {
         let x = pq.pop().unwrap().0;
-
         answer = (answer * x) % MOD;
-
         pq.push(Reverse(x * x));
     }
+    answer
+}
 
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #800\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
-
+fn main() {
+    pe_utils::run(500, solve);
 }

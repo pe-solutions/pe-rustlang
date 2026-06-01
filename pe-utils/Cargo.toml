@@ -1,7 +1,6 @@
 [package]
-name = "pe-0060"
+name = "pe-utils"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-pe-utils = { workspace = true }

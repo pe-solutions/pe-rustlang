@@ -51,22 +51,18 @@
      false
  }
  
- fn main() {
-    let start = std::time::Instant::now();
-     
-     let upper_limit = 28_123;
- 
-     let mut answer = 0;
-     let ab: Vec<i32> = (1..=upper_limit).filter(|&a| sigma(a) > a).collect();
- 
-     for n in 1..upper_limit {
-         if !can_be_sum_of_two_ab_numb(&ab, n) {
-             answer += n;
-         }
-     }
- 
-     let duration = start.elapsed();
-    
-    println!("\nProject Euler #23\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
- }
+fn solve() -> i32 {
+    let upper_limit = 28_123;
+    let ab: Vec<i32> = (1..=upper_limit).filter(|&a| sigma(a) > a).collect();
+    let mut answer = 0;
+    for n in 1..upper_limit {
+        if !can_be_sum_of_two_ab_numb(&ab, n) {
+            answer += n;
+        }
+    }
+    answer
+}
+
+fn main() {
+    pe_utils::run(23, solve);
+}

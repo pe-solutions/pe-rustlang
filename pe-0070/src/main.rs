@@ -75,14 +75,10 @@ fn sorted_digits(n: usize) -> Vec<char> {
     digits
 }
 
+fn solve() -> usize {
+    find_n(10_000_000)
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-    
-    const LIMIT: usize = 10_000_000;
-    let answer = find_n(LIMIT);
-
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #70\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+    pe_utils::run(70, solve);
 }

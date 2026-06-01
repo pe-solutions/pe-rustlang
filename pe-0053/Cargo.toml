@@ -5,3 +5,4 @@ edition = "2024"
 authors = ["menjaraz"]
 
 [dependencies]
+pe-utils = { workspace = true }

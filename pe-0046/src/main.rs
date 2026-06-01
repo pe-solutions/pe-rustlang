@@ -57,18 +57,13 @@
      busted
  }
  
- fn main() {
-     let start = std::time::Instant::now();
- 
-     let result = (35..6_000).step_by(2).filter(|&x| is_composite(x) && is_goldbach_busted(x)).min();
- 
-     match result {
-         Some(min) => println!("\nProject Euler #48\nAnswer:{}", min),
-         None => println!("No solution found"),
-     }
- 
-     let duration = start.elapsed();
+fn solve() -> i32 {
+    (35..6_000).step_by(2)
+        .filter(|&x| is_composite(x) && is_goldbach_busted(x))
+        .min()
+        .expect("no solution found")
+}
 
-     println!("Elapsed time: {} milliseconds.", duration.as_millis());
- }
- 
+fn main() {
+    pe_utils::run(46, solve);
+}

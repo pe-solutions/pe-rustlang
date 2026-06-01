@@ -9,20 +9,16 @@ fn is_pandigital(num: i32) -> bool {
 }
 
 
-fn main() {
-    let start = std::time::Instant::now();
-    
+fn solve() -> i32 {
     for index in (1..=9876).rev() {
-        let candidate = index * (100_002);
-
+        let candidate = index * 100_002;
         if is_pandigital(candidate) {
-            println!("\nProject Euler #38\nAnswer: {}", candidate);
-            // 
-            break;
+            return candidate;
         }
     }
+    panic!("no pandigital found")
+}
 
-    let duration = start.elapsed();
-
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+fn main() {
+    pe_utils::run(38, solve);
 }

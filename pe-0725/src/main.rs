@@ -36,13 +36,10 @@ fn calculate_digit_sum_modulo() -> BigUint {
     s_2020 % BigUint::from(10u32).pow(16u32)
 }
 
+fn solve() -> num_bigint::BigUint {
+    calculate_digit_sum_modulo()
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-
-    let answer = calculate_digit_sum_modulo();
-
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #725\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+    pe_utils::run(725, solve);
 }

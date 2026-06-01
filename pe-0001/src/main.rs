@@ -8,13 +8,10 @@ fn multiples(factors: &[i64], limit: i64) ->i64 {
         .sum()
 }
 
+fn solve() -> i64 {
+    multiples(&[3, 5], 1000)
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-    //
-    let answer = multiples(&[3, 5], 1000);
-    //
-    let duration = start.elapsed();
-    
-    println!("\nProject Euler #1\nAnswer: {}", answer);
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
+    pe_utils::run(1, solve);
 }

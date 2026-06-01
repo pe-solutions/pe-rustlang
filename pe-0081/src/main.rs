@@ -83,25 +83,14 @@ fn min_path_sum(matrix: &[Vec<u32>]) -> u32 {
     dp[rows - 1][cols - 1]
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-    
-    let file_path = "data/matrix.txt";
-    match read_data(file_path) {
-        Ok(matrix) => {
-            
-            
-            let answer = min_path_sum(&matrix);
-            let duration = start.elapsed();
-
-            println!("\nProject Euler #81\nAnswer: {}", answer);
-            println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
-        }
-        Err(e) => eprintln!("Error reading matrix: {}", e),
-    }
+fn solve() -> u32 {
+    let matrix = read_data("data/matrix.txt").expect("failed to read data/matrix.txt");
+    min_path_sum(&matrix)
 }
 
-// Test
+fn main() {
+    pe_utils::run(81, solve);
+}
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -121,3 +110,4 @@ mod tests {
         assert_eq!(result, 7);
     }
 }
+

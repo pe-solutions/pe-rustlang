@@ -12,14 +12,10 @@ fn largest_prime_factor(mut n: u64) -> u64 {
     n
 }
 
+fn solve() -> u64 {
+    largest_prime_factor(600_851_475_143)
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-    
-    let number: u64 = 600_851_475_143;
-    let answer = largest_prime_factor(number);
-
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #3\nAnswer: {}", answer);
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
+    pe_utils::run(3, solve);
 }

@@ -6,3 +6,4 @@ authors = ["menjaraz"]
 
 
 [dependencies]
+pe-utils = { workspace = true }

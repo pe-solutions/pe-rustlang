@@ -122,31 +122,25 @@ impl<T: Into<i64>> From<T> for Rational {
     }
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-
+fn solve() -> i64 {
     let mut answer = Rational::new(1, 1);
-
     for b in 1i64..10 {
         for c in (b + 1)..10 {
             let a_numer = 9 * b * c;
             let a_denom = 10 * c - b;
-
             if a_numer % a_denom == 0 && a_numer < 10 * a_denom {
                 answer = answer * Rational::new(b, c);
             }
-
             let a_numer = 9 * b * c;
             let a_denom = 10 * b - c;
-
             if a_numer % a_denom == 0 && a_numer < 10 * a_denom {
                 answer = answer * Rational::new(b, c);
             }
         }
     }
+    answer.denominator
+}
 
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #33\nAnswer: {}", answer.denominator);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+fn main() {
+    pe_utils::run(33, solve);
 }

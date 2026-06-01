@@ -67,47 +67,28 @@ fn is_prime(n: u64) -> bool {
     true
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-    
-    //-----------------------------------
-    
-    // Step 1: primes
+fn solve() -> u128 {
     let mut primes = Vec::with_capacity(NEED);
     let mut x = START + 1;
-
     while primes.len() < NEED {
-        if is_prime(x) {
-            primes.push(x);
-        }
+        if is_prime(x) { primes.push(x); }
         x += 1;
     }
-
-    // Step 2: initial Fibonacci
     let p0 = primes[0];
-    let (mut f_prev, mut f_cur) = fib(p0 - 1); // F(n-1), F(n)
-
+    let (mut f_prev, mut f_cur) = fib(p0 - 1);
     let mut sum = f_cur % MOD;
-
-    // Step 3: iterate using gaps
     for i in 1..NEED {
         let gap = primes[i] - primes[i - 1];
-
-        let (fd, fd1) = fib(gap); // F(d), F(d+1)
-
+        let (fd, fd1) = fib(gap);
         let new_f = (f_cur * fd1 + f_prev * fd) % MOD;
         let new_prev = (f_cur * fd + f_prev * ((fd1 + MOD - fd) % MOD)) % MOD;
-
         f_cur = new_f;
         f_prev = new_prev;
-
         sum = (sum + f_cur) % MOD;
     }
-    
-    //-----------------------------------
-    
-    let duration = start.elapsed();
+    sum % MOD
+}
 
-    println!("\nProject Euler #304\nAnswer: {}", sum % MOD);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis()); 
+fn main() {
+    pe_utils::run(304, solve);
 }

@@ -28,14 +28,10 @@ fn sum_of_even_fibo(limit: u64) -> u64 {
     EvenFibonacci::new().take_while(|&x| x < limit).sum()
 }
 
+fn solve() -> u64 {
+    sum_of_even_fibo(4_000_000)
+}
+
 fn main() {
-    let start = std::time::Instant::now();    
-
-    // Calculate and Print the sum
-    println!("\nProject Euler #2\nAnswer: {}", sum_of_even_fibo(4_000_000));
-
-    let duration = start.elapsed();
-
-    // Print the Elapsed time    
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
+    pe_utils::run(2, solve);
 }

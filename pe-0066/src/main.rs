@@ -53,30 +53,17 @@ fn find_minimal_solution(d: i32) -> (BigInt, BigInt) {
     }
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-    //
-    
+fn solve() -> i32 {
     let mut max_x = BigInt::zero();
     let mut max_d = 0;
-
     for d in 2..=1000 {
-        if is_square(d) {
-            continue;
-        }
-        
+        if is_square(d) { continue; }
         let (x, _y) = find_minimal_solution(d);
-        
-        if x > max_x {
-            max_x = x;
-            max_d = d;
-        }
+        if x > max_x { max_x = x; max_d = d; }
     }
-    
-    //
-    let duration = start.elapsed();
-    
-    println!("\nProject Euler #66\nAnswer: {}", max_d);
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
+    max_d
+}
 
+fn main() {
+    pe_utils::run(66, solve);
 }

@@ -14,13 +14,10 @@ fn count_triangles(n: i32) -> i32 {
         .count() as i32 / 2
 }
 
+fn solve() -> i32 {
+    count_triangles(50)
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-	
-	let answer = count_triangles(50);
-	
-	let duration = start.elapsed();
-	
-    println!("\nProject Euler #91\nAnswer: {}", answer);
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
+    pe_utils::run(91, solve);
 }

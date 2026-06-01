@@ -11,12 +11,10 @@ use itertools::Itertools;
     }
 }
 
+fn solve() -> String {
+    get_millionth_permutation().expect("no permutation found")
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-    
-    println!(
-        "\nProject Euler #24\nAnswer: {:?}\nElapsed time: {:?} milliseconds.",
-        get_millionth_permutation(),
-        start.elapsed().as_millis()
-    );
+    pe_utils::run(24, solve);
 }

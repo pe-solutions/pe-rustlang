@@ -3,6 +3,10 @@
 
 use num::integer::binomial;
 
+fn solve() -> u64 {
+    binomial(40u64, 20u64)
+}
+
 fn main() {
-    println!("{}", binomial(40u64, 20u64));
+    pe_utils::run(15, solve);
 }

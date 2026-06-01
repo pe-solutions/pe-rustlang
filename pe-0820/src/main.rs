@@ -20,14 +20,10 @@ fn calculate_nth_digit_sum(n: u64) -> u64 {
         .sum()
 }
 
+fn solve() -> u64 {
+    calculate_nth_digit_sum(10_000_000)
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-
-    let n: u64 = 10_000_000;
-    let answer = calculate_nth_digit_sum(n);
-
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #820\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+    pe_utils::run(820, solve);
 }

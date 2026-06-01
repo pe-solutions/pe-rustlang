@@ -1,7 +1,6 @@
 // Sum Square Difference
 // https://projecteuler.net/problem/6
 
-use std::time::Instant;
 
 fn sum_square_difference(n: i64) -> i64 {
     let sum_of_squares: i64 = (1..=n).map(|x| x.pow(2)).sum();
@@ -10,14 +9,10 @@ fn sum_square_difference(n: i64) -> i64 {
     square_of_sums - sum_of_squares
 }
 
-fn main() {
-    let start = Instant::now();
-    
-    let n: i64 = 100;
-    let answer = sum_square_difference(n);
-    
-    let duration = start.elapsed();
+fn solve() -> i64 {
+    sum_square_difference(100)
+}
 
-    println!("\nProject Euler #6\nAnswer: {}", answer);
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
+fn main() {
+    pe_utils::run(6, solve);
 }

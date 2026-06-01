@@ -53,14 +53,11 @@ fn count_valid_combinations(primes: &Vec<usize>) -> usize {
     valid_combinations
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-
+fn solve() -> usize {
     let primes = sieve((800_800_f64 * 800_800_f64.log2()) as usize);
-    let answer = count_valid_combinations(&primes);
+    count_valid_combinations(&primes)
+}
 
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #800\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+fn main() {
+    pe_utils::run(800, solve);
 }

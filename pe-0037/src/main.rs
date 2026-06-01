@@ -21,16 +21,13 @@ fn is_truncatable(t: usize) -> bool {
         })
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-    
-    let answer = (10..)
+fn solve() -> usize {
+    (10..)
         .filter(|&i| is_prime(i) && is_truncatable(i))
         .take(11)
-        .fold(0, |acc, x| acc + x);
-    
-    let duration = start.elapsed();
-    
-    println!("\nProject Euler #37\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+        .sum::<usize>()
+}
+
+fn main() {
+    pe_utils::run(37, solve);
 }

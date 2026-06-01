@@ -27,13 +27,10 @@ fn find_next_tph() -> i32 {
     return h;
 }
 
+fn solve() -> i32 {
+    find_next_tph()
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-     
-    let answer = find_next_tph();
-
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #45\nAnswer:{}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+    pe_utils::run(45, solve);
 }

@@ -31,24 +31,16 @@ fn ends_in_89(n: u64, memo: &mut HashMap<u64, bool>) -> bool {
     result
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-    
+fn solve() -> u32 {
     let limit = 10_000_000;
-    
     let mut count = 0;
-    
     let mut memo = HashMap::new();
-
-    // Count how many numbers below `limit` eventually end up at 89.
     for i in 1..limit {
-        if ends_in_89(i, &mut memo) {
-            count += 1;
-        }
+        if ends_in_89(i, &mut memo) { count += 1; }
     }
-    
-    let duration = start.elapsed();
-    
-    println!("\nProject Euler #92\nAnswer: {}", count);
-    println!("Elapsed time: {:?} milliseconds.\n", duration.as_millis());
+    count
+}
+
+fn main() {
+    pe_utils::run(92, solve);
 }

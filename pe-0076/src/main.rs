@@ -18,16 +18,10 @@ fn n_partitions(n: usize) -> usize {
     compute_partitions(n)-1
 }    
 
+fn solve() -> usize {
+    n_partitions(100)
+}
+
 fn main() {
-    let start = std::time::Instant::now();
-    
-    const N: usize = 100;
-    let answer = n_partitions(N);
-
-    assert_eq!(n_partitions(5), 6); // Test
-        
-    println!("\nProject Euler #31\nAnswer: {}", answer);
-
-    let duration = start.elapsed();
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+    pe_utils::run(76, solve);
 }

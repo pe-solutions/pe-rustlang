@@ -35,34 +35,21 @@ impl RecurringCycleFinder {
     }
 }
 
-fn main() {
-    let start = std::time::Instant::now();
-    
-    // Length of the recurring cycle
+fn solve() -> i32 {
     let mut max_val = 0;
-    
-    // Denominator with the longest recurring cycle
     let mut d_max = 0;
-
     for i in 2..1_000 {
         let finder = RecurringCycleFinder::new(1, i);
-
-        match finder.denominator_cycle_length () {
-            Ok(recurring_cycle_length) => {
-                if recurring_cycle_length > max_val {
-                    max_val = recurring_cycle_length;
-                    d_max = i;
-                }
+        if let Ok(len) = finder.denominator_cycle_length() {
+            if len > max_val {
+                max_val = len;
+                d_max = i;
             }
-            
-            Err(err) => println!("Error: {}", err),
         }
     }
+    d_max
+}
 
-    let answer = d_max;
-
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #26\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+fn main() {
+    pe_utils::run(26, solve);
 }

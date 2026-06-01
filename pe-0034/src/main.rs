@@ -12,20 +12,15 @@ fn s_of_fac_digits(n: u32) -> u32 {
     s
 }
 
-fn main() {
-    let start = std::time::Instant::now();
- 
+fn solve() -> u32 {
     let s_of_fac_pred = |n: u32| s_of_fac_digits(n) == n;
-
     let mut answer = 0;
     for n in 3..10_000_000 {
-        if s_of_fac_pred(n) {
-            answer += n;
-        }
+        if s_of_fac_pred(n) { answer += n; }
     }
+    answer
+}
 
-    let duration = start.elapsed();
-
-    println!("\nProject Euler #34\nAnswer: {}", answer);
-    println!("Elapsed time: {} milliseconds.\n", duration.as_millis());
+fn main() {
+    pe_utils::run(34, solve);
 }
