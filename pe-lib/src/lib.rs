@@ -11,6 +11,7 @@
 //! - **isqrt**: integer square root, perfect square testing
 //! - **number_theory**: Euler's totient function, totient sieve
 //! - **file_io**: file reading utilities (CSV, lines, strings)
+//! - **generic_int**: generic integer operations (u64, u128, extensible)
 //!
 //! All functions are re-exported at crate root via `pub use`.
 
@@ -18,6 +19,7 @@ pub mod combinatorics;
 pub mod digits;
 pub mod divisors;
 pub mod file_io;
+pub mod generic_int;
 pub mod isqrt;
 pub mod modular;
 pub mod number_theory;
@@ -29,6 +31,7 @@ pub use combinatorics::*;
 pub use digits::*;
 pub use divisors::*;
 pub use file_io::*;
+pub use generic_int::*;
 pub use isqrt::*;
 pub use modular::*;
 pub use number_theory::*;

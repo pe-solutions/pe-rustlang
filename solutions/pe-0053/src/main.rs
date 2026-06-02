@@ -1,6 +1,8 @@
 // Combinatoric Selections
 // https://projecteuler.net/problem=53
 
+use pe_lib::digit_sum_generic;
+
 fn solve() -> u32 {
     const THRESHOLD: u128 = 1_000_000;
     (1u32..=100)
