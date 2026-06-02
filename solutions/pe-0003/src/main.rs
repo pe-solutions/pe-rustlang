@@ -11,6 +11,7 @@ fn solve() -> u64 {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use pe_lib::{is_prime, prime_factors};
 
     #[test]
     fn test_prime_factorization_small() {

@@ -9,7 +9,10 @@ pub fn is_prime(n: u64) -> bool {
     }
 
     let (d, shift) = decompose(n - 1);
-    for &a in &[2u64, 325, 9375, 28178, 450775, 9780504, 1795265022] {
+    for &a in &[2u64, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37] {
+        if a >= n {
+            continue;
+        }
         if !miller_rabin_test(a, d, shift, n) {
             return false;
         }
@@ -91,6 +94,9 @@ mod tests {
         assert!(is_prime(7));
         assert!(is_prime(11));
         assert!(is_prime(13));
+        assert!(is_prime(17));
+        assert!(is_prime(19));
+        assert!(is_prime(23));
         assert!(!is_prime(4));
         assert!(!is_prime(6));
         assert!(!is_prime(9));
