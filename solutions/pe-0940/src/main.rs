@@ -1,21 +1,10 @@
 // Two-Dimensional Recurrence
 // https://projecteuler.net/problem=940
 
+use pe_lib::Fibonacci;
+
 const MOD: i64 = 1_123_581_313;
 const MAX_K: usize = 50;
-
-/// Returns the nth Fibonacci number
-fn fibonacci(n: usize) -> u64 {
-    let (mut a, mut b) = (0, 1);
-    
-    for _ in 0..n {
-        let next = a + b;
-        a = b;
-        b = next;
-    }
-    
-    a
-}
 
 /// Computes the nth term of a linear recurrence:
 /// f[n] = a * f[n-1] + b * f[n-2], given f(0) and f(1)
@@ -53,11 +42,12 @@ fn compute_a(n: u64, m: u64) -> i64 {
 }
 
 fn solve() -> i64 {
+    let fib_values: Vec<u64> = Fibonacci::new().take(MAX_K + 1).collect();
     let mut total = 0i64;
     for i in 2..=MAX_K {
-        let fi = fibonacci(i);
+        let fi = fib_values[i];
         for j in 2..=MAX_K {
-            let fj = fibonacci(j);
+            let fj = fib_values[j];
             total = (total + compute_a(fi, fj)) % MOD as i64;
         }
     }
