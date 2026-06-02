@@ -28,8 +28,8 @@ mod tests {
 
     #[test]
     fn test_is_truncatable_basic() {
-        // 3797: 3, 7, 9, 7 (and 3, 37, 37...) - but 9 is not prime, so false
-        assert!(!is_truncatable(3797));
+        // 3797 is a known truncatable prime
+        assert!(is_truncatable(3797));
     }
 
     #[test]
