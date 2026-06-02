@@ -43,4 +43,39 @@ fn solve() -> i32 {
     answer
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_abundant_12() {
+        // 12 is the smallest abundant number (divisors: 1,2,3,4,6 sum to 16 > 12)
+        let sum = sum_proper_divisors(12);
+        assert!(sum > 12);
+    }
+
+    #[test]
+    fn test_sum_two_abundant_small() {
+        let ab: Vec<i32> = (1..=100).filter(|&a| sum_proper_divisors(a as u64) > a as u64).collect();
+        // Test that binary search finds sums correctly
+        assert!(ab.len() > 0);
+        // 24 = 12 + 12, both abundant
+        assert!(can_be_sum_of_two_ab_numb(&ab, 24));
+    }
+
+    #[test]
+    fn test_non_abundant_sum_behavior() {
+        // Small non-abundant numbers shouldn't be expressible
+        let ab: Vec<i32> = (1..=100).filter(|&a| sum_proper_divisors(a as u64) > a as u64).collect();
+        let small = !can_be_sum_of_two_ab_numb(&ab, 5);
+        assert!(small); // 5 is not sum of abundant numbers
+    }
+
+    #[test]
+    fn test_solve_produces_positive() {
+        let result = solve();
+        assert!(result > 0);
+    }
+}
+
 pe_utils::pe_main!();
