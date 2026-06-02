@@ -169,6 +169,8 @@ def write_toml(merged):
         data_url = entry.get("data_url", "")
         if data_url:
             lines.append(f'data_url = "{data_url}"')
+        if entry.get("data_embedded"):
+            lines.append("data_embedded = true")
         lines.append(f"solved = {str(entry['solved']).lower()}")
         lines.append("")
     with open("problems.toml", "w") as f:
@@ -208,6 +210,7 @@ for num, title in fetched_titles.items():
         "title": title,
         "statement": entry.get("statement", ""),
         "data_url": entry.get("data_url", ""),
+        "data_embedded": entry.get("data_embedded", False),
         "solved": entry.get("solved", is_solved(num)),
     }
 
