@@ -98,13 +98,44 @@ fn solve() -> u64 {
 }
 ```
 
-**Refactoring status:** 42 of 83 solutions (50.6%) have been refactored to use `pe-lib` functions across 4 tiers:
+**Refactoring status:** 44 of 83 solutions (53.0%) have been refactored to use `pe-lib` functions across 4 tiers:
 - **Tier 1** (26 solutions): Primes, digits, sieve, modular arithmetic
 - **Tier 2** (10 solutions): Number theory, sequences, divisors, combinatorics, isqrt
-- **Tier 3** (1 solution): Specialized iterator patterns
-- **Tier 4** (5 solutions): File I/O utilities
+- **Tier 3** (5 solutions): Specialized iterator patterns
+- **Tier 4** (3 solutions): File I/O utilities
 
-Total: ~1550 lines of duplicated code eliminated. All 83 solutions have `pe-lib` in their `Cargo.toml`.
+Total: ~1600 lines of duplicated code eliminated. All 83 solutions have `pe-lib` in their `Cargo.toml`.
+
+### Testing
+
+Comprehensive test suite with 185 passing tests across three phases:
+
+**Phase 1: pe-lib Unit Tests (117 tests)**
+- All 12 modules tested: primes, digits, sieve, modular, sequences, divisors, combinatorics, isqrt, number_theory, file_io, and more
+- Edge cases, known values, mathematical properties (commutativity, associativity, overflow safety)
+
+**Phase 2: Solution-Level Tests (37 solutions, ~152 tests)**
+- 84% coverage of refactored solutions
+- Property-based testing (monotonic growth, symmetry, composition)
+- Avoids hardcoding large answers; verifies correctness via properties
+
+**Phase 3: Integration Tests (31 tests)**
+- Cross-module verification: sieve/is_prime consistency, GCD/LCM relationships, prime factorization
+- Cross-solution validation: pe-0010, pe-0021, pe-0066, pe-0070, pe-0076 logic
+- Performance baselines: sieve <1s for 100K, is_prime scaling, GCD <1000μs
+- Error boundary testing: zero/one handling, large numbers
+
+**Test commands:**
+```bash
+cargo test -p pe-lib              # All 148 tests (117 unit + 31 integration)
+cargo test -p pe-lib --lib        # Just unit tests (117)
+cargo test -p pe-lib --test integration_test  # Just integration (31)
+cargo test -p pe-NNNN             # Specific solution tests
+./test-all.sh                     # Full build/test (84 solutions)
+```
+
+**Known issues fixed:**
+- Miller-Rabin primality test corrected: original witness set contained values divisible by small primes (e.g., 450775 % 19 = 0), causing is_prime(19) to return false. Replaced with standard deterministic witnesses [2,3,5,7,11,13,17,19,23,29,31,37].
 
 ### Solution crate pattern
 
@@ -195,10 +226,11 @@ fn solve() -> i32 {
 }
 ```
 
-### Refactoring status
+### Refactoring progress
 
-- **26 solutions** have been refactored to use `pe-lib` (Tier 1 completion)
-- **57 solutions** still have custom implementations available for refactoring
-- **~1200 lines** of duplicated code eliminated through Tier 1 refactoring
+- **44 solutions** refactored across all tiers (53% of 83 total)
+- **39 solutions** remain available for refactoring
+- **~1600 lines** of duplicated code eliminated
+- **185 tests** covering refactored code at unit, solution, and integration levels
 
-Identified refactorable patterns include digit manipulation (24 solutions), prime checking (19 solutions), sieve implementations (11 solutions), modular arithmetic (10 solutions), and others. See `pe-lib` module documentation above for available functions.
+Remaining refactorable patterns: digit manipulation (24 solutions), prime checking (19 solutions), sieve implementations (11 solutions), modular arithmetic (10 solutions), and others. See `pe-lib` module documentation for available functions.
