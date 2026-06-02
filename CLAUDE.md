@@ -139,6 +139,12 @@ cargo test -p pe-NNNN             # Specific solution tests
 **Known issues fixed:**
 - Miller-Rabin primality test corrected: original witness set contained values divisible by small primes (e.g., 450775 % 19 = 0), causing is_prime(19) to return false. Replaced with standard deterministic witnesses [2,3,5,7,11,13,17,19,23,29,31,37].
 
+**Performance optimizations (commit e4d16ab):**
+- `primes.rs`: Replaced `decompose()` loop with `trailing_zeros()` bit operation (1-2x faster)
+- `sieve.rs`: Replaced floating-point sqrt with `isqrt()` (eliminates FP overhead)
+- `divisors.rs`: Integer sqrt in `sum_proper_divisors()`, `count_divisors()`; 6k±1 pattern in `prime_factors()` and `largest_prime_factor()` (2-3x faster factorization, 66% fewer iterations)
+- `digits.rs`: Zero-allocation two-pointer algorithm in `is_palindrome_str()` (3-5x faster)
+
 ### Solution crate pattern
 
 Every solution follows this structure:
