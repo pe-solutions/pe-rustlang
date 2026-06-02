@@ -3,12 +3,7 @@
 
 use num_bigint::BigInt;
 use num_traits::{One, Zero};
-
-fn is_square(n: i32) -> bool {
-    let root = (n as f64).sqrt() as i32;
-    
-    root * root == n
-}
+use pe_lib::is_perfect_square;
 
 fn find_minimal_solution(d: i32) -> (BigInt, BigInt) {
     let d_big = BigInt::from(d);
@@ -57,7 +52,7 @@ fn solve() -> i32 {
     let mut max_x = BigInt::zero();
     let mut max_d = 0;
     for d in 2..=1000 {
-        if is_square(d) { continue; }
+        if is_perfect_square(d as u64) { continue; }
         let (x, _y) = find_minimal_solution(d);
         if x > max_x { max_x = x; max_d = d; }
     }
