@@ -54,7 +54,6 @@ impl NumberFunctions {
                             s.push(number);
                             flags_copy[index] = true;
                             if let Some(result) = NumberFunctions::find_cyclic_numbers(s, &mut flags_copy, sequences, min_limit, max_limit, max_sequence_length) {
-                                flags_copy[index] = false;
                                 s.pop();
                                 return Some(result);
                             }
