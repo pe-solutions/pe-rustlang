@@ -36,17 +36,20 @@ cargo build --workspace
 
 ### `problems.toml`
 
-Tracks every published PE problem with title, full problem statement, and a `solved` flag:
+Tracks every published PE problem with title, statement, an optional data file URL, and a `solved` flag:
 
 ```toml
-[42]
-title = "Coded Triangle Numbers"
+[54]
+title = "Poker Hands"
 statement = '''
-The nth term of the sequence of triangle numbers is given by $t_n = n(n+1)/2$ ...'''
-solved = true
+In the card game poker ...'''
+data_url = "https://projecteuler.net/resources/documents/0054_poker.txt"
+solved = false
 ```
 
-`new-solution.sh` reads this file to insert the problem title as a header comment in `src/main.rs`. `fetch-problems.sh` scrapes titles from `/archives` and statements from `/minimal=N`; re-running preserves manually set `solved` values and auto-detects the flag for new entries (directory exists and `src/main.rs` contains no `todo!()`).
+`data_url` is present for the ~20 problems that ship with a downloadable input file. PE consistently names these files `NNNN_name.txt`. `new-solution.sh` reads this file to insert the problem title in `src/main.rs` and auto-downloads the data file into `data/NNNN_name.txt` if `data_url` is set and the file isn't already there.
+
+`fetch-problems.sh` scrapes titles from `/archives`, statements and data URLs from `/minimal=N` (only re-fetching the ~20 problems whose statement mentions a `.txt`/`.csv` file). Re-running preserves manually set `solved` values; the flag is auto-detected for new entries (directory exists and `src/main.rs` contains no `todo!()`).
 
 Mark a problem solved by editing `problems.toml` directly.
 
@@ -90,6 +93,6 @@ Use the scaffolding script — it handles directory creation, boilerplate, and w
 
 This creates `solutions/pe-0042/` with a `Cargo.toml` and a `src/main.rs` pre-filled with the problem title (from `problems.toml`) and URL, then inserts `"solutions/pe-0042"` into the workspace `members` list in sorted order.
 
-If a data file is needed, place it under `solutions/pe-NNNN/data/` and read it with a relative path from `src/main.rs`.
+If the problem has a `data_url` in `problems.toml`, the scaffolding script downloads it automatically to `solutions/pe-NNNN/data/NNNN_name.txt`. Read it from `src/main.rs` using a relative path (e.g. `"data/0054_poker.txt"`). For problems without a `data_url`, place any hand-crafted data files in the same `data/` directory.
 
 To add an external dependency, declare it once in the root `Cargo.toml` under `[workspace.dependencies]`, then reference it in the crate's `Cargo.toml` with `{ workspace = true }`.

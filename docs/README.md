@@ -12,7 +12,7 @@ solutions/
   pe-0001/         one crate per problem
   pe-0002/
   ...
-problems.toml      problem titles, statements, and solved flags (998 problems)
+problems.toml      titles, statements, data URLs, and solved flags (998 problems)
 ```
 
 ## Usage
