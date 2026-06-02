@@ -41,6 +41,12 @@ ROW_RE = re.compile(
     r'<td class="id_column">(\d+)</td>'
     r'<td><a href="problem=\d+"[^>]*>([^<]+)</a>'
 )
+DATA_URL_RE = re.compile(r'href="(resources/documents/[^"]+)"')
+PE_BASE = "https://projecteuler.net/"
+
+
+def likely_has_data_file(statement):
+    return bool(re.search(r'\b\w+\.(txt|csv)\b', statement, re.I))
 
 
 def fetch(url, headers=HEADERS):
@@ -77,12 +83,16 @@ def html_to_text(raw):
     return '\n'.join(result).strip()
 
 
-def fetch_statement(num):
+def fetch_minimal(num):
+    """Return (statement, data_url) from the minimal endpoint."""
     try:
         raw = fetch(f"https://projecteuler.net/minimal={num}", MINIMAL_HEADERS)
-        return html_to_text(raw)
+        stmt = html_to_text(raw)
+        m = DATA_URL_RE.search(raw)
+        data_url = PE_BASE + m.group(1) if m else ""
+        return stmt, data_url
     except Exception:
-        return None
+        return None, ""
 
 
 def is_solved(num):
@@ -156,6 +166,9 @@ def write_toml(merged):
         if stmt:
             safe = stmt.replace("'''", "' ''")
             lines.append(f"statement = '''\n{safe}'''")
+        data_url = entry.get("data_url", "")
+        if data_url:
+            lines.append(f'data_url = "{data_url}"')
         lines.append(f"solved = {str(entry['solved']).lower()}")
         lines.append("")
     with open("problems.toml", "w") as f:
@@ -194,32 +207,41 @@ for num, title in fetched_titles.items():
     merged[num] = {
         "title": title,
         "statement": entry.get("statement", ""),
+        "data_url": entry.get("data_url", ""),
         "solved": entry.get("solved", is_solved(num)),
     }
 
-# ── fetch missing statements ──────────────────────────────────────────────────
-# --all: fill in every problem missing a statement
-# --recent: only fetch statements for newly seen problems
+# ── fetch missing statements + data URLs ─────────────────────────────────────
+# --all: fill in every problem missing a statement; check data_url for
+#        problems whose statement suggests a downloadable file
+# --recent: same but restricted to newly seen problems
 pool = merged if MODE == "--all" else fetched_titles
-need = sorted(n for n in pool if not merged[n].get("statement"))
-CHECKPOINT = 50  # write problems.toml every N statements
+need_stmt = {n for n in pool if not merged[n].get("statement")}
+need_data = {n for n in merged
+             if not merged[n].get("data_url")
+             and "data_url" not in (existing.get(n) or {})
+             and likely_has_data_file(merged[n].get("statement", ""))}
+need = sorted(need_stmt | need_data)
+CHECKPOINT = 50
 
 if need:
-    print(f"\nFetching {len(need)} missing statements...")
+    print(f"\nFetching {len(need)} minimal pages (statements: {len(need_stmt)}, data URLs: {len(need_data)})...")
     for i, num in enumerate(need, 1):
-        print(f"  [{i:4d}/{len(need)}] problem {num:4d} ... ", end="", flush=True)
-        stmt = fetch_statement(num)
-        if stmt:
+        tags = "+".join(filter(None, ["stmt" if num in need_stmt else "",
+                                      "data_url" if num in need_data else ""]))
+        print(f"  [{i:4d}/{len(need)}] problem {num:4d} [{tags}] ... ", end="", flush=True)
+        stmt, data_url = fetch_minimal(num)
+        if num in need_stmt and stmt:
             merged[num]["statement"] = stmt
-            print("ok")
-        else:
-            print("failed")
+        if num in need_data:
+            merged[num]["data_url"] = data_url  # "" if none found
+        print("ok" if (stmt or num not in need_stmt) else "failed")
         if i % CHECKPOINT == 0:
             write_toml(merged)
-            print(f"  [checkpoint] problems.toml written ({i}/{len(need)} statements fetched)")
+            print(f"  [checkpoint] problems.toml written ({i}/{len(need)})")
         time.sleep(0.5)
 else:
-    print("All statements already present.")
+    print("All statements and data URLs up to date.")
 
 # ── write ─────────────────────────────────────────────────────────────────────
 write_toml(merged)

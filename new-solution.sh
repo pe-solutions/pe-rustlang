@@ -26,25 +26,44 @@ if [ -d "$DIR" ]; then
     exit 1
 fi
 
-# Look up title from problems.toml (run ./fetch-problems.sh to populate)
-TITLE=$(NUM="$PROBLEM_NUM" python3 << 'PYEOF'
-import os, re
+# Look up title and data_url from problems.toml
+eval "$(NUM="$PROBLEM_NUM" python3 << 'PYEOF'
+import os, re, shlex
 num = int(os.environ["NUM"])
-if not os.path.exists("problems.toml"):
-    exit(0)
-current = None
-with open("problems.toml") as f:
-    for line in f:
-        line = line.rstrip()
-        if re.match(rf"^\[{num}\]$", line):
-            current = num
-        elif current == num:
-            m = re.match(r'^title\s*=\s*"(.+)"$', line)
-            if m:
-                print(m.group(1))
+title, data_url = "", ""
+if os.path.exists("problems.toml"):
+    all_lines = open("problems.toml").read().splitlines()
+    current, i = None, 0
+    while i < len(all_lines):
+        line = all_lines[i].rstrip()
+        m = re.match(r"^\[(\d+)\]$", line)
+        if m:
+            current = int(m.group(1))
+            if current > num:
                 break
+            i += 1
+            continue
+        if current != num:
+            i += 1
+            continue
+        # Skip multiline blocks
+        if re.match(r"^\w+\s*=\s*'''$", line):
+            i += 1
+            while i < len(all_lines) and not all_lines[i].rstrip().endswith("'''"):
+                i += 1
+            i += 1
+            continue
+        m = re.match(r'^title\s*=\s*"(.+)"$', line)
+        if m:
+            title = m.group(1)
+        m = re.match(r'^data_url\s*=\s*"(.+)"$', line)
+        if m:
+            data_url = m.group(1)
+        i += 1
+print(f"TITLE={shlex.quote(title)}")
+print(f"DATA_URL={shlex.quote(data_url)}")
 PYEOF
-)
+)"
 
 mkdir -p "$DIR/src"
 
@@ -100,6 +119,25 @@ new_content = content[:match.start(2)] + new_block + content[match.end(2):]
 with open("Cargo.toml", "w") as f:
     f.write(new_content)
 PYEOF
+
+# Download data file if listed in problems.toml and not already present
+if [ -n "$DATA_URL" ]; then
+    FILENAME=$(basename "$DATA_URL")
+    if [ -f "$DIR/data/$FILENAME" ]; then
+        echo "Data     $DIR/data/$FILENAME (already present)"
+    else
+        mkdir -p "$DIR/data"
+        echo "Downloading $FILENAME ..."
+        DATA_URL="$DATA_URL" DIR="$DIR" FILENAME="$FILENAME" python3 << 'PYEOF'
+import os, urllib.request
+urllib.request.urlretrieve(
+    os.environ["DATA_URL"],
+    f"{os.environ['DIR']}/data/{os.environ['FILENAME']}"
+)
+PYEOF
+        echo "Data     $DIR/data/$FILENAME"
+    fi
+fi
 
 echo "Created  $DIR/"
 echo "Added    $CRATE to workspace Cargo.toml"

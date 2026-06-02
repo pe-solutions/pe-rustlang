@@ -522,6 +522,7 @@ Using names.txt (right click and 'Save Link/Target As...'), a 46K text file cont
 For example, when the list is sorted into alphabetical order, COLIN, which is worth $3 + 15 + 12 + 9 + 14 = 53$, is the $938$th name in the list. So, COLIN would obtain a score of $938 \times 53 = 49714$.
 
 What is the total of all the name scores in the file?'''
+data_url = "https://projecteuler.net/resources/documents/0022_names.txt"
 solved = true
 
 [23]
@@ -800,6 +801,7 @@ $$1, 3, 6, 10, 15, 21, 28, 36, 45, 55, \dots$$
 By converting each letter in a word to a number corresponding to its alphabetical position and adding these values we form a word value. For example, the word value for SKY is $19 + 11 + 25 = 55 = t_{10}$. If the word value is a triangle number then we shall call the word a triangle word.
 
 Using words.txt (right click and 'Save Link/Target As...'), a 16K text file containing nearly two-thousand common English words, how many are triangle words?'''
+data_url = "https://projecteuler.net/resources/documents/0042_words.txt"
 solved = true
 
 [43]
@@ -1028,6 +1030,7 @@ with Three Threes   Player 1
 The file, poker.txt, contains one-thousand random hands dealt to two players. Each line of the file contains ten cards (separated by a single space): the first five are Player 1's cards and the last five are Player 2's cards. You can assume that all hands are valid (no invalid characters or repeated cards), each player's hand is in no specific order, and in each hand there is a clear winner.
 
 How many hands does Player 1 win?'''
+data_url = "https://projecteuler.net/resources/documents/0054_poker.txt"
 solved = false
 
 [55]
@@ -1118,6 +1121,7 @@ For unbreakable encryption, the key is the same length as the plain text message
 Unfortunately, this method is impractical for most users, so the modified method is to use a password as a key. If the password is shorter than the message, which is likely, the key is repeated cyclically throughout the message. The balance for this method is using a sufficiently long password key for security, but short enough to be memorable.
 
 Your task has been made easy, as the encryption key consists of three lower case characters. Using 0059_cipher.txt (right click and 'Save Link/Target As...'), a file containing the encrypted ASCII codes, and the knowledge that the plain text must contain common English words, decrypt the message and find the sum of the ASCII values in the original text.'''
+data_url = "https://projecteuler.net/resources/documents/0059_cipher.txt"
 solved = false
 
 [60]
@@ -1327,6 +1331,7 @@ That is, 3 + 7 + 4 + 9 = 23.
 Find the maximum total from top to bottom in triangle.txt (right click and 'Save Link/Target As...'), a 15K text file containing a triangle with one-hundred rows.
 
 NOTE: This is a much more difficult version of Problem 18. It is not possible to try every route to solve this problem, as there are $2^{99}$ altogether! If you could check one trillion ($10^{12}$) routes every second it would take over twenty billion years to check them all. There is an efficient algorithm to solve it. ;o)'''
+data_url = "https://projecteuler.net/resources/documents/0067_triangle.txt"
 solved = false
 
 [68]
@@ -1581,6 +1586,7 @@ A common security method used for online banking is to ask the user for three ra
 The text file, keylog.txt, contains fifty successful login attempts.
 
 Given that the three characters are always asked for in order, analyse the file so as to determine the shortest possible secret passcode of unknown length.'''
+data_url = "https://projecteuler.net/resources/documents/0079_keylog.txt"
 solved = false
 
 [80]
@@ -1609,6 +1615,7 @@ $$
 $$
 
 Find the minimal path sum from the top left to the bottom right by only moving right and down in matrix.txt (right click and "Save Link/Target As..."), a 31K text file containing an $80$ by $80$ matrix.'''
+data_url = "https://projecteuler.net/resources/documents/0081_matrix.txt"
 solved = true
 
 [82]
@@ -1629,6 +1636,7 @@ $$
 $$
 
 Find the minimal path sum from the left column to the right column in matrix.txt (right click and "Save Link/Target As..."), a 31K text file containing an $80$ by $80$ matrix.'''
+data_url = "https://projecteuler.net/resources/documents/0082_matrix.txt"
 solved = false
 
 [83]
@@ -1649,6 +1657,7 @@ $$
 $$
 
 Find the minimal path sum from the top left to the bottom right by moving left, right, up, and down in matrix.txt (right click and "Save Link/Target As..."), a 31K text file containing an $80$ by $80$ matrix.'''
+data_url = "https://projecteuler.net/resources/documents/0083_matrix.txt"
 solved = false
 
 [84]
@@ -1784,6 +1793,7 @@ The 11K text file, roman.txt (right click and 'Save Link/Target As...'), contain
 Find the number of characters saved by writing each of these in their minimal form.
 
 Note: You can assume that all the Roman numerals in the file contain no more than four consecutive identical units.'''
+data_url = "https://projecteuler.net/resources/documents/0089_roman.txt"
 solved = false
 
 [90]
@@ -1891,6 +1901,7 @@ A well constructed Su Doku puzzle has a unique solution and can be solved by log
 The 6K text file, sudoku.txt (right click and 'Save Link/Target As...'), contains fifty different Su Doku puzzles ranging in difficulty, but all with unique solutions (the first puzzle in the file is the example above).
 
 By solving all fifty puzzles find the sum of the 3-digit numbers found in the top left corner of each solution grid; for example, 483 is the 3-digit number found in the top left corner of the solution grid above.'''
+data_url = "https://projecteuler.net/resources/documents/0096_sudoku.txt"
 solved = false
 
 [97]
@@ -1913,6 +1924,7 @@ Using words.txt (right click and 'Save Link/Target As...'), a 16K text file cont
 What is the largest square number formed by any member of such a pair?
 
 NOTE: All anagrams formed must be contained in the given text file.'''
+data_url = "https://projecteuler.net/resources/documents/0098_words.txt"
 solved = false
 
 [99]
@@ -1925,6 +1937,7 @@ However, confirming that $632382^{518061} \gt 519432^{525806}$ would be much mor
 Using base_exp.txt (right click and 'Save Link/Target As...'), a 22K text file containing one thousand lines with a base/exponent pair on each line, determine which line number has the greatest numerical value.
 
 NOTE: The first two lines in the file represent the numbers in the example given above.'''
+data_url = "https://projecteuler.net/resources/documents/0099_base_exp.txt"
 solved = false
 
 [100]
@@ -1991,6 +2004,7 @@ It can be verified that triangle $ABC$ contains the origin, whereas triangle $XY
 Using triangles.txt (right click and 'Save Link/Target As...'), a 27K text file containing the co-ordinates of one thousand "random" triangles, find the number of triangles for which the interior contains the origin.
 
 NOTE: The first two examples in the file represent the triangles in the example given above.'''
+data_url = "https://projecteuler.net/resources/documents/0102_triangles.txt"
 solved = false
 
 [103]
@@ -2048,6 +2062,7 @@ For example, $\{81, 88, 75, 42, 87, 84, 86, 65\}$ is not a special sum set becau
 Using sets.txt (right click and "Save Link/Target As..."), a 4K text file with one-hundred sets containing seven to twelve elements (the two examples given above are the first two sets in the file), identify all the special sum sets, $A_1, A_2, \dots, A_k$, and find the value of $S(A_1) + S(A_2) + \cdots + S(A_k)$.
 
 NOTE: This problem is related to Problem 103 and Problem 106.'''
+data_url = "https://projecteuler.net/resources/documents/0105_sets.txt"
 solved = false
 
 [106]
@@ -2094,6 +2109,7 @@ G - - - 23 11 27 -
 However, it is possible to optimise the network by removing some edges and still ensure that all points on the network remain connected. The network which achieves the maximum saving is shown below. It has a weight of 93, representing a saving of 243 − 93 = 150 from the original network.
 
 Using network.txt (right click and 'Save Link/Target As...'), a 6K text file containing a network with forty vertices, and given in matrix form, find the maximum saving which can be achieved by removing redundant edges whilst ensuring that the network remains connected.'''
+data_url = "https://projecteuler.net/resources/documents/0107_network.txt"
 solved = false
 
 [108]
@@ -8684,6 +8700,7 @@ The required answer to each puzzle is based on the value of each letter necessar
 You are given that the sum of the answers for the first 10 puzzles in the file is 64414157580.
 
 Find the sum of the answers for the 200 puzzles.'''
+data_url = "https://projecteuler.net/resources/documents/0424_kakuro200.txt"
 solved = false
 
 [425]
@@ -13854,6 +13871,7 @@ The downloadable text files beds.txt and desks.txt contain pairings for $n=500$.
 2,4
 
 With these pairings, find the number of permutations that satisfy the students' conditions. Give your answer modulo $999\,999\,937$.'''
+data_url = "https://projecteuler.net/resources/documents/0673_beds.txt"
 solved = false
 
 [674]
@@ -13870,6 +13888,7 @@ C = \mathcal{I}(\mathcal{I}(x,z),y)\end{array}$$
 The least simultaneous value of $A$ and $B$ is $23$, attained for $x=3,y=1,z=t=0$. On the other hand, $A=C$ has no solutions in non-negative integers, so the least simultaneous value of $A$ and $C$ is $0$. The total sum of least simultaneous pairs made of $\mathcal{I}$-expressions from $\{A,B,C\}$ is $26$.
 
 Find the sum of least simultaneous values of all $\mathcal{I}$-expressions pairs made of distinct expressions from file I-expressions.txt (pairs $(e_1,e_2)$ and $(e_2,e_1)$ are considered to be identical). Give the last nine digits of the result as the answer.'''
+data_url = "https://projecteuler.net/resources/documents/0674_i_expressions.txt"
 solved = false
 
 [675]
@@ -16561,6 +16580,7 @@ where the number before the colon is the target and the remaining comma-separate
 Numbering the problems 1, 2, ..., 200, we let $s_n$ be the minimum score of the solution to the $n$th problem. For example, $s_1=40$, as the first problem in the file is the example given above. Note that not all problems have a solution; in such cases we take $s_n=0$.
 
 Find $\displaystyle\sum_{n=1}^{200} 3^n s_n$. Give your answer modulo $1005075251$.'''
+data_url = "https://projecteuler.net/resources/documents/0828_number_challenges.txt"
 solved = false
 
 [829]
