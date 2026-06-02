@@ -6,7 +6,8 @@ pub fn sieve_bools(limit: usize) -> Vec<bool> {
     if limit > 1 {
         is_prime[1] = false;
     }
-    for i in 2..=((limit as f64).sqrt() as usize) {
+    let sqrt_limit = crate::isqrt::isqrt(limit as u64) as usize;
+    for i in 2..=sqrt_limit {
         if is_prime[i] {
             for j in (i * i..=limit).step_by(i) {
                 is_prime[j] = false;

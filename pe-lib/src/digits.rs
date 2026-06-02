@@ -33,8 +33,17 @@ pub fn is_palindrome_num(n: u64) -> bool {
 }
 
 pub fn is_palindrome_str(s: &str) -> bool {
-    let reversed: String = s.chars().rev().collect();
-    s == reversed
+    let bytes = s.as_bytes();
+    let mut left = 0;
+    let mut right = bytes.len();
+    while left < right {
+        right -= 1;
+        if bytes[left] != bytes[right] {
+            return false;
+        }
+        left += 1;
+    }
+    true
 }
 
 pub fn is_pandigital(s: &str) -> bool {

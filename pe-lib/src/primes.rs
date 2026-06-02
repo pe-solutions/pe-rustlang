@@ -20,13 +20,9 @@ pub fn is_prime(n: u64) -> bool {
     true
 }
 
-fn decompose(mut n: u64) -> (u64, u32) {
-    let mut shift = 0;
-    while n % 2 == 0 {
-        n /= 2;
-        shift += 1;
-    }
-    (n, shift)
+fn decompose(n: u64) -> (u64, u32) {
+    let shift = n.trailing_zeros();
+    (n >> shift, shift)
 }
 
 fn miller_rabin_test(a: u64, d: u64, shift: u32, n: u64) -> bool {

@@ -3,7 +3,7 @@ pub fn sum_proper_divisors(n: u64) -> u64 {
         return 0;
     }
     let mut sum = 1;
-    let sqrt_n = (n as f64).sqrt() as u64;
+    let sqrt_n = crate::isqrt::isqrt(n);
     for i in 2..=sqrt_n {
         if n % i == 0 {
             sum += i;
@@ -21,7 +21,7 @@ pub fn sum_divisors(n: u64) -> u64 {
 
 pub fn count_divisors(n: u64) -> u64 {
     let mut count = 0;
-    let sqrt_n = (n as f64).sqrt() as u64;
+    let sqrt_n = crate::isqrt::isqrt(n);
     for i in 1..=sqrt_n {
         if n % i == 0 {
             if i * i == n {
@@ -36,9 +36,25 @@ pub fn count_divisors(n: u64) -> u64 {
 
 pub fn prime_factors(mut n: u64) -> Vec<(u64, u32)> {
     let mut factors = Vec::new();
-    let mut divisor = 2;
+    let mut count = 0;
+    while n % 2 == 0 {
+        n /= 2;
+        count += 1;
+    }
+    if count > 0 {
+        factors.push((2, count));
+    }
+    count = 0;
+    while n % 3 == 0 {
+        n /= 3;
+        count += 1;
+    }
+    if count > 0 {
+        factors.push((3, count));
+    }
+    let mut divisor = 5;
     while divisor * divisor <= n {
-        let mut count = 0;
+        count = 0;
         while n % divisor == 0 {
             n /= divisor;
             count += 1;
@@ -46,7 +62,16 @@ pub fn prime_factors(mut n: u64) -> Vec<(u64, u32)> {
         if count > 0 {
             factors.push((divisor, count));
         }
-        divisor += 1;
+        count = 0;
+        let next = divisor + 2;
+        while n % next == 0 {
+            n /= next;
+            count += 1;
+        }
+        if count > 0 {
+            factors.push((next, count));
+        }
+        divisor += 6;
     }
     if n > 1 {
         factors.push((n, 1));
@@ -56,13 +81,26 @@ pub fn prime_factors(mut n: u64) -> Vec<(u64, u32)> {
 
 pub fn largest_prime_factor(mut n: u64) -> u64 {
     let mut largest = 1u64;
-    let mut i: u64 = 2;
+    while n % 2 == 0 {
+        largest = 2;
+        n /= 2;
+    }
+    while n % 3 == 0 {
+        largest = 3;
+        n /= 3;
+    }
+    let mut i: u64 = 5;
     while i * i <= n {
         while n % i == 0 {
             largest = i;
             n /= i;
         }
-        i += 1;
+        let next = i + 2;
+        while n % next == 0 {
+            largest = next;
+            n /= next;
+        }
+        i += 6;
     }
     if n > 1 {
         largest = n;
