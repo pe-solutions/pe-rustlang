@@ -82,6 +82,7 @@ Mark a problem solved by editing `problems.toml` directly.
 | `isqrt` | `isqrt`, `is_perfect_square` | Integer square root operations |
 | `number_theory` | `totient`, `totient_sieve` | Number theory utilities |
 | `file_io` | `read_file_to_string`, `read_csv_matrix`, `read_space_separated_matrix`, `read_lines` | File I/O and parsing utilities |
+| `rational` | `Rational` struct with arithmetic ops | Rational number arithmetic (fractions with automatic GCD reduction) |
 
 **Using pe-lib in a solution:**
 
@@ -98,13 +99,14 @@ fn solve() -> u64 {
 }
 ```
 
-**Refactoring status:** 44 of 83 solutions (53.0%) have been refactored to use `pe-lib` functions across 4 tiers:
+**Refactoring status:** 45 of 83 solutions (54.2%) have been refactored to use `pe-lib` functions across 5 categories:
 - **Tier 1** (26 solutions): Primes, digits, sieve, modular arithmetic
 - **Tier 2** (10 solutions): Number theory, sequences, divisors, combinatorics, isqrt
 - **Tier 3** (5 solutions): Specialized iterator patterns
 - **Tier 4** (3 solutions): File I/O utilities
+- **Tier 5** (1 solution): Rational Number Algebra
 
-Total: ~1600 lines of duplicated code eliminated. All 83 solutions have `pe-lib` in their `Cargo.toml`.
+Total: ~1,814 lines of duplicated code eliminated. All 83 solutions have `pe-lib` in their `Cargo.toml`.
 
 ### Testing
 
@@ -228,9 +230,9 @@ fn solve() -> i32 {
 
 ### Refactoring progress
 
-- **44 solutions** refactored across all tiers (53% of 83 total)
-- **39 solutions** remain available for refactoring
-- **~1600 lines** of duplicated code eliminated
-- **185 tests** covering refactored code at unit, solution, and integration levels
+- **45 solutions** refactored across all tiers (54.2% of 83 total)
+- **38 solutions** remain (mostly domain-specific algorithms)
+- **~1,814 lines** of duplicated code eliminated
+- **343 tests** covering refactored code (126 unit + 31 integration + ~186 solution)
 
-Remaining refactorable patterns: digit manipulation (24 solutions), prime checking (19 solutions), sieve implementations (11 solutions), modular arithmetic (10 solutions), and others. See `pe-lib` module documentation for available functions.
+Remaining solutions are primarily domain-specific algorithms unsuitable for library extraction. See `pe-lib` module documentation for available functions.

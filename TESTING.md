@@ -6,9 +6,9 @@ This document describes the comprehensive testing implementation for the pe-lib 
 
 ## Testing Phases
 
-### Phase 1: pe-lib Unit Tests (117 tests) ✅ COMPLETE
+### Phase 1: pe-lib Unit Tests (126 tests) ✅ COMPLETE
 
-Comprehensive unit test coverage for all 12 pe-lib modules:
+Comprehensive unit test coverage for all 13 pe-lib modules:
 
 #### Module Breakdown
 
@@ -23,10 +23,11 @@ Comprehensive unit test coverage for all 12 pe-lib modules:
 | combinatorics.rs | factorial, binomial_big, count_partitions | 13 | Growth properties, Pascal's identity, OEIS values |
 | divisors.rs | sum_proper_divisors, count_divisors, prime_factors, largest_prime_factor | 15 | Perfect numbers, factorization reconstruction |
 | generic_int.rs | digit_sum_generic, digit_sum_sq_generic, reverse_digits_generic, is_palindrome_generic | 6 | u64 and u128 support |
+| rational.rs | Rational struct, Add, Sub, Mul, Div, Neg, Ord | 9 | Arithmetic ops, GCD reduction, comparisons |
 | primes.rs | is_prime, is_prime_trial | 2 | Basic primality testing |
 | digits.rs | digit_sum, digit_sum_sq, reverse_digits, is_palindrome_num, is_palindrome_str, is_pandigital, is_permutation, digits | 5 | Digit manipulation functions |
 
-**Total Phase 1: 117 tests**
+**Total Phase 1: 126 tests**
 
 ### Phase 2: Solution-Level Tests (152 tests) ✅ COMPLETE
 
@@ -129,10 +130,10 @@ fn test_amicable_pair_220_284() {
 
 ## Test Coverage Summary
 
-- **Phase 1 (pe-lib)**: 117 tests covering all 40+ functions in 12 modules
-- **Phase 2 (Solutions)**: 186 tests across all 44 refactored solutions (100% coverage) ✅
+- **Phase 1 (pe-lib)**: 126 tests covering 40+ functions in 13 modules (with rational module)
+- **Phase 2 (Solutions)**: 186 tests across 45 refactored solutions (54.2% coverage) ✅
 - **Phase 3 (Integration)**: 31 cross-module and cross-solution tests
-- **Total**: 219 tests, all passing ✅
+- **Total**: 343 tests, all passing ✅
 - **All Solutions**: 84/84 build and run successfully ✅
 
 ## Complete Phase 2 Coverage (Optional Enhancement Completed ✅)
@@ -204,19 +205,19 @@ mod tests {
 ## Test Results - FINAL
 
 ```
-Phase 1 (pe-lib unit tests):     117 tests passing ✅
-Phase 2 (solution tests):        186 tests passing (44/44 solutions = 100% coverage) ✅
+Phase 1 (pe-lib unit tests):     126 tests passing ✅ (with rational module +9)
+Phase 2 (solution tests):        186 tests passing (45/83 solutions = 54.2% refactored) ✅
 Phase 3 (integration tests):      31 tests passing ✅
-Total:                           234 tests passing ✅
+Total:                           343 tests passing ✅
 All 84 solutions:                Build + run successful ✅
 ```
 
 **Commands to verify:**
 ```bash
-cargo test -p pe-lib              # 117 + 31 = 148 pe-lib tests
-cargo test -p pe-lib --lib        # Just unit tests (117)
+cargo test -p pe-lib              # 126 + 31 = 157 pe-lib tests
+cargo test -p pe-lib --lib        # Just unit tests (126)
 cargo test -p pe-lib --test integration_test  # Just integration (31)
-cargo test -p pe-{0002,0011,0013,0022,0023,0044,0053,0055}  # Phase 2 optional additions (34 tests)
+cargo test -p pe-{0033,0071}     # Rational algebra tests
 ./test-all.sh                     # Full build/test all 84 solutions
 ```
 
