@@ -99,27 +99,27 @@ fn solve() -> u64 {
 }
 ```
 
-**Refactoring status:** 69 of 96 solutions (71.9%) have been refactored to use `pe-lib` functions across 5 categories:
+**Refactoring status:** 72 of 106 solutions (67.9%) have been refactored to use `pe-lib` functions across 5 categories:
 - **Tier 1** (26 solutions): Primes, digits, sieve, modular arithmetic
 - **Tier 2** (10 solutions): Number theory, sequences, divisors, combinatorics, isqrt
 - **Tier 3** (5 solutions): Specialized iterator patterns
 - **Tier 4** (3 solutions): File I/O utilities
 - **Tier 5** (1 solution): Rational Number Algebra
 - **Batch 2** (18 solutions): Additional refactoring (HIGH + MEDIUM impact)
-- **Batch 3** (6 solutions): Expanded range 51-100 with pe-lib functions
+- **Batch 3** (9 solutions): Expanded range 51-100 with pe-lib functions
 
-Total: ~2,100 lines of duplicated code eliminated. 96 solutions with `pe-lib` in their `Cargo.toml`.
+Total: ~2,300 lines of duplicated code eliminated. All 106 solutions have `pe-lib` in their `Cargo.toml`.
 
 ### Testing
 
-Comprehensive test suite with 245+ passing tests across three phases:
+Comprehensive test suite with 250+ passing tests across three phases:
 
 **Phase 1: pe-lib Unit Tests (126 tests)**
 - All 13 modules tested: primes, digits, sieve, modular, sequences, divisors, combinatorics, isqrt, number_theory, file_io, rational, and more
 - Edge cases, known values, mathematical properties (commutativity, associativity, overflow safety)
 
-**Phase 2: Solution-Level Tests (96 solutions)**
-- 71.9% refactored (69/96 solutions)
+**Phase 2: Solution-Level Tests (106 solutions)**
+- 67.9% refactored (72/106 solutions)
 - Property-based testing (monotonic growth, symmetry, composition)
 - Avoids hardcoding large answers; verifies correctness via properties
 
@@ -135,10 +135,10 @@ cargo test -p pe-lib              # All pe-lib tests (157 total: 126 unit + 31 i
 cargo test -p pe-lib --lib        # Just unit tests (126)
 cargo test -p pe-lib --test integration_test  # Just integration (31)
 cargo test -p pe-NNNN             # Specific solution tests
-./test-all.sh                     # Full build/test (96 solutions, 100% passing)
+./test-all.sh                     # Full build/test (106 solutions, 100% passing)
 ```
 
-**Test Results:** All 96 solutions passing (100% success rate) ✓
+**Test Results:** All 106 solutions passing (100% success rate) ✓
 
 **Known issues fixed:**
 - Miller-Rabin primality test corrected: original witness set contained values divisible by small primes (e.g., 450775 % 19 = 0), causing is_prime(19) to return false. Replaced with standard deterministic witnesses [2,3,5,7,11,13,17,19,23,29,31,37].
