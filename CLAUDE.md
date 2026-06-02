@@ -36,7 +36,7 @@ cargo build --workspace
 
 ### `problems.toml`
 
-Tracks every published PE problem with title, statement, an optional data file URL, and a `solved` flag:
+Tracks every published PE problem with title, statement, optional data fields, and a `solved` flag:
 
 ```toml
 [54]
@@ -48,6 +48,8 @@ solved = false
 ```
 
 `data_url` is present for the ~20 problems that ship with a downloadable input file. PE consistently names these files `NNNN_name.txt`. `new-solution.sh` reads this file to insert the problem title in `src/main.rs` and auto-downloads the data file into `data/NNNN_name.txt` if `data_url` is set and the file isn't already there.
+
+`data_embedded = true` marks problems whose input data is embedded directly in the problem statement (e.g. a grid or triangle of numbers) rather than hosted as a separate download. PE provides no `data_url` for these, but the data is still separable from the narrative — the existing solutions for these problems (11, 18, 345) hardcode the data in `src/main.rs`.
 
 `fetch-problems.sh` scrapes titles from `/archives`, statements and data URLs from `/minimal=N` (only re-fetching the ~20 problems whose statement mentions a `.txt`/`.csv` file). Re-running preserves manually set `solved` values; the flag is auto-detected for new entries (directory exists and `src/main.rs` contains no `todo!()`).
 

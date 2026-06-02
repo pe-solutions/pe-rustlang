@@ -143,6 +143,7 @@ In the $20 \times 20$ grid below, four numbers along a diagonal line have been m
 The product of these numbers is $26 \times 63 \times 78 \times 14 = 1788696$.
 
 What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the $20 \times 20$ grid?'''
+data_embedded = true
 solved = true
 
 [12]
@@ -465,6 +466,7 @@ Find the maximum total from top to bottom of the triangle below:
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
 
 NOTE: As there are only $16384$ routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! (c;'''
+data_embedded = true
 solved = true
 
 [19]
@@ -6936,6 +6938,7 @@ Find the Matrix Sum of:
 815 559 813 459 522 788 168 586 966 232 308 833 251 631 107
 
 813 883 451 509 615  77 281 613 459 205 380 274 302  35 805'''
+data_embedded = true
 solved = true
 
 [346]
