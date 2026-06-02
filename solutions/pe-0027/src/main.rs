@@ -28,4 +28,46 @@ fn solve() -> i32 {
     answer
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_is_prime_basic() {
+        assert!(is_prime(2));
+        assert!(is_prime(3));
+        assert!(is_prime(5));
+        assert!(is_prime(7));
+        assert!(!is_prime(4));
+        assert!(!is_prime(6));
+    }
+
+    #[test]
+    fn test_is_prime_negative() {
+        assert!(!is_prime(-1));
+        assert!(!is_prime(-2));
+        assert!(!is_prime(0));
+        assert!(!is_prime(1));
+    }
+
+    #[test]
+    fn test_quadratic_formula() {
+        // Test quadratic n^2 + a*n + b for small values
+        let a = 1;
+        let b = 41;
+        for n in 0..5 {
+            let val = n * n + a * n + b;
+            if n < 4 {
+                assert!(is_prime(val), "n={}, formula={}", n, val);
+            }
+        }
+    }
+
+    #[test]
+    fn test_solve_produces_output() {
+        let result = solve();
+        assert!(result != 0);
+    }
+}
+
 pe_utils::pe_main!();
