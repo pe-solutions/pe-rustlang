@@ -13,4 +13,34 @@ fn solve() -> u64 {
     calculate_nth_digit_sum(10_000_000)
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_calculate_small() {
+        let result = calculate_nth_digit_sum(10);
+        assert!(result > 0);
+    }
+
+    #[test]
+    fn test_calculate_monotonic() {
+        let a = calculate_nth_digit_sum(10);
+        let b = calculate_nth_digit_sum(20);
+        assert!(b >= a);
+    }
+
+    #[test]
+    fn test_mod_pow_usage() {
+        let val = mod_pow(10, 5, 7);
+        assert!(val < 7);
+    }
+
+    #[test]
+    fn test_solve_produces_result() {
+        let result = solve();
+        assert!(result > 0);
+    }
+}
+
 pe_utils::pe_main!();

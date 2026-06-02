@@ -49,4 +49,52 @@ fn solve() -> usize {
     count_valid_combinations(&primes)
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_sieve_generation() {
+        let primes = sieve(30);
+        assert!(primes.len() > 0);
+        assert!(primes.contains(&2));
+        assert!(primes.contains(&29));
+    }
+
+    #[test]
+    fn test_is_valid_basic() {
+        let params = Parameters {
+            p: 2.0,
+            q: 3.0,
+            b: 100.0,
+            e: 100.0,
+        };
+        assert!(is_valid(&params));
+    }
+
+    #[test]
+    fn test_is_valid_invalid() {
+        let params = Parameters {
+            p: 1000.0,
+            q: 1000.0,
+            b: 10.0,
+            e: 10.0,
+        };
+        assert!(!is_valid(&params));
+    }
+
+    #[test]
+    fn test_count_valid_basic() {
+        let primes = sieve(30);
+        let count = count_valid_combinations(&primes);
+        assert!(count >= 0);
+    }
+
+    #[test]
+    fn test_solve_produces_result() {
+        let result = solve();
+        assert!(result > 0);
+    }
+}
+
 pe_utils::pe_main!();

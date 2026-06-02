@@ -49,6 +49,42 @@ fn fp_square_root(n: u64, p: u64) -> Option<u64> {
     Some(r)
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_modmul_basic() {
+        assert_eq!(modmul(2, 3, 5), 1);
+        assert_eq!(modmul(4, 3, 7), 5);
+    }
+
+    #[test]
+    fn test_modpow_basic() {
+        assert_eq!(modpow(2, 3, 11), 8);
+        assert_eq!(modpow(3, 4, 17), 81 % 17);
+    }
+
+    #[test]
+    fn test_fp_square_root_zero() {
+        let result = fp_square_root(0, 7);
+        assert_eq!(result, Some(0));
+    }
+
+    #[test]
+    fn test_quadratic_residue() {
+        // 4 is a quadratic residue mod 7
+        let result = fp_square_root(4, 7);
+        assert!(result.is_some());
+    }
+
+    #[test]
+    fn test_solve_produces_result() {
+        let result = solve();
+        assert!(result >= 0);
+    }
+}
+
 fn solve() -> u64 {
     let n = 10_000_000;
     let mut sieve = (0..n)

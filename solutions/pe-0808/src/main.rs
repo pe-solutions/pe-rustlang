@@ -59,4 +59,43 @@ fn solve() -> u64 {
     sum_of_rev_prime(50)
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_reverse_basic() {
+        assert_eq!(reverse(123), 321);
+        assert_eq!(reverse(1000), 1);
+        assert_eq!(reverse(121), 121);
+    }
+
+    #[test]
+    fn test_reverse_single_digit() {
+        assert_eq!(reverse(5), 5);
+        assert_eq!(reverse(9), 9);
+    }
+
+    #[test]
+    fn test_reverse_property() {
+        let num = 12345;
+        let rev = reverse(num);
+        let rev_rev = reverse(rev);
+        assert_eq!(rev_rev, num);
+    }
+
+    #[test]
+    fn test_is_prime_check() {
+        assert!(is_prime(13));
+        assert!(is_prime(17));
+        assert!(!is_prime(15));
+    }
+
+    #[test]
+    fn test_solve_produces_result() {
+        let result = solve();
+        assert!(result > 0);
+    }
+}
+
 pe_utils::pe_main!();

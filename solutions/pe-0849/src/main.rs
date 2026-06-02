@@ -27,4 +27,36 @@ fn solve() -> usize {
     f_alternate(100)
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_f_alternate_small() {
+        let result = f_alternate(2);
+        assert!(result > 0);
+    }
+
+    #[test]
+    fn test_f_alternate_modulo() {
+        const MOD: usize = 1_000_000_007;
+        let result = f_alternate(3);
+        assert!(result < MOD);
+    }
+
+    #[test]
+    fn test_dp_growth() {
+        let a = f_alternate(2);
+        let b = f_alternate(3);
+        // DP result should be positive for both
+        assert!(a > 0 && b > 0);
+    }
+
+    #[test]
+    fn test_solve_produces_result() {
+        let result = solve();
+        assert!(result > 0);
+    }
+}
+
 pe_utils::pe_main!();

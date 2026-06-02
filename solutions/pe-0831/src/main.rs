@@ -29,4 +29,40 @@ fn solve() -> num_bigint::BigInt {
     pe0831()
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_g_m_small() {
+        let result = g_m(BigInt::from(10));
+        assert!(result > BigInt::from(0));
+    }
+
+    #[test]
+    fn test_bigint_power() {
+        let val = BigInt::from(2).pow(3u32);
+        assert_eq!(val, BigInt::from(8));
+    }
+
+    #[test]
+    fn test_base_conversion() {
+        let num = BigInt::from(49); // 100 in base 7
+        let base7 = num.to_str_radix(7);
+        assert_eq!(base7, "100");
+    }
+
+    #[test]
+    fn test_pe0831_produces_result() {
+        let result = pe0831();
+        assert!(result > BigInt::from(0));
+    }
+
+    #[test]
+    fn test_solve_produces_result() {
+        let result = solve();
+        assert!(result > BigInt::from(0));
+    }
+}
+
 pe_utils::pe_main!();

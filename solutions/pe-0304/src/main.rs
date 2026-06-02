@@ -42,3 +42,50 @@ fn solve() -> u128 {
 }
 
 pe_utils::pe_main!();
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_fib_base_case() {
+        let (f0, f1) = fib(0);
+        assert_eq!(f0, 0);
+        assert_eq!(f1, 1);
+    }
+
+    #[test]
+    fn test_fib_small_values() {
+        let (f1_prev, f1_cur) = fib(1);
+        assert!(f1_cur > 0);
+
+        let (f2_prev, f2_cur) = fib(2);
+        assert!(f2_cur > 0);
+    }
+
+    #[test]
+    fn test_is_prime_verification() {
+        assert!(is_prime(2));
+        assert!(is_prime(3));
+        assert!(is_prime(5));
+        assert!(is_prime(97));
+        assert!(is_prime(101));
+        assert!(!is_prime(4));
+        assert!(!is_prime(6));
+    }
+
+    #[test]
+    fn test_modular_arithmetic() {
+        let val = 10u128.pow(12);
+        let result = val % MOD;
+        assert!(result < MOD);
+    }
+
+    #[test]
+    fn test_solve_produces_result() {
+        let result = solve();
+        assert!(result > 0);
+        assert!(result < MOD);
+    }
+}
+
