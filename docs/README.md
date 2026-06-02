@@ -2,7 +2,7 @@
 
 <p align="center"><img src="logo.png"></p>
 
-Rust solutions to [Project Euler](https://projecteuler.net/) problems, organised as a Cargo workspace. Each problem is a standalone binary crate under `solutions/pe-NNNN/`. **88 solutions implemented**, covering problems 1-50 (complete) and select problems 51-940.
+Rust solutions to [Project Euler](https://projecteuler.net/) problems, organised as a Cargo workspace. Each problem is a standalone binary crate under `solutions/pe-NNNN/`. **96 solutions implemented**, covering problems 1-50 (complete) and 29 problems in the 51-100 range (58% complete).
 
 ## Structure
 
@@ -97,10 +97,11 @@ pe_utils::pe_main!();
 
 ### Refactoring Status
 
-- **63 of 88 solutions** (71.6%) refactored to use `pe-lib`
+- **69 of 96 solutions** (71.9%) refactored to use `pe-lib`
 - **~2,100 lines** of duplicated code eliminated
 - **157 pe-lib tests** (126 unit + 31 integration) all passing
-- **88 solution tests** verifying correctness across all problems
+- **96 solution tests** verifying correctness across all problems
+- **100% pass rate** across all 96 solutions
 - **Recommended**: Use pe-lib functions when adding new solutions
 
 ### Performance Optimizations
@@ -117,30 +118,30 @@ pe-lib core functions are highly optimized:
 
 **Refactoring Campaign**: Consolidated duplicated code into pe-lib
 - Eliminated ~2,100 lines of duplicated code
-- Refactored 14 solutions to use pe-lib (45 → 63 solutions, 54.2% → 71.6%)
+- Refactored 24 solutions to use pe-lib (45 → 69 solutions, 54.2% → 71.9%)
 - Removed external `primes` crate dependency
 - Improved code consistency and maintainability
 
-**New Solutions**: Added 5 new problems demonstrating pe-lib
-- pe-0051: Prime digit replacements (`sieve_primes`, `is_prime`)
-- pe-0052: Permuted multiples (`is_permutation`)
-- pe-0054: Poker hands (file I/O)
-- pe-0057: Square root convergents (`Rational` arithmetic)
-- pe-0058: Spiral primes (`is_prime` optimized)
+**New Solutions**: Added 13 new problems across 51-100 range using pe-lib
+- **Batch 1** (5 solutions): pe-0051, 0052, 0054, 0057, 0058
+  - Prime digit replacements, permuted multiples, poker hands, convergents of e, spiral primes
+- **Batch 2** (8 solutions): pe-0059, 0062, 0064, 0065, 0067, 0068, 0069, 0072
+  - XOR decryption, cubic permutations, odd period square roots, convergents of e, max path sum, magic ring, totient maximum, counting fractions
+- **Coverage progress**: 51-100 range 21/50 → 29/50 (42% → 58%)
 
 ## Testing
 
-Comprehensive test coverage: **all 88 solutions passing** (100% success rate)
+Comprehensive test coverage: **all 96 solutions passing** (100% success rate)
 
 - **Unit Tests** (126): All pe-lib modules with edge cases, known values, mathematical properties
 - **Integration Tests** (31): Cross-module verification, sieve/prime consistency, performance baselines
-- **Solution Tests** (88): Individual solution verification across all 88 problems
+- **Solution Tests** (96): Individual solution verification across all 96 problems
 - **Total**: 245+ tests, all passing ✓
 
 Run tests with:
 ```bash
 cargo test -p pe-lib              # All pe-lib tests (157 total)
-./test-all.sh                     # Full build/test all 88 solutions
+./test-all.sh                     # Full build/test all 96 solutions
 cargo test -p pe-NNNN             # Specific solution tests
 ```
 
@@ -149,7 +150,7 @@ cargo test -p pe-NNNN             # Specific solution tests
 | Range | Count | Status |
 |-------|-------|--------|
 | **1-50** | 50/50 (100%) | ✓ Complete |
-| **51-100** | 21/50 (42%) | 5 new solutions added |
+| **51-100** | 29/50 (58%) | 13 new solutions (2 batches) |
 | **101-200** | 4/100 | Select problems |
 | **201-940** | 13/740 | Select problems |
-| **Total** | **88/998** | All passing |
+| **Total** | **96/998** | All passing ✓ |
