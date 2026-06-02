@@ -33,4 +33,42 @@ fn solve() -> i64 {
     max_sum
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_is_prime_i64_basic() {
+        assert!(is_prime_i64(2));
+        assert!(is_prime_i64(3));
+        assert!(is_prime_i64(5));
+        assert!(!is_prime_i64(4));
+        assert!(!is_prime_i64(1));
+        assert!(!is_prime_i64(0));
+    }
+
+    #[test]
+    fn test_prime_sum_property() {
+        // Example: 2+3 = 5 (prime), 2+3+5 = 10 (not prime)
+        assert!(is_prime_i64(5));
+        assert!(!is_prime_i64(10));
+    }
+
+    #[test]
+    fn test_consecutive_sum() {
+        // Small test: sum of first few primes
+        let sum = 2i64 + 3 + 5; // = 10, not prime
+        assert!(!is_prime_i64(sum));
+        let sum2 = 2i64 + 3 + 5 + 7; // = 17, prime
+        assert!(is_prime_i64(sum2));
+    }
+
+    #[test]
+    fn test_solve_produces_prime() {
+        let result = solve();
+        assert!(is_prime_i64(result));
+        assert!(result > 100);
+    }
+}
+
 pe_utils::pe_main!();

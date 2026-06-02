@@ -22,4 +22,38 @@ fn solve() -> usize {
         .sum::<usize>()
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_is_truncatable_basic() {
+        // 3797: 3, 7, 9, 7 (and 3, 37, 37...) - but 9 is not prime, so false
+        assert!(!is_truncatable(3797));
+    }
+
+    #[test]
+    fn test_is_truncatable_two_digit() {
+        // 37: left=3 (prime), right=7 (prime) - both prime
+        assert!(is_truncatable(37));
+        // 13: left=1 (not prime), right=3 (prime) - 1 is not prime
+        assert!(!is_truncatable(13));
+    }
+
+    #[test]
+    fn test_is_truncatable_property() {
+        // All truncatable primes must be formed from prime digits
+        // Examples: 23 -> 2,3 both prime
+        assert!(is_truncatable(23));
+    }
+
+    #[test]
+    fn test_solve_produces_sum() {
+        let result = solve();
+        assert!(result > 0);
+        // Sum should include 11 truncatable primes
+        assert!(result > 100);
+    }
+}
+
 pe_utils::pe_main!();

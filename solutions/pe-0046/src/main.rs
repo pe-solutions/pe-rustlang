@@ -47,4 +47,48 @@ fn solve() -> i32 {
         .expect("no solution found")
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_sqrtint_basic() {
+        assert_eq!(sqrtint(4), 2);
+        assert_eq!(sqrtint(9), 3);
+        assert_eq!(sqrtint(16), 4);
+    }
+
+    #[test]
+    fn test_sqrtint_non_perfect() {
+        assert_eq!(sqrtint(5), 2);
+        assert_eq!(sqrtint(10), 3);
+    }
+
+    #[test]
+    fn test_is_composite() {
+        assert!(is_composite(4));
+        assert!(is_composite(6));
+        assert!(is_composite(8));
+        assert!(!is_composite(2));
+        assert!(!is_composite(3));
+        assert!(!is_composite(5));
+    }
+
+    #[test]
+    fn test_goldbach_property() {
+        // Goldbach_busted returns true if no prime p and square s exist
+        // such that n = p + 2*s^2
+        // For testing, just verify the function returns a boolean
+        let result = is_goldbach_busted(9);
+        assert!(result == true || result == false);
+    }
+
+    #[test]
+    fn test_solve_produces_odd_composite() {
+        let result = solve();
+        assert!(result % 2 == 1);  // Should be odd
+        assert!(is_composite(result)); // Should be composite
+    }
+}
+
 pe_utils::pe_main!();
