@@ -84,7 +84,7 @@ fn min_path_sum(matrix: &[Vec<u32>]) -> u32 {
 }
 
 fn solve() -> u32 {
-    let matrix = read_data("data/matrix.txt").expect("failed to read data/matrix.txt");
+    let matrix = read_data("data/0081_matrix.txt").expect("failed to read data/0081_matrix.txt");
     min_path_sum(&matrix)
 }
 
