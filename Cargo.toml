@@ -83,11 +83,13 @@ members = [
     "solutions/pe-0831",
     "solutions/pe-0849",
     "solutions/pe-0940",
+    "pe-lib",
     "pe-utils",
 ]
 resolver = "2"
 
 [workspace.dependencies]
+pe-lib = { path = "pe-lib" }
 pe-utils = { path = "pe-utils" }
 chrono = "0.4.38"
 csv = "1.3.0"

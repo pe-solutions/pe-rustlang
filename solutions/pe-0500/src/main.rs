@@ -3,28 +3,12 @@
 
 use std::collections::BinaryHeap;
 use std::cmp::Reverse;
-
-fn generate_primes(n: usize) -> Vec<usize> {
-    let mut primes = Vec::new();
-    let mut is_prime = vec![true; n + 1];
-
-    for num in 2..=n {
-        if is_prime[num] {
-            primes.push(num);
-
-            for multiple in (num..=n).step_by(num) {
-                is_prime[multiple] = false;
-            }
-        }
-    }
-
-    primes
-}
+use pe_lib::sieve_primes;
 
 fn solve() -> usize {
     const N: usize = 500500;
     const MOD: usize = 500500507;
-    let primes = generate_primes(7376507);
+    let primes = sieve_primes(7376507);
     let mut pq = BinaryHeap::new();
     for &prime in &primes { pq.push(Reverse(prime)); }
     let mut answer = 1;

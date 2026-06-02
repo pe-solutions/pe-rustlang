@@ -1,0 +1,5 @@
+/home/menjaraz/Desktop/pe-rustlang/target/debug/deps/pe_0119-22ca23ffd4093cbc.d: pe-0119/src/main.rs
+
+/home/menjaraz/Desktop/pe-rustlang/target/debug/deps/libpe_0119-22ca23ffd4093cbc.rmeta: pe-0119/src/main.rs
+
+pe-0119/src/main.rs:

@@ -1,37 +1,7 @@
 // Totient Permutation
 // https://projecteuler.net/problem=70
 
-pub fn prime_sieve(limit: usize) -> Vec<usize> {
-    let mut is_prime = vec![true; limit + 1];
-
-    is_prime[0] = false;
-    is_prime[1] = false;
-    
-    for i in 2..=(limit as f64).sqrt() as usize {
-        if is_prime[i] {
-            for j in (i * i..=limit).step_by(i) {
-                is_prime[j] = false;
-            }
-        }
-    }
-    
-    is_prime
-        .iter()
-        .enumerate()
-        .filter_map(|(i, &is_prime)| if is_prime { Some(i) } else { None })
-        .collect()
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    
-    #[test]
-    fn test_prime_sieve() {
-        assert_eq!(prime_sieve(10), vec![2, 3, 5, 7]);
-        assert_eq!(prime_sieve(20), vec![2, 3, 5, 7, 11, 13, 17, 19]);
-    }
-}
+use pe_lib::sieve_primes as prime_sieve;
 
 
 fn find_n(lim: usize) -> usize {

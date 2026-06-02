@@ -1,28 +1,13 @@
 // Hyperexponentiation
 // https://projecteuler.net/problem=188
 
+use pe_lib::mod_pow;
+
 fn tetra_mod(base: u64, exponent: u64, modulus: u64) -> u64 {
-    fn modpow(mut base: u64, mut exponent: u64, modulus: u64) -> u64 {
-        let mut result = 1;
-
-        base %= modulus;
-
-        while exponent > 0 {
-            if exponent % 2 == 1 {
-                result = (result * base) % modulus;
-            }
-
-            base = (base * base) % modulus;
-            exponent /= 2;
-        }
-
-        result
-    }
-
     let mut x = base;
 
     for _ in 2..=exponent {
-        x = modpow(base, x, modulus);
+        x = mod_pow(base, x, modulus);
     }
 
     x

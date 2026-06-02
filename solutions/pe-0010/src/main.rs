@@ -1,18 +1,7 @@
 // Summation of primes
 // https://projecteuler.net/problem/10
 
-
-fn is_prime(n: u64) -> bool {
-    if n < 2 {
-        return false;
-    }
-    for i in 2..=((n as f64).sqrt() as u64) {
-        if n % i == 0 {
-            return false;
-        }
-    }
-    true
-}
+use pe_lib::is_prime;
 
 fn sum_primes_below_limit(limit: u64) -> u64 {
     let mut sum: u64 = 0;

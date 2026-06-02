@@ -1,0 +1,1 @@
+/home/menjaraz/Desktop/pe-rustlang/target/debug/pe-0060: /home/menjaraz/Desktop/pe-rustlang/pe-utils/src/lib.rs /home/menjaraz/Desktop/pe-rustlang/solutions/pe-0060/src/main.rs /home/menjaraz/Desktop/pe-rustlang/solutions/pe-0060/src/prime_utils.rs

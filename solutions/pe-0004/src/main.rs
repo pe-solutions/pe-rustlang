@@ -1,9 +1,10 @@
 // Largest Palindrome Product
 // https://projecteuler.net/problem=4
 
+use pe_lib::is_palindrome_num;
+
 fn is_palindrome(n: i32) -> bool {
-    let s = n.to_string();
-    s == s.chars().rev().collect::<String>()
+    is_palindrome_num(n as u64)
 }
 
 fn find_largest_palindrome_product(range: std::ops::RangeInclusive<i32>) -> Option<i32> {

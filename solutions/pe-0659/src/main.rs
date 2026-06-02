@@ -1,22 +1,16 @@
 // Largest Prime
 // https://projecteuler.net/problem=659
 
+use pe_lib::{mod_mul, mod_pow};
+
 const MOD: u64 = 1_000_000_000_000_000_000;
 
 fn modmul(a: u64, b: u64, m: u64) -> u64 {
-    (((a as u128) * (b as u128)) % (m as u128)) as u64
+    mod_mul(a, b, m)
 }
 
-fn modpow(mut base: u64, mut exp: u64, modulus: u64) -> u64 {
-    let mut result = 1;
-    while exp > 0 {
-        if exp % 2 == 1 {
-            result = modmul(result, base, modulus);
-        }
-        base = modmul(base, base, modulus);
-        exp /= 2;
-    }
-    result
+fn modpow(base: u64, exp: u64, modulus: u64) -> u64 {
+    mod_pow(base, exp, modulus)
 }
 
 fn find_quadratic_nonresidue(p: u64) -> u64 {

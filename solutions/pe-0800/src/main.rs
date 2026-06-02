@@ -1,23 +1,14 @@
 // Hybrid Integers
 // https://projecteuler.net/problem=800
 
+use pe_lib::sieve_primes;
+
 const BASE: usize = 800_800;
 const EXP: usize = 800_800;
 const LOG_2: f64 = 2.0;
 
 fn sieve(n: usize) -> Vec<usize> {
-    let mut is_prime = vec![true; n + 1];
-    let sqrt_n = (n as f64).sqrt() as usize + 1;
-
-    for i in 2..sqrt_n {
-        if is_prime[i] {
-            for j in (i * i..=n).step_by(i) {
-                is_prime[j] = false;
-            }
-        }
-    }
-
-    (2..=n).filter(|&i| is_prime[i]).collect()
+    sieve_primes(n)
 }
 
 struct Parameters {
