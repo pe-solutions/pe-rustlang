@@ -1,6 +1,13 @@
 use crate::divisors::prime_factors;
 use crate::sieve::sieve_bools;
 
+pub fn gcd(mut a: u64, mut b: u64) -> u64 {
+    while b != 0 {
+        (a, b) = (b, a % b);
+    }
+    a
+}
+
 pub fn totient(n: u64) -> u64 {
     if n == 1 {
         return 1;
