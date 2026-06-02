@@ -1,5 +1,6 @@
 use std::fs::File;
 use std::io::{self, BufRead};
+use std::str::FromStr;
 
 pub fn read_file_to_string(path: &str) -> io::Result<String> {
     std::fs::read_to_string(path)
@@ -19,6 +20,20 @@ pub fn read_csv_matrix(path: &str) -> io::Result<Vec<Vec<u32>>> {
         matrix.push(row?);
     }
 
+    Ok(matrix)
+}
+
+pub fn read_space_separated_matrix<T: FromStr>(path: &str) -> io::Result<Vec<Vec<T>>> {
+    let content = std::fs::read_to_string(path)?;
+    let matrix = content
+        .lines()
+        .map(|line| {
+            line.split_whitespace()
+                .map(|s| s.parse::<T>().ok())
+                .collect::<Option<Vec<T>>>()
+                .ok_or_else(|| io::Error::new(io::ErrorKind::InvalidData, "parse error"))
+        })
+        .collect::<Result<Vec<_>, _>>()?;
     Ok(matrix)
 }
 

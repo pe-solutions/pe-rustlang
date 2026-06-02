@@ -2,7 +2,7 @@
 // https://projecteuler.net/problem=13
 
 use num_bigint::BigUint;
-use std::fs;
+use pe_lib::read_lines;
 
 fn large_sum(arr: Vec<String>) -> Result<BigUint, num_bigint::ParseBigIntError> {
     let mut sum = BigUint::from(0u32);
@@ -14,8 +14,7 @@ fn large_sum(arr: Vec<String>) -> Result<BigUint, num_bigint::ParseBigIntError> 
 }
 
 fn solve() -> u64 {
-    let content = fs::read_to_string("data/numbers.txt").expect("failed to read data/numbers.txt");
-    let arr: Vec<String> = content.lines().map(String::from).collect();
+    let arr = read_lines("data/numbers.txt").expect("failed to read data/numbers.txt");
     let sum = large_sum(arr).expect("failed to parse numbers");
     sum.to_string()[..10].parse::<u64>().unwrap()
 }

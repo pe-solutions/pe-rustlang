@@ -1,13 +1,10 @@
 // Largest Product in a Grid
 // https://projecteuler.net/problem=11
 
-use std::fs;
+use pe_lib::read_space_separated_matrix;
 
 fn solve() -> i32 {
-    let content = fs::read_to_string("data/0011_grid.txt").expect("failed to read data/0011_grid.txt");
-    let grid: Vec<Vec<i32>> = content.lines()
-        .map(|line| line.split_whitespace().map(|n| n.parse().unwrap()).collect())
-        .collect();
+    let grid: Vec<Vec<i32>> = read_space_separated_matrix("data/0011_grid.txt").expect("failed to read data/0011_grid.txt");
     let rows = grid.len();
     let cols = grid[0].len();
     let mut answer = 0;
