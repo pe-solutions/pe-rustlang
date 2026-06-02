@@ -1,12 +1,14 @@
 // Concealed Square
 // https://projecteuler.net/problem=206
 
+use pe_lib::isqrt;
+
 fn calculate_square_root_upper_bound() -> u64 {
-    ((192_939_495_969_798_999_0u64 as f64).sqrt() / 10.0) as u64 * 10
+    (isqrt(192_939_495_969_798_999_0u64) / 10) * 10
 }
 
 fn calculate_square_root_lower_bound() -> u64 {
-    ((102_030_405_060_708_090_0u64 as f64).sqrt() / 10.0) as u64 * 10
+    (isqrt(102_030_405_060_708_090_0u64) / 10) * 10
 }
 
 fn has_concealed_square_pattern(candidate: u64) -> bool {
