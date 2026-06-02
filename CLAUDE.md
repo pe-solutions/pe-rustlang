@@ -9,23 +9,44 @@ A Cargo workspace of standalone Rust solutions to [Project Euler](https://projec
 ## Commands
 
 ```bash
-# Build a single problem
+# Build / run / test a single problem
 cargo build -p pe-0001
+cargo run   -p pe-0001
+cargo test  -p pe-0081
 
-# Run a single problem (from repo root; some solutions read relative data/ paths)
-cargo run -p pe-0001
-
-# Run tests for a problem that has them
-cargo test -p pe-0081
-
-# Build all solutions and report failures
+# Build or test all 80+ solutions and report failures
 ./build-all.sh
+./test-all.sh
 
 # Build the entire workspace
 cargo build --workspace
 ```
 
 > Solutions that read data files (e.g. `pe-0013`, `pe-0022`, `pe-0042`, `pe-0081`) use relative paths like `data/filename.txt`. Run them from the crate directory (`cd solutions/pe-0081 && cargo run`) or they will fail to open the file.
+
+## Scripts
+
+| Script | Purpose |
+|--------|---------|
+| `./new-solution.sh <N>` | Scaffold a new `solutions/pe-NNNN/` crate and add it to the workspace |
+| `./build-all.sh` | Build every solution; report failures |
+| `./test-all.sh` | Test every solution; report failures |
+| `./fetch-problems.sh --all` | Full scrape of projecteuler.net/archives → `problems.toml` (run once) |
+| `./fetch-problems.sh` | Incremental update via projecteuler.net/recent → `problems.toml` |
+
+### `problems.toml`
+
+Tracks every published PE problem with its title and a `solved` flag:
+
+```toml
+[42]
+title = "Coded Triangle Numbers"
+solved = true
+```
+
+`new-solution.sh` reads this file to insert the problem title as a header comment in `src/main.rs`. Re-running `fetch-problems.sh` preserves manually set `solved` values and auto-detects the flag for new entries (directory exists and `src/main.rs` contains no `todo!()`).
+
+Mark a problem solved by editing `problems.toml` directly.
 
 ## Architecture
 
@@ -59,8 +80,14 @@ All external crates are declared once in the root `Cargo.toml` under `[workspace
 
 ### Adding a new problem
 
-1. `cargo new solutions/pe-NNNN --name pe-NNNN` (crate name must match `pe-NNNN` for the macro to extract the problem number).
-2. Add `"solutions/pe-NNNN"` to the `members` list in the root `Cargo.toml`.
-3. In `solutions/pe-NNNN/Cargo.toml`, add `pe-utils = { workspace = true }` and any needed workspace deps.
-4. Write `fn solve()` and call `pe_utils::pe_main!();` at the bottom of `src/main.rs`.
-5. If the problem needs a data file, place it under `solutions/pe-NNNN/data/` and read it with a relative path.
+Use the scaffolding script — it handles directory creation, boilerplate, and workspace registration in one step:
+
+```bash
+./new-solution.sh 42
+```
+
+This creates `solutions/pe-0042/` with a `Cargo.toml` and a `src/main.rs` pre-filled with the problem title (from `problems.toml`) and URL, then inserts `"solutions/pe-0042"` into the workspace `members` list in sorted order.
+
+If a data file is needed, place it under `solutions/pe-NNNN/data/` and read it with a relative path from `src/main.rs`.
+
+To add an external dependency, declare it once in the root `Cargo.toml` under `[workspace.dependencies]`, then reference it in the crate's `Cargo.toml` with `{ workspace = true }`.
