@@ -22,7 +22,7 @@ cargo test  -p pe-0081
 cargo build --workspace
 ```
 
-> Solutions that read data files (e.g. `pe-0013`, `pe-0022`, `pe-0042`, `pe-0081`) use relative paths like `data/filename.txt`. Run them from the crate directory (`cd solutions/pe-0081 && cargo run`) or they will fail to open the file.
+> Solutions that read data files (e.g. `pe-0011`, `pe-0013`, `pe-0018`, `pe-0022`, `pe-0042`, `pe-0081`, `pe-0345`) use relative paths like `data/filename.txt`. Run them from the crate directory (`cd solutions/pe-0081 && cargo run`) or they will fail to open the file.
 
 ## Scripts
 
