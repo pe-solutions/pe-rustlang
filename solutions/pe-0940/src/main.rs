@@ -54,4 +54,46 @@ fn solve() -> i64 {
     total
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_fibonacci_iterator() {
+        let fib: Vec<u64> = Fibonacci::new().take(10).collect();
+        assert_eq!(fib[0], 0);
+        assert_eq!(fib[1], 1);
+        assert_eq!(fib[2], 1);
+        assert_eq!(fib[3], 2);
+    }
+
+    #[test]
+    fn test_modulo_property() {
+        let val = 1_000_000_000i64;
+        let result = val % MOD;
+        assert!(result < MOD);
+    }
+
+    #[test]
+    fn test_solve_recurrence_simple() {
+        // Test with simple recurrence
+        let result = solve_recurrence(0, 1, 3, 1, 0);
+        assert!(result >= 0);
+    }
+
+    #[test]
+    fn test_compute_a_basic() {
+        // Test that compute_a returns valid result
+        let result = compute_a(1, 1);
+        assert!(result < MOD);
+    }
+
+    #[test]
+    fn test_solve_produces_result() {
+        let result = solve();
+        assert!(result >= 0);
+        assert!(result < MOD);
+    }
+}
+
 pe_utils::pe_main!();

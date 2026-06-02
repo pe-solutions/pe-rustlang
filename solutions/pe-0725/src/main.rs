@@ -28,4 +28,40 @@ fn solve() -> num_bigint::BigUint {
     calculate_digit_sum_modulo()
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_binomial_computation() {
+        let b = binomial_big(10, 2);
+        assert_eq!(b, BigUint::from(45u32)); // C(10,2) = 45
+    }
+
+    #[test]
+    fn test_s_function_small_values() {
+        let s2 = s(2);
+        assert!(s2 > BigUint::from(0u32));
+    }
+
+    #[test]
+    fn test_power_calculation() {
+        let power = BigUint::from(10u32).pow(3u32);
+        assert_eq!(power, BigUint::from(1000u32));
+    }
+
+    #[test]
+    fn test_s_grows_exponentially() {
+        let s2 = s(2);
+        let s3 = s(3);
+        assert!(s3 > s2);
+    }
+
+    #[test]
+    fn test_solve_produces_result() {
+        let result = solve();
+        assert!(result > BigUint::from(0u32));
+    }
+}
+
 pe_utils::pe_main!();

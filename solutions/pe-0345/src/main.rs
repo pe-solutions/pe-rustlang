@@ -23,4 +23,36 @@ fn solve() -> i32 {
     dp[N][N2 - 1]
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_bitmask_operations() {
+        // Test bit shifting and masking
+        let mask = 1 << 3; // bit 3 set
+        assert_eq!(mask, 8);
+        assert_eq!((1 << 3) & mask, 8);
+        assert_eq!((1 << 2) & mask, 0);
+    }
+
+    #[test]
+    fn test_bit_manipulation() {
+        let c = 0b1010u32; // bits 1 and 3 are set
+        let mut set_bits = Vec::new();
+        for x in 0..4 {
+            if (1 << x) & c != 0 {
+                set_bits.push(x);
+            }
+        }
+        assert_eq!(set_bits, vec![1, 3]);
+    }
+
+    #[test]
+    fn test_solve_produces_result() {
+        let result = solve();
+        assert!(result > 0);
+    }
+}
+
 pe_utils::pe_main!();

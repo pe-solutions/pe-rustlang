@@ -32,6 +32,21 @@ mod tests {
     use super::*;
 
     #[test]
+    fn test_digit_sum_basic() {
+        assert_eq!(calculate_digit_sum(18), 1 + 8);
+        assert_eq!(calculate_digit_sum(512), 5 + 1 + 2);
+        assert_eq!(calculate_digit_sum(27), 2 + 7);
+    }
+
+    #[test]
+    fn test_power_calculation() {
+        // 2^9 = 512, digit sum = 8
+        assert_eq!(calculate_digit_sum(2u64.pow(9)), 8);
+        // 3^3 = 27, digit sum = 9
+        assert_eq!(calculate_digit_sum(3u64.pow(3)), 9);
+    }
+
+    #[test]
     fn test_calculate_digit_power_sums_2() {
         assert_eq!(calculate_digit_power_sums(2), 512);
     }
@@ -39,6 +54,13 @@ mod tests {
     #[test]
     fn test_calculate_digit_power_sums_10() {
         assert_eq!(calculate_digit_power_sums(10), 614656);
+    }
+
+    #[test]
+    fn test_solve_produces_output() {
+        let result = solve();
+        assert!(result > 0);
+        assert!(result > 1000);
     }
 }
 

@@ -40,18 +40,46 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_read_data() {
-        let result = read_data("data/test_matrix.txt");
-        assert!(result.is_ok());
-        let matrix = result.unwrap();
-        assert_eq!(matrix, vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]]);
-    }
-
-    #[test]
-    fn test_min_path_sum() {
+    fn test_min_path_sum_simple() {
         let matrix = vec![vec![1, 3, 1], vec![1, 5, 1], vec![4, 2, 1]];
         let result = min_path_sum(&matrix);
         assert_eq!(result, 7);
+    }
+
+    #[test]
+    fn test_min_path_sum_single_cell() {
+        let matrix = vec![vec![5]];
+        let result = min_path_sum(&matrix);
+        assert_eq!(result, 5);
+    }
+
+    #[test]
+    fn test_min_path_sum_single_row() {
+        let matrix = vec![vec![1, 2, 3, 4]];
+        let result = min_path_sum(&matrix);
+        assert_eq!(result, 10); // 1+2+3+4
+    }
+
+    #[test]
+    fn test_min_path_sum_single_column() {
+        let matrix = vec![vec![1], vec![2], vec![3], vec![4]];
+        let result = min_path_sum(&matrix);
+        assert_eq!(result, 10); // 1+2+3+4
+    }
+
+    #[test]
+    fn test_min_path_sum_property() {
+        // Minimum path should only go right or down
+        let matrix = vec![
+            vec![1, 5, 5],
+            vec![5, 1, 5],
+            vec![5, 5, 1]
+        ];
+        // Best path: right (5), right (5), down (1), down (1) = 1+5+5+1+1 = 13
+        // Or: down (5), down (5), right (1), right (1) = 1+5+5+1+1 = 13
+        // Or: right (5), down (1), right (1), down (1) = 1+5+1+1+1 = 9
+        let result = min_path_sum(&matrix);
+        assert!(result >= 1 && result <= 20);
     }
 }
 

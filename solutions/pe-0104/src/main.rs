@@ -22,4 +22,50 @@ fn solve() -> u32 {
     }
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_pandigital_basic() {
+        assert!(is_pandigital("123456789"));
+        assert!(!is_pandigital("123456780"));
+    }
+
+    #[test]
+    fn test_bigint_modulo() {
+        let big = BigInt::from(123456789u64);
+        let result = big % 1_000_000_000u64;
+        assert_eq!(format!("{}", result), "123456789");
+    }
+
+    #[test]
+    fn test_bigint_addition() {
+        let a = BigInt::from(1u32);
+        let b = BigInt::from(2u32);
+        let sum = &a + &b;
+        assert_eq!(sum, BigInt::from(3u32));
+    }
+
+    #[test]
+    fn test_fibonacci_growth() {
+        let mut fib_prev = BigInt::from(0u32);
+        let mut fib_curr = BigInt::from(1u32);
+        let fib_next = &fib_prev + &fib_curr;
+        assert_eq!(fib_next, BigInt::from(1u32));
+
+        fib_prev = fib_curr;
+        fib_curr = fib_next;
+        let fib_next2 = &fib_prev + &fib_curr;
+        assert_eq!(fib_next2, BigInt::from(2u32));
+    }
+
+    #[test]
+    fn test_solve_produces_index() {
+        let result = solve();
+        assert!(result > 0);
+        assert!(result > 1000);  // Index should be reasonably large
+    }
+}
+
 pe_utils::pe_main!();

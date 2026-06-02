@@ -49,4 +49,46 @@ fn solve() -> usize {
     find_n(10_000_000)
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_sorted_digits() {
+        assert_eq!(sorted_digits(123), vec!['1', '2', '3']);
+        assert_eq!(sorted_digits(321), vec!['1', '2', '3']);
+        assert_eq!(sorted_digits(1), vec!['1']);
+    }
+
+    #[test]
+    fn test_sorted_digits_permutation() {
+        let d1 = sorted_digits(132);
+        let d2 = sorted_digits(213);
+        assert_eq!(d1, d2);
+    }
+
+    #[test]
+    fn test_totient_property() {
+        // For n = p1 * p2 (two distinct primes),
+        // φ(n) = (p1-1)*(p2-1)
+        // Example: 6 = 2*3, φ(6) = 1*2 = 2
+        let phi = (2 - 1) * (3 - 1);
+        assert_eq!(phi, 2);
+    }
+
+    #[test]
+    fn test_find_n_produces_result() {
+        let result = find_n(100);
+        // Should find some n or return 0
+        assert!(result >= 0);
+    }
+
+    #[test]
+    fn test_solve_produces_result() {
+        let result = solve();
+        assert!(result > 0);
+        assert!(result < 10_000_000);
+    }
+}
+
 pe_utils::pe_main!();

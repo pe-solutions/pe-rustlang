@@ -110,4 +110,40 @@ fn solve() -> i32 {
     ).expect("no cyclic sequence found")
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_digit_extraction() {
+        assert_eq!(NumberFunctions::first_two_digits(1234), 12);
+        assert_eq!(NumberFunctions::last_two_digits(1234), 34);
+        assert_eq!(NumberFunctions::first_two_digits(5678), 56);
+        assert_eq!(NumberFunctions::last_two_digits(5678), 78);
+    }
+
+    #[test]
+    fn test_figurate_numbers() {
+        assert_eq!(NumberFunctions::triangle_number(3), 6);
+        assert_eq!(NumberFunctions::square_number(4), 16);
+        assert_eq!(NumberFunctions::pentagonal_number(3), 12);
+        assert_eq!(NumberFunctions::hexagonal_number(2), 6);
+    }
+
+    #[test]
+    fn test_figurate_growth() {
+        // Each figurate number sequence should be monotonically increasing
+        let t1 = NumberFunctions::triangle_number(5);
+        let t2 = NumberFunctions::triangle_number(6);
+        assert!(t1 < t2);
+    }
+
+    #[test]
+    fn test_solve_produces_sum() {
+        let result = solve();
+        assert!(result > 0);
+        assert!(result > 1000);
+    }
+}
+
 pe_utils::pe_main!();
