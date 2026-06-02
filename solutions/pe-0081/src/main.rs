@@ -1,64 +1,10 @@
 // Path Sum: Two Ways
 // https://projecteuler.net/problem=81
 
-use std::error::Error;
-use std::fmt;
-use std::fs::File;
-use std::io::{self, BufRead};
+use std::io;
+use pe_lib::read_csv_matrix;
 
-#[derive(Debug)]
-enum MatrixError {
-    IoError(io::Error),
-    ParseError(std::num::ParseIntError),
-}
-
-impl fmt::Display for MatrixError {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        match self {
-            MatrixError::IoError(err) => write!(f, "IO error: {}", err),
-            MatrixError::ParseError(err) => write!(f, "Parse error: {}", err),
-        }
-    }
-}
-
-impl Error for MatrixError {
-    fn source(&self) -> Option<&(dyn Error + 'static)> {
-        match self {
-            MatrixError::IoError(err) => Some(err),
-            MatrixError::ParseError(err) => Some(err),
-        }
-    }
-}
-
-impl From<io::Error> for MatrixError {
-    fn from(err: io::Error) -> Self {
-        MatrixError::IoError(err)
-    }
-}
-
-impl From<std::num::ParseIntError> for MatrixError {
-    fn from(err: std::num::ParseIntError) -> Self {
-        MatrixError::ParseError(err)
-    }
-}
-
-fn read_data(file_path: &str) -> Result<Vec<Vec<u32>>, MatrixError> {
-    let file = File::open(file_path)?;
-    let reader = io::BufReader::new(file);
-
-    let mut matrix = Vec::new();
-
-    for line in reader.lines() {
-        let row: Result<Vec<u32>, _> = line?
-            .trim()
-            .split(',')
-            .map(|s| s.parse())
-            .collect();
-        matrix.push(row.map_err(MatrixError::from)?);
-    }
-
-    Ok(matrix)
-}
+type MatrixError = io::Error;
 
 fn min_path_sum(matrix: &[Vec<u32>]) -> u32 {
     let mut dp = matrix.to_owned();
@@ -84,7 +30,7 @@ fn min_path_sum(matrix: &[Vec<u32>]) -> u32 {
 }
 
 fn solve() -> u32 {
-    let matrix = read_data("data/0081_matrix.txt").expect("failed to read data/0081_matrix.txt");
+    let matrix = read_csv_matrix("data/0081_matrix.txt").expect("failed to read data/0081_matrix.txt");
     min_path_sum(&matrix)
 }
 

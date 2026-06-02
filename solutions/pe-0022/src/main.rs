@@ -1,7 +1,7 @@
 // Names scores
 // https://projecteuler.net/problem=22
 
-use std::fs;
+use pe_lib::read_file_to_string;
 
 fn name_value(name: &str) -> u32 {
     name.chars().map(|c| c as u32 - 'A' as u32 + 1).sum()
@@ -20,7 +20,7 @@ fn all_name_score(names: &Vec<String>) -> u32 {
 }
 
 fn solve() -> u32 {
-    let mut names: Vec<String> = fs::read_to_string("./data/0022_names.txt")
+    let mut names: Vec<String> = read_file_to_string("./data/0022_names.txt")
         .expect("failed to read ./data/0022_names.txt")
         .split(',')
         .map(|s| s.trim_matches('"').to_string())
