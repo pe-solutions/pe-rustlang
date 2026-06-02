@@ -1,0 +1,3995 @@
+# Updated: 2026-06-02
+# ./fetch-problems.sh --all   full scrape (first-time setup)
+# ./fetch-problems.sh         update via /recent
+
+[1]
+title = "Multiples of 3 or 5"
+solved = true
+
+[2]
+title = "Even Fibonacci Numbers"
+solved = true
+
+[3]
+title = "Largest Prime Factor"
+solved = true
+
+[4]
+title = "Largest Palindrome Product"
+solved = true
+
+[5]
+title = "Smallest Multiple"
+solved = true
+
+[6]
+title = "Sum Square Difference"
+solved = true
+
+[7]
+title = "10 001st Prime"
+solved = true
+
+[8]
+title = "Largest Product in a Series"
+solved = true
+
+[9]
+title = "Special Pythagorean Triplet"
+solved = true
+
+[10]
+title = "Summation of Primes"
+solved = true
+
+[11]
+title = "Largest Product in a Grid"
+solved = true
+
+[12]
+title = "Highly Divisible Triangular Number"
+solved = true
+
+[13]
+title = "Large Sum"
+solved = true
+
+[14]
+title = "Longest Collatz Sequence"
+solved = true
+
+[15]
+title = "Lattice Paths"
+solved = true
+
+[16]
+title = "Power Digit Sum"
+solved = true
+
+[17]
+title = "Number Letter Counts"
+solved = true
+
+[18]
+title = "Maximum Path Sum I"
+solved = true
+
+[19]
+title = "Counting Sundays"
+solved = true
+
+[20]
+title = "Factorial Digit Sum"
+solved = true
+
+[21]
+title = "Amicable Numbers"
+solved = true
+
+[22]
+title = "Names Scores"
+solved = true
+
+[23]
+title = "Non-Abundant Sums"
+solved = true
+
+[24]
+title = "Lexicographic Permutations"
+solved = true
+
+[25]
+title = "$1000$-digit Fibonacci Number"
+solved = true
+
+[26]
+title = "Reciprocal Cycles"
+solved = true
+
+[27]
+title = "Quadratic Primes"
+solved = true
+
+[28]
+title = "Number Spiral Diagonals"
+solved = true
+
+[29]
+title = "Distinct Powers"
+solved = true
+
+[30]
+title = "Digit Fifth Powers"
+solved = true
+
+[31]
+title = "Coin Sums"
+solved = true
+
+[32]
+title = "Pandigital Products"
+solved = true
+
+[33]
+title = "Digit Cancelling Fractions"
+solved = true
+
+[34]
+title = "Digit Factorials"
+solved = true
+
+[35]
+title = "Circular Primes"
+solved = true
+
+[36]
+title = "Double-base Palindromes"
+solved = true
+
+[37]
+title = "Truncatable Primes"
+solved = true
+
+[38]
+title = "Pandigital Multiples"
+solved = true
+
+[39]
+title = "Integer Right Triangles"
+solved = true
+
+[40]
+title = "Champernowne's Constant"
+solved = true
+
+[41]
+title = "Pandigital Prime"
+solved = true
+
+[42]
+title = "Coded Triangle Numbers"
+solved = true
+
+[43]
+title = "Sub-string Divisibility"
+solved = true
+
+[44]
+title = "Pentagon Numbers"
+solved = true
+
+[45]
+title = "Triangular, Pentagonal, and Hexagonal"
+solved = true
+
+[46]
+title = "Goldbach's Other Conjecture"
+solved = true
+
+[47]
+title = "Distinct Primes Factors"
+solved = true
+
+[48]
+title = "Self Powers"
+solved = true
+
+[49]
+title = "Prime Permutations"
+solved = true
+
+[50]
+title = "Consecutive Prime Sum"
+solved = true
+
+[51]
+title = "Prime Digit Replacements"
+solved = false
+
+[52]
+title = "Permuted Multiples"
+solved = false
+
+[53]
+title = "Combinatoric Selections"
+solved = true
+
+[54]
+title = "Poker Hands"
+solved = false
+
+[55]
+title = "Lychrel Numbers"
+solved = true
+
+[56]
+title = "Powerful Digit Sum"
+solved = true
+
+[57]
+title = "Square Root Convergents"
+solved = false
+
+[58]
+title = "Spiral Primes"
+solved = false
+
+[59]
+title = "XOR Decryption"
+solved = false
+
+[60]
+title = "Prime Pair Sets"
+solved = true
+
+[61]
+title = "Cyclical Figurate Numbers"
+solved = true
+
+[62]
+title = "Cubic Permutations"
+solved = false
+
+[63]
+title = "Powerful Digit Counts"
+solved = true
+
+[64]
+title = "Odd Period Square Roots"
+solved = false
+
+[65]
+title = "Convergents of $e$"
+solved = false
+
+[66]
+title = "Diophantine Equation"
+solved = true
+
+[67]
+title = "Maximum Path Sum II"
+solved = false
+
+[68]
+title = "Magic 5-gon Ring"
+solved = false
+
+[69]
+title = "Totient Maximum"
+solved = false
+
+[70]
+title = "Totient Permutation"
+solved = true
+
+[71]
+title = "Ordered Fractions"
+solved = true
+
+[72]
+title = "Counting Fractions"
+solved = false
+
+[73]
+title = "Counting Fractions in a Range"
+solved = false
+
+[74]
+title = "Digit Factorial Chains"
+solved = false
+
+[75]
+title = "Singular Integer Right Triangles"
+solved = false
+
+[76]
+title = "Counting Summations"
+solved = true
+
+[77]
+title = "Prime Summations"
+solved = false
+
+[78]
+title = "Coin Partitions"
+solved = false
+
+[79]
+title = "Passcode Derivation"
+solved = false
+
+[80]
+title = "Square Root Digital Expansion"
+solved = false
+
+[81]
+title = "Path Sum: Two Ways"
+solved = true
+
+[82]
+title = "Path Sum: Three Ways"
+solved = false
+
+[83]
+title = "Path Sum: Four Ways"
+solved = false
+
+[84]
+title = "Monopoly Odds"
+solved = false
+
+[85]
+title = "Counting Rectangles"
+solved = false
+
+[86]
+title = "Cuboid Route"
+solved = false
+
+[87]
+title = "Prime Power Triples"
+solved = true
+
+[88]
+title = "Product-sum Numbers"
+solved = false
+
+[89]
+title = "Roman Numerals"
+solved = false
+
+[90]
+title = "Cube Digit Pairs"
+solved = true
+
+[91]
+title = "Right Triangles with Integer Coordinates"
+solved = true
+
+[92]
+title = "Square Digit Chains"
+solved = true
+
+[93]
+title = "Arithmetic Expressions"
+solved = false
+
+[94]
+title = "Almost Equilateral Triangles"
+solved = false
+
+[95]
+title = "Amicable Chains"
+solved = false
+
+[96]
+title = "Su Doku"
+solved = false
+
+[97]
+title = "Large Non-Mersenne Prime"
+solved = true
+
+[98]
+title = "Anagramic Squares"
+solved = false
+
+[99]
+title = "Largest Exponential"
+solved = false
+
+[100]
+title = "Arranged Probability"
+solved = false
+
+[101]
+title = "Optimum Polynomial"
+solved = false
+
+[102]
+title = "Triangle Containment"
+solved = false
+
+[103]
+title = "Special Subset Sums: Optimum"
+solved = false
+
+[104]
+title = "Pandigital Fibonacci Ends"
+solved = true
+
+[105]
+title = "Special Subset Sums: Testing"
+solved = false
+
+[106]
+title = "Special Subset Sums: Meta-testing"
+solved = false
+
+[107]
+title = "Minimal Network"
+solved = false
+
+[108]
+title = "Diophantine Reciprocals I"
+solved = false
+
+[109]
+title = "Darts"
+solved = false
+
+[110]
+title = "Diophantine Reciprocals II"
+solved = false
+
+[111]
+title = "Primes with Runs"
+solved = false
+
+[112]
+title = "Bouncy Numbers"
+solved = false
+
+[113]
+title = "Non-bouncy Numbers"
+solved = false
+
+[114]
+title = "Counting Block Combinations I"
+solved = false
+
+[115]
+title = "Counting Block Combinations II"
+solved = false
+
+[116]
+title = "Red, Green or Blue Tiles"
+solved = false
+
+[117]
+title = "Red, Green, and Blue Tiles"
+solved = false
+
+[118]
+title = "Pandigital Prime Sets"
+solved = false
+
+[119]
+title = "Digit Power Sum"
+solved = true
+
+[120]
+title = "Square Remainders"
+solved = false
+
+[121]
+title = "Disc Game Prize Fund"
+solved = false
+
+[122]
+title = "Efficient Exponentiation"
+solved = false
+
+[123]
+title = "Prime Square Remainders"
+solved = false
+
+[124]
+title = "Ordered Radicals"
+solved = false
+
+[125]
+title = "Palindromic Sums"
+solved = false
+
+[126]
+title = "Cuboid Layers"
+solved = false
+
+[127]
+title = "abc-hits"
+solved = false
+
+[128]
+title = "Hexagonal Tile Differences"
+solved = false
+
+[129]
+title = "Repunit Divisibility"
+solved = false
+
+[130]
+title = "Composites with Prime Repunit Property"
+solved = false
+
+[131]
+title = "Prime Cube Partnership"
+solved = false
+
+[132]
+title = "Large Repunit Factors"
+solved = false
+
+[133]
+title = "Repunit Nonfactors"
+solved = false
+
+[134]
+title = "Prime Pair Connection"
+solved = false
+
+[135]
+title = "Same Differences"
+solved = false
+
+[136]
+title = "Singleton Difference"
+solved = false
+
+[137]
+title = "Fibonacci Golden Nuggets"
+solved = false
+
+[138]
+title = "Special Isosceles Triangles"
+solved = false
+
+[139]
+title = "Pythagorean Tiles"
+solved = false
+
+[140]
+title = "Modified Fibonacci Golden Nuggets"
+solved = false
+
+[141]
+title = "Square Progressive Numbers"
+solved = false
+
+[142]
+title = "Perfect Square Collection"
+solved = false
+
+[143]
+title = "Torricelli Triangles"
+solved = false
+
+[144]
+title = "Laser Beam Reflections "
+solved = false
+
+[145]
+title = "Reversible Numbers"
+solved = false
+
+[146]
+title = "Investigating a Prime Pattern "
+solved = false
+
+[147]
+title = "Rectangles in Cross-hatched Grids"
+solved = false
+
+[148]
+title = "Exploring Pascal's Triangle"
+solved = false
+
+[149]
+title = "Maximum-sum Subsequence"
+solved = false
+
+[150]
+title = "Sub-triangle Sums"
+solved = false
+
+[151]
+title = "A Preference for A5"
+solved = false
+
+[152]
+title = "Sums of Square Reciprocals"
+solved = false
+
+[153]
+title = "Investigating Gaussian Integers"
+solved = false
+
+[154]
+title = "Exploring Pascal's Pyramid"
+solved = false
+
+[155]
+title = "Counting Capacitor Circuits"
+solved = false
+
+[156]
+title = "Counting Digits"
+solved = false
+
+[157]
+title = "Base-10 Diophantine Reciprocal"
+solved = false
+
+[158]
+title = "Lexicographical Neighbours"
+solved = false
+
+[159]
+title = "Digital Root Sums of Factorisations"
+solved = false
+
+[160]
+title = "Factorial Trailing Digits"
+solved = true
+
+[161]
+title = "Triominoes"
+solved = false
+
+[162]
+title = "Hexadecimal Numbers"
+solved = false
+
+[163]
+title = "Cross-hatched Triangles"
+solved = false
+
+[164]
+title = "Three Consecutive Digital Sum Limit"
+solved = false
+
+[165]
+title = "Intersections"
+solved = false
+
+[166]
+title = "Criss Cross"
+solved = false
+
+[167]
+title = "Investigating Ulam Sequences"
+solved = false
+
+[168]
+title = "Number Rotations"
+solved = false
+
+[169]
+title = "Sums of Powers of Two"
+solved = false
+
+[170]
+title = "Pandigital Concatenating Products"
+solved = false
+
+[171]
+title = "Square Sum of the Digital Squares"
+solved = false
+
+[172]
+title = "Few Repeated Digits"
+solved = false
+
+[173]
+title = "Hollow Square Laminae I"
+solved = false
+
+[174]
+title = "Hollow Square Laminae II"
+solved = false
+
+[175]
+title = "Fractions and Sum of Powers of Two"
+solved = false
+
+[176]
+title = "Common Cathetus Right-angled Triangles"
+solved = false
+
+[177]
+title = "Integer Angled Quadrilaterals"
+solved = false
+
+[178]
+title = "Step Numbers"
+solved = false
+
+[179]
+title = "Consecutive Positive Divisors"
+solved = false
+
+[180]
+title = "Golden Triplets"
+solved = false
+
+[181]
+title = "Grouping Two Different Coloured Objects"
+solved = false
+
+[182]
+title = "RSA Encryption"
+solved = false
+
+[183]
+title = "Maximum Product of Parts"
+solved = false
+
+[184]
+title = "Triangles Containing the Origin"
+solved = false
+
+[185]
+title = "Number Mind"
+solved = false
+
+[186]
+title = "Connectedness of a Network"
+solved = false
+
+[187]
+title = "Semiprimes"
+solved = false
+
+[188]
+title = "Hyperexponentiation"
+solved = true
+
+[189]
+title = "Tri-colouring a Triangular Grid"
+solved = false
+
+[190]
+title = "Maximising a Weighted Product"
+solved = false
+
+[191]
+title = "Prize Strings"
+solved = false
+
+[192]
+title = "Best Approximations"
+solved = false
+
+[193]
+title = "Squarefree Numbers"
+solved = false
+
+[194]
+title = "Coloured Configurations"
+solved = false
+
+[195]
+title = "$60$-degree Triangle Inscribed Circles"
+solved = false
+
+[196]
+title = "Prime Triplets"
+solved = false
+
+[197]
+title = "A Recursively Defined Sequence"
+solved = false
+
+[198]
+title = "Ambiguous Numbers"
+solved = false
+
+[199]
+title = "Iterative Circle Packing"
+solved = false
+
+[200]
+title = "Prime-proof Squbes"
+solved = false
+
+[201]
+title = "Subsets with a Unique Sum"
+solved = false
+
+[202]
+title = "Laserbeam"
+solved = false
+
+[203]
+title = "Squarefree Binomial Coefficients"
+solved = false
+
+[204]
+title = "Generalised Hamming Numbers"
+solved = false
+
+[205]
+title = "Dice Game"
+solved = false
+
+[206]
+title = "Concealed Square"
+solved = true
+
+[207]
+title = "Integer Partition Equations"
+solved = false
+
+[208]
+title = "Robot Walks"
+solved = false
+
+[209]
+title = "Circular Logic"
+solved = false
+
+[210]
+title = "Obtuse Angled Triangles"
+solved = false
+
+[211]
+title = "Divisor Square Sum"
+solved = false
+
+[212]
+title = "Combined Volume of Cuboids"
+solved = false
+
+[213]
+title = "Flea Circus"
+solved = false
+
+[214]
+title = "Totient Chains"
+solved = false
+
+[215]
+title = "Crack-free Walls"
+solved = false
+
+[216]
+title = "The Primality of $2n^2 - 1$"
+solved = false
+
+[217]
+title = "Balanced Numbers"
+solved = false
+
+[218]
+title = "Perfect Right-angled Triangles"
+solved = false
+
+[219]
+title = "Skew-cost Coding"
+solved = false
+
+[220]
+title = "Heighway Dragon"
+solved = false
+
+[221]
+title = "Alexandrian Integers"
+solved = false
+
+[222]
+title = "Sphere Packing"
+solved = false
+
+[223]
+title = "Almost Right-angled Triangles I"
+solved = false
+
+[224]
+title = "Almost Right-angled Triangles II"
+solved = false
+
+[225]
+title = "Tribonacci Non-divisors"
+solved = false
+
+[226]
+title = "A Scoop of Blancmange"
+solved = false
+
+[227]
+title = "The Chase"
+solved = false
+
+[228]
+title = "Minkowski Sums"
+solved = false
+
+[229]
+title = "Four Representations Using Squares"
+solved = false
+
+[230]
+title = "Fibonacci Words"
+solved = false
+
+[231]
+title = "Prime Factorisation of Binomial Coefficients"
+solved = false
+
+[232]
+title = "The Race"
+solved = false
+
+[233]
+title = "Lattice Points on a Circle"
+solved = false
+
+[234]
+title = "Semidivisible Numbers"
+solved = false
+
+[235]
+title = "An Arithmetic Geometric Sequence"
+solved = false
+
+[236]
+title = "Luxury Hampers"
+solved = false
+
+[237]
+title = "Tours on a $4 \times N$ Playing Board"
+solved = false
+
+[238]
+title = "Infinite String Tour"
+solved = false
+
+[239]
+title = "Twenty-two Foolish Primes"
+solved = false
+
+[240]
+title = "Top Dice"
+solved = false
+
+[241]
+title = "Perfection Quotients"
+solved = false
+
+[242]
+title = "Odd Triplets"
+solved = false
+
+[243]
+title = "Resilience"
+solved = false
+
+[244]
+title = "Sliders"
+solved = false
+
+[245]
+title = "Coresilience"
+solved = false
+
+[246]
+title = "Tangents to an Ellipse"
+solved = false
+
+[247]
+title = "Squares Under a Hyperbola"
+solved = false
+
+[248]
+title = "Euler's Totient Function Equals 13!"
+solved = false
+
+[249]
+title = "Prime Subset Sums"
+solved = false
+
+[250]
+title = "$250250$"
+solved = false
+
+[251]
+title = "Cardano Triplets"
+solved = false
+
+[252]
+title = "Convex Holes"
+solved = false
+
+[253]
+title = "Tidying Up A"
+solved = false
+
+[254]
+title = "Sums of Digit Factorials"
+solved = false
+
+[255]
+title = "Rounded Square Roots"
+solved = false
+
+[256]
+title = "Tatami-Free Rooms"
+solved = false
+
+[257]
+title = "Angular Bisectors"
+solved = false
+
+[258]
+title = "A Lagged Fibonacci Sequence"
+solved = false
+
+[259]
+title = "Reachable Numbers"
+solved = false
+
+[260]
+title = "Stone Game"
+solved = false
+
+[261]
+title = "Pivotal Square Sums"
+solved = false
+
+[262]
+title = "Mountain Range"
+solved = false
+
+[263]
+title = "An Engineers' Dream Come True"
+solved = false
+
+[264]
+title = "Triangle Centres"
+solved = false
+
+[265]
+title = "Binary Circles"
+solved = false
+
+[266]
+title = "Pseudo Square Root"
+solved = false
+
+[267]
+title = "Billionaire"
+solved = false
+
+[268]
+title = "At Least Four Distinct Prime Factors Less Than 100"
+solved = false
+
+[269]
+title = "Polynomials with at Least One Integer Root"
+solved = false
+
+[270]
+title = "Cutting Squares"
+solved = false
+
+[271]
+title = "Modular Cubes, Part 1"
+solved = false
+
+[272]
+title = "Modular Cubes, Part 2"
+solved = false
+
+[273]
+title = "Sum of Squares"
+solved = false
+
+[274]
+title = "Divisibility Multipliers"
+solved = false
+
+[275]
+title = "Balanced Sculptures"
+solved = false
+
+[276]
+title = "Primitive Triangles"
+solved = false
+
+[277]
+title = "A Modified Collatz Sequence"
+solved = false
+
+[278]
+title = "Linear Combinations of Semiprimes"
+solved = false
+
+[279]
+title = "Triangles with Integral Sides and an Integral Angle "
+solved = false
+
+[280]
+title = "Ant and Seeds"
+solved = false
+
+[281]
+title = "Pizza Toppings"
+solved = false
+
+[282]
+title = "The Ackermann Function"
+solved = false
+
+[283]
+title = "Integer Sided Triangles with Integral Area/perimeter Ratio"
+solved = false
+
+[284]
+title = "Steady Squares"
+solved = false
+
+[285]
+title = "Pythagorean Odds"
+solved = false
+
+[286]
+title = "Scoring Probabilities"
+solved = false
+
+[287]
+title = "Quadtree Encoding (a Simple Compression Algorithm)"
+solved = false
+
+[288]
+title = "An Enormous Factorial"
+solved = false
+
+[289]
+title = "Eulerian Cycles"
+solved = false
+
+[290]
+title = "Digital Signature"
+solved = false
+
+[291]
+title = "Panaitopol Primes"
+solved = false
+
+[292]
+title = "Pythagorean Polygons"
+solved = false
+
+[293]
+title = "Pseudo-Fortunate Numbers"
+solved = false
+
+[294]
+title = "Sum of Digits - Experience #23"
+solved = false
+
+[295]
+title = "Lenticular Holes"
+solved = false
+
+[296]
+title = "Angular Bisector and Tangent"
+solved = false
+
+[297]
+title = "Zeckendorf Representation"
+solved = false
+
+[298]
+title = "Selective Amnesia"
+solved = false
+
+[299]
+title = "Three Similar Triangles"
+solved = false
+
+[300]
+title = "Protein Folding"
+solved = false
+
+[301]
+title = "Nim"
+solved = false
+
+[302]
+title = "Strong Achilles Numbers"
+solved = false
+
+[303]
+title = "Multiples with Small Digits"
+solved = false
+
+[304]
+title = "Primonacci"
+solved = true
+
+[305]
+title = "Reflexive Position"
+solved = false
+
+[306]
+title = "Paper-strip Game"
+solved = false
+
+[307]
+title = "Chip Defects"
+solved = false
+
+[308]
+title = "An Amazing Prime-generating Automaton"
+solved = false
+
+[309]
+title = "Integer Ladders"
+solved = false
+
+[310]
+title = "Nim Square"
+solved = false
+
+[311]
+title = "Biclinic Integral Quadrilaterals"
+solved = false
+
+[312]
+title = "Cyclic Paths on Sierpiński Graphs"
+solved = false
+
+[313]
+title = "Sliding Game"
+solved = false
+
+[314]
+title = "The Mouse on the Moon"
+solved = false
+
+[315]
+title = "Digital Root Clocks"
+solved = false
+
+[316]
+title = "Numbers in Decimal Expansions"
+solved = false
+
+[317]
+title = "Firecracker"
+solved = false
+
+[318]
+title = "2011 Nines"
+solved = false
+
+[319]
+title = "Bounded Sequences"
+solved = false
+
+[320]
+title = "Factorials Divisible by a Huge Integer"
+solved = false
+
+[321]
+title = "Swapping Counters"
+solved = false
+
+[322]
+title = "Binomial Coefficients Divisible by 10"
+solved = false
+
+[323]
+title = "Bitwise-OR Operations on Random Integers"
+solved = false
+
+[324]
+title = "Building a Tower"
+solved = false
+
+[325]
+title = "Stone Game II"
+solved = false
+
+[326]
+title = "Modulo Summations"
+solved = false
+
+[327]
+title = "Rooms of Doom"
+solved = false
+
+[328]
+title = "Lowest-cost Search"
+solved = false
+
+[329]
+title = "Prime Frog"
+solved = false
+
+[330]
+title = "Euler's Number"
+solved = false
+
+[331]
+title = "Cross Flips"
+solved = false
+
+[332]
+title = "Spherical Triangles"
+solved = false
+
+[333]
+title = "Special Partitions"
+solved = false
+
+[334]
+title = "Spilling the Beans"
+solved = false
+
+[335]
+title = "Gathering the Beans"
+solved = false
+
+[336]
+title = "Maximix Arrangements"
+solved = false
+
+[337]
+title = "Totient Stairstep Sequences"
+solved = false
+
+[338]
+title = "Cutting Rectangular Grid Paper"
+solved = false
+
+[339]
+title = "Peredur Fab Efrawg"
+solved = false
+
+[340]
+title = "Crazy Function"
+solved = false
+
+[341]
+title = "Golomb's Self-describing Sequence"
+solved = false
+
+[342]
+title = "The Totient of a Square Is a Cube"
+solved = false
+
+[343]
+title = "Fractional Sequences"
+solved = false
+
+[344]
+title = "Silver Dollar Game"
+solved = false
+
+[345]
+title = "Matrix Sum"
+solved = true
+
+[346]
+title = "Strong Repunits"
+solved = false
+
+[347]
+title = "Largest Integer Divisible by Two Primes"
+solved = false
+
+[348]
+title = "Sum of a Square and a Cube"
+solved = false
+
+[349]
+title = "Langton's Ant"
+solved = false
+
+[350]
+title = "Constraining the Least Greatest and the Greatest Least"
+solved = false
+
+[351]
+title = "Hexagonal Orchards"
+solved = false
+
+[352]
+title = "Blood Tests"
+solved = false
+
+[353]
+title = "Risky Moon"
+solved = false
+
+[354]
+title = "Distances in a Bee's Honeycomb "
+solved = false
+
+[355]
+title = "Maximal Coprime Subset"
+solved = false
+
+[356]
+title = "Largest Roots of Cubic Polynomials"
+solved = false
+
+[357]
+title = "Prime Generating Integers"
+solved = false
+
+[358]
+title = "Cyclic Numbers"
+solved = false
+
+[359]
+title = "Hilbert's New Hotel"
+solved = false
+
+[360]
+title = "Scary Sphere"
+solved = false
+
+[361]
+title = "Subsequence of Thue-Morse Sequence"
+solved = false
+
+[362]
+title = "Squarefree Factors"
+solved = false
+
+[363]
+title = "Bézier Curves"
+solved = false
+
+[364]
+title = "Comfortable Distance"
+solved = false
+
+[365]
+title = "A Huge Binomial Coefficient"
+solved = false
+
+[366]
+title = "Stone Game III"
+solved = false
+
+[367]
+title = "Bozo Sort"
+solved = false
+
+[368]
+title = "A Kempner-like Series"
+solved = false
+
+[369]
+title = "Badugi"
+solved = false
+
+[370]
+title = "Geometric Triangles"
+solved = false
+
+[371]
+title = "Licence Plates"
+solved = false
+
+[372]
+title = "Pencils of Rays"
+solved = false
+
+[373]
+title = "Circumscribed Circles"
+solved = false
+
+[374]
+title = "Maximum Integer Partition Product"
+solved = false
+
+[375]
+title = "Minimum of Subsequences"
+solved = false
+
+[376]
+title = "Nontransitive Sets of Dice"
+solved = false
+
+[377]
+title = "Sum of Digits - Experience #13"
+solved = false
+
+[378]
+title = "Triangle Triples"
+solved = false
+
+[379]
+title = "Least Common Multiple Count"
+solved = false
+
+[380]
+title = "Amazing Mazes!"
+solved = false
+
+[381]
+title = "$(\text{prime}-k)$ Factorial"
+solved = false
+
+[382]
+title = "Generating Polygons"
+solved = false
+
+[383]
+title = "Divisibility Comparison Between Factorials"
+solved = false
+
+[384]
+title = "Rudin-Shapiro Sequence"
+solved = false
+
+[385]
+title = "Ellipses Inside Triangles"
+solved = false
+
+[386]
+title = "Maximum Length of an Antichain"
+solved = false
+
+[387]
+title = "Harshad Numbers"
+solved = false
+
+[388]
+title = "Distinct Lines"
+solved = false
+
+[389]
+title = "Platonic Dice"
+solved = false
+
+[390]
+title = "Triangles with Non Rational Sides and Integral Area"
+solved = false
+
+[391]
+title = "Hopping Game"
+solved = false
+
+[392]
+title = "Enmeshed Unit Circle"
+solved = false
+
+[393]
+title = "Migrating Ants"
+solved = false
+
+[394]
+title = "Eating Pie"
+solved = false
+
+[395]
+title = "Pythagorean Tree"
+solved = false
+
+[396]
+title = "Weak Goodstein Sequence"
+solved = false
+
+[397]
+title = "Triangle on Parabola"
+solved = false
+
+[398]
+title = "Cutting Rope"
+solved = false
+
+[399]
+title = "Squarefree Fibonacci Numbers"
+solved = false
+
+[400]
+title = "Fibonacci Tree Game"
+solved = false
+
+[401]
+title = "Sum of Squares of Divisors"
+solved = false
+
+[402]
+title = "Integer-valued Polynomials"
+solved = false
+
+[403]
+title = "Lattice Points Enclosed by Parabola and Line"
+solved = false
+
+[404]
+title = "Crisscross Ellipses"
+solved = false
+
+[405]
+title = "A Rectangular Tiling"
+solved = false
+
+[406]
+title = "Guessing Game"
+solved = false
+
+[407]
+title = "Idempotents"
+solved = false
+
+[408]
+title = "Admissible Paths Through a Grid"
+solved = false
+
+[409]
+title = "Nim Extreme"
+solved = false
+
+[410]
+title = "Circle and Tangent Line"
+solved = false
+
+[411]
+title = "Uphill Paths"
+solved = false
+
+[412]
+title = "Gnomon Numbering"
+solved = false
+
+[413]
+title = "One-child Numbers"
+solved = false
+
+[414]
+title = "Kaprekar Constant"
+solved = false
+
+[415]
+title = "Titanic Sets"
+solved = false
+
+[416]
+title = "A Frog's Trip"
+solved = false
+
+[417]
+title = "Reciprocal Cycles II"
+solved = false
+
+[418]
+title = "Factorisation Triples"
+solved = false
+
+[419]
+title = "Look and Say Sequence"
+solved = false
+
+[420]
+title = "$2 \times 2$ Positive Integer Matrix"
+solved = false
+
+[421]
+title = "Prime Factors of $n^{15}+1$"
+solved = false
+
+[422]
+title = "Sequence of Points on a Hyperbola"
+solved = false
+
+[423]
+title = "Consecutive Die Throws"
+solved = false
+
+[424]
+title = "Kakuro"
+solved = false
+
+[425]
+title = "Prime Connection"
+solved = false
+
+[426]
+title = "Box-Ball System"
+solved = false
+
+[427]
+title = "$n$-sequences"
+solved = false
+
+[428]
+title = "Necklace of Circles"
+solved = false
+
+[429]
+title = "Sum of Squares of Unitary Divisors"
+solved = false
+
+[430]
+title = "Range Flips"
+solved = false
+
+[431]
+title = "Square Space Silo"
+solved = false
+
+[432]
+title = "Totient Sum"
+solved = false
+
+[433]
+title = "Steps in Euclid's Algorithm"
+solved = false
+
+[434]
+title = "Rigid Graphs"
+solved = false
+
+[435]
+title = "Polynomials of Fibonacci Numbers"
+solved = false
+
+[436]
+title = "Unfair Wager"
+solved = false
+
+[437]
+title = "Fibonacci Primitive Roots"
+solved = false
+
+[438]
+title = "Integer Part of Polynomial Equation's Solutions"
+solved = false
+
+[439]
+title = "Sum of Sum of Divisors"
+solved = false
+
+[440]
+title = "GCD and Tiling"
+solved = false
+
+[441]
+title = "The Inverse Summation of Coprime Couples"
+solved = false
+
+[442]
+title = "Eleven-free Integers"
+solved = false
+
+[443]
+title = "GCD Sequence"
+solved = false
+
+[444]
+title = "The Roundtable Lottery"
+solved = false
+
+[445]
+title = "Retractions A"
+solved = false
+
+[446]
+title = "Retractions B"
+solved = false
+
+[447]
+title = "Retractions C"
+solved = false
+
+[448]
+title = "Average Least Common Multiple"
+solved = false
+
+[449]
+title = "Chocolate Covered Candy"
+solved = false
+
+[450]
+title = "Hypocycloid and Lattice Points"
+solved = false
+
+[451]
+title = "Modular Inverses"
+solved = false
+
+[452]
+title = "Long Products"
+solved = false
+
+[453]
+title = "Lattice Quadrilaterals"
+solved = false
+
+[454]
+title = "Diophantine Reciprocals III"
+solved = false
+
+[455]
+title = "Powers with Trailing Digits"
+solved = true
+
+[456]
+title = "Triangles Containing the Origin II"
+solved = false
+
+[457]
+title = "A Polynomial Modulo the Square of a Prime"
+solved = false
+
+[458]
+title = "Permutations of Project"
+solved = false
+
+[459]
+title = "Flipping Game"
+solved = false
+
+[460]
+title = "An Ant on the Move"
+solved = false
+
+[461]
+title = "Almost Pi"
+solved = false
+
+[462]
+title = "Permutation of 3-smooth Numbers"
+solved = false
+
+[463]
+title = "A Weird Recurrence Relation"
+solved = false
+
+[464]
+title = "Möbius Function and Intervals"
+solved = false
+
+[465]
+title = "Polar Polygons"
+solved = false
+
+[466]
+title = "Distinct Terms in a Multiplication Table"
+solved = false
+
+[467]
+title = "Superinteger"
+solved = false
+
+[468]
+title = "Smooth Divisors of Binomial Coefficients"
+solved = false
+
+[469]
+title = "Empty Chairs"
+solved = false
+
+[470]
+title = "Super Ramvok"
+solved = false
+
+[471]
+title = "Triangle Inscribed in Ellipse"
+solved = false
+
+[472]
+title = "Comfortable Distance II"
+solved = false
+
+[473]
+title = "Phigital Number Base"
+solved = false
+
+[474]
+title = "Last Digits of Divisors"
+solved = false
+
+[475]
+title = "Music Festival"
+solved = false
+
+[476]
+title = "Circle Packing II"
+solved = false
+
+[477]
+title = "Number Sequence Game"
+solved = false
+
+[478]
+title = "Mixtures"
+solved = false
+
+[479]
+title = "Roots on the Rise"
+solved = false
+
+[480]
+title = "The Last Question"
+solved = false
+
+[481]
+title = "Chef Showdown"
+solved = false
+
+[482]
+title = "The Incenter of a Triangle"
+solved = false
+
+[483]
+title = "Repeated Permutation"
+solved = false
+
+[484]
+title = "Arithmetic Derivative"
+solved = false
+
+[485]
+title = "Maximum Number of Divisors"
+solved = false
+
+[486]
+title = "Palindrome-containing Strings"
+solved = false
+
+[487]
+title = "Sums of Power Sums"
+solved = false
+
+[488]
+title = "Unbalanced Nim"
+solved = false
+
+[489]
+title = "Common Factors Between Two Sequences"
+solved = false
+
+[490]
+title = "Jumping Frog"
+solved = false
+
+[491]
+title = "Double Pandigital Number Divisible by $11$"
+solved = false
+
+[492]
+title = "Exploding Sequence"
+solved = false
+
+[493]
+title = "Under the Rainbow"
+solved = false
+
+[494]
+title = "Collatz Prefix Families"
+solved = false
+
+[495]
+title = "Writing $n$ as the Product of $k$ Distinct Positive Integers"
+solved = false
+
+[496]
+title = "Incenter and Circumcenter of Triangle"
+solved = false
+
+[497]
+title = "Drunken Tower of Hanoi"
+solved = false
+
+[498]
+title = "Remainder of Polynomial Division"
+solved = false
+
+[499]
+title = "St. Petersburg Lottery"
+solved = false
+
+[500]
+title = "Problem 500!!!"
+solved = true
+
+[501]
+title = "Eight Divisors"
+solved = false
+
+[502]
+title = "Counting Castles"
+solved = false
+
+[503]
+title = "Compromise or Persist"
+solved = false
+
+[504]
+title = "Square on the Inside"
+solved = false
+
+[505]
+title = "Bidirectional Recurrence"
+solved = false
+
+[506]
+title = "Clock Sequence"
+solved = false
+
+[507]
+title = "Shortest Lattice Vector"
+solved = false
+
+[508]
+title = "Integers in Base $i-1$"
+solved = false
+
+[509]
+title = "Divisor Nim"
+solved = false
+
+[510]
+title = "Tangent Circles"
+solved = false
+
+[511]
+title = "Sequences with Nice Divisibility Properties"
+solved = false
+
+[512]
+title = "Sums of Totients of Powers"
+solved = false
+
+[513]
+title = "Integral Median"
+solved = false
+
+[514]
+title = "Geoboard Shapes"
+solved = false
+
+[515]
+title = "Dissonant Numbers"
+solved = false
+
+[516]
+title = "$5$-smooth Totients"
+solved = false
+
+[517]
+title = "A Real Recursion"
+solved = false
+
+[518]
+title = "Prime Triples and Geometric Sequences"
+solved = false
+
+[519]
+title = "Tricoloured Coin Fountains"
+solved = false
+
+[520]
+title = "Simbers"
+solved = false
+
+[521]
+title = "Smallest Prime Factor"
+solved = false
+
+[522]
+title = "Hilbert's Blackout"
+solved = false
+
+[523]
+title = "First Sort I"
+solved = false
+
+[524]
+title = "First Sort II"
+solved = false
+
+[525]
+title = "Rolling Ellipse"
+solved = false
+
+[526]
+title = "Largest Prime Factors of Consecutive Numbers"
+solved = false
+
+[527]
+title = "Randomized Binary Search"
+solved = false
+
+[528]
+title = "Constrained Sums"
+solved = false
+
+[529]
+title = "$10$-substrings"
+solved = false
+
+[530]
+title = "GCD of Divisors"
+solved = false
+
+[531]
+title = "Chinese Leftovers"
+solved = false
+
+[532]
+title = "Nanobots on Geodesics"
+solved = false
+
+[533]
+title = "Minimum Values of the Carmichael Function"
+solved = false
+
+[534]
+title = "Weak Queens"
+solved = false
+
+[535]
+title = "Fractal Sequence"
+solved = false
+
+[536]
+title = "Modulo Power Identity "
+solved = false
+
+[537]
+title = "Counting Tuples"
+solved = false
+
+[538]
+title = "Maximum Quadrilaterals"
+solved = false
+
+[539]
+title = "Odd Elimination"
+solved = false
+
+[540]
+title = "Counting Primitive Pythagorean Triples"
+solved = false
+
+[541]
+title = "Divisibility of Harmonic Number Denominators"
+solved = false
+
+[542]
+title = "Geometric Progression with Maximum Sum"
+solved = false
+
+[543]
+title = "Prime-Sum Numbers"
+solved = false
+
+[544]
+title = "Chromatic Conundrum"
+solved = false
+
+[545]
+title = "Faulhaber's Formulas"
+solved = false
+
+[546]
+title = "The Floor's Revenge"
+solved = false
+
+[547]
+title = "Distance of Random Points Within Hollow Square Laminae"
+solved = false
+
+[548]
+title = "Gozinta Chains"
+solved = false
+
+[549]
+title = "Divisibility of Factorials"
+solved = false
+
+[550]
+title = "Divisor Game"
+solved = false
+
+[551]
+title = "Sum of Digits Sequence"
+solved = false
+
+[552]
+title = "Chinese Leftovers II"
+solved = false
+
+[553]
+title = "Power Sets of Power Sets"
+solved = false
+
+[554]
+title = "Centaurs on a Chess Board"
+solved = false
+
+[555]
+title = "McCarthy 91 Function"
+solved = false
+
+[556]
+title = "Squarefree Gaussian Integers"
+solved = false
+
+[557]
+title = "Cutting Triangles"
+solved = false
+
+[558]
+title = "Irrational Base"
+solved = false
+
+[559]
+title = "Permuted Matrices"
+solved = false
+
+[560]
+title = "Coprime Nim"
+solved = false
+
+[561]
+title = "Divisor Pairs"
+solved = false
+
+[562]
+title = "Maximal Perimeter"
+solved = false
+
+[563]
+title = "Robot Welders"
+solved = false
+
+[564]
+title = "Maximal Polygons"
+solved = false
+
+[565]
+title = "Divisibility of Sum of Divisors"
+solved = false
+
+[566]
+title = "Cake Icing Puzzle"
+solved = false
+
+[567]
+title = "Reciprocal Games I"
+solved = false
+
+[568]
+title = "Reciprocal Games II"
+solved = false
+
+[569]
+title = "Prime Mountain Range"
+solved = false
+
+[570]
+title = "Snowflakes"
+solved = false
+
+[571]
+title = "Super Pandigital Numbers"
+solved = false
+
+[572]
+title = "Idempotent Matrices"
+solved = false
+
+[573]
+title = "Unfair Race"
+solved = false
+
+[574]
+title = "Verifying Primes"
+solved = false
+
+[575]
+title = "Wandering Robots"
+solved = false
+
+[576]
+title = "Irrational Jumps"
+solved = false
+
+[577]
+title = "Counting Hexagons"
+solved = false
+
+[578]
+title = "Integers with Decreasing Prime Powers"
+solved = false
+
+[579]
+title = "Lattice Points in Lattice Cubes"
+solved = false
+
+[580]
+title = "Squarefree Hilbert Numbers"
+solved = false
+
+[581]
+title = "$47$-smooth Triangular Numbers"
+solved = false
+
+[582]
+title = "Nearly Isosceles $120$ Degree Triangles"
+solved = false
+
+[583]
+title = "Heron Envelopes"
+solved = false
+
+[584]
+title = "Birthday Problem Revisited"
+solved = false
+
+[585]
+title = "Nested Square Roots"
+solved = false
+
+[586]
+title = "Binary Quadratic Form"
+solved = false
+
+[587]
+title = "Concave Triangle"
+solved = false
+
+[588]
+title = "Quintinomial Coefficients"
+solved = false
+
+[589]
+title = "Poohsticks Marathon"
+solved = false
+
+[590]
+title = "Sets with a Given Least Common Multiple"
+solved = false
+
+[591]
+title = "Best Approximations by Quadratic Integers"
+solved = false
+
+[592]
+title = "Factorial Trailing Digits 2"
+solved = false
+
+[593]
+title = "Fleeting Medians"
+solved = false
+
+[594]
+title = "Rhombus Tilings"
+solved = false
+
+[595]
+title = "Incremental Random Sort"
+solved = false
+
+[596]
+title = "Number of Lattice Points in a Hyperball"
+solved = false
+
+[597]
+title = "Torpids"
+solved = false
+
+[598]
+title = "Split Divisibilities"
+solved = false
+
+[599]
+title = "Distinct Colourings of a Rubik's Cube"
+solved = false
+
+[600]
+title = "Integer Sided Equiangular Hexagons"
+solved = false
+
+[601]
+title = "Divisibility Streaks"
+solved = false
+
+[602]
+title = "Product of Head Counts"
+solved = false
+
+[603]
+title = "Substring Sums of Prime Concatenations"
+solved = false
+
+[604]
+title = "Convex Path in Square"
+solved = false
+
+[605]
+title = "Pairwise Coin-Tossing Game"
+solved = false
+
+[606]
+title = "Gozinta Chains II"
+solved = false
+
+[607]
+title = "Marsh Crossing"
+solved = false
+
+[608]
+title = "Divisor Sums"
+solved = false
+
+[609]
+title = "$\pi$ Sequences"
+solved = false
+
+[610]
+title = "Roman Numerals II"
+solved = false
+
+[611]
+title = "Hallway of Square Steps"
+solved = false
+
+[612]
+title = "Friend Numbers"
+solved = false
+
+[613]
+title = "Pythagorean Ant"
+solved = false
+
+[614]
+title = "Special Partitions 2"
+solved = false
+
+[615]
+title = "The Millionth Number with at Least One Million Prime Factors"
+solved = false
+
+[616]
+title = "Creative Numbers"
+solved = false
+
+[617]
+title = "Mirror Power Sequence"
+solved = false
+
+[618]
+title = "Numbers with a Given Prime Factor Sum"
+solved = false
+
+[619]
+title = "Square Subsets"
+solved = false
+
+[620]
+title = "Planetary Gears"
+solved = false
+
+[621]
+title = "Expressing an Integer as the Sum of Triangular Numbers"
+solved = false
+
+[622]
+title = "Riffle Shuffles"
+solved = false
+
+[623]
+title = "Lambda Count"
+solved = false
+
+[624]
+title = "Two Heads Are Better Than One"
+solved = false
+
+[625]
+title = "Gcd Sum"
+solved = false
+
+[626]
+title = "Counting Binary Matrices"
+solved = false
+
+[627]
+title = "Counting Products"
+solved = false
+
+[628]
+title = "Open Chess Positions"
+solved = false
+
+[629]
+title = "Scatterstone Nim"
+solved = false
+
+[630]
+title = "Crossed Lines"
+solved = false
+
+[631]
+title = "Constrained Permutations"
+solved = false
+
+[632]
+title = "Square Prime Factors"
+solved = false
+
+[633]
+title = "Square Prime Factors II"
+solved = false
+
+[634]
+title = "Numbers of the Form $a^2b^3$"
+solved = false
+
+[635]
+title = "Subset Sums"
+solved = false
+
+[636]
+title = "Restricted Factorisations"
+solved = false
+
+[637]
+title = "Flexible Digit Sum"
+solved = false
+
+[638]
+title = "Weighted Lattice Paths"
+solved = false
+
+[639]
+title = "Summing a Multiplicative Function"
+solved = false
+
+[640]
+title = "Shut the Box"
+solved = false
+
+[641]
+title = "A Long Row of Dice"
+solved = false
+
+[642]
+title = "Sum of Largest Prime Factors"
+solved = false
+
+[643]
+title = "$2$-Friendly"
+solved = false
+
+[644]
+title = "Squares on the Line"
+solved = false
+
+[645]
+title = "Every Day Is a Holiday"
+solved = false
+
+[646]
+title = "Bounded Divisors"
+solved = false
+
+[647]
+title = "Linear Transformations of Polygonal Numbers"
+solved = false
+
+[648]
+title = "Skipping Squares"
+solved = false
+
+[649]
+title = "Low-Prime Chessboard Nim"
+solved = false
+
+[650]
+title = "Divisors of Binomial Product"
+solved = false
+
+[651]
+title = "Patterned Cylinders"
+solved = false
+
+[652]
+title = "Distinct Values of a Proto-logarithmic Function"
+solved = false
+
+[653]
+title = "Frictionless Tube"
+solved = false
+
+[654]
+title = "Neighbourly Constraints"
+solved = false
+
+[655]
+title = "Divisible Palindromes"
+solved = false
+
+[656]
+title = "Palindromic Sequences"
+solved = false
+
+[657]
+title = "Incomplete Words"
+solved = false
+
+[658]
+title = "Incomplete Words II"
+solved = false
+
+[659]
+title = "Largest Prime"
+solved = true
+
+[660]
+title = "Pandigital Triangles"
+solved = false
+
+[661]
+title = "A Long Chess Match"
+solved = false
+
+[662]
+title = "Fibonacci Paths"
+solved = false
+
+[663]
+title = "Sums of Subarrays"
+solved = false
+
+[664]
+title = "An Infinite Game"
+solved = false
+
+[665]
+title = "Proportionate Nim"
+solved = false
+
+[666]
+title = "Polymorphic Bacteria"
+solved = false
+
+[667]
+title = "Moving Pentagon"
+solved = false
+
+[668]
+title = "Square Root Smooth Numbers"
+solved = false
+
+[669]
+title = "The King's Banquet"
+solved = false
+
+[670]
+title = "Colouring a Strip"
+solved = false
+
+[671]
+title = "Colouring a Loop"
+solved = false
+
+[672]
+title = "One More One"
+solved = false
+
+[673]
+title = "Beds and Desks"
+solved = false
+
+[674]
+title = "Solving $\mathcal{I}$-equations"
+solved = false
+
+[675]
+title = "$2^{\omega(n)}$"
+solved = false
+
+[676]
+title = "Matching Digit Sums"
+solved = false
+
+[677]
+title = "Coloured Graphs"
+solved = false
+
+[678]
+title = "Fermat-like Equations"
+solved = false
+
+[679]
+title = "Freefarea"
+solved = false
+
+[680]
+title = "Yarra Gnisrever"
+solved = false
+
+[681]
+title = "Maximal Area"
+solved = false
+
+[682]
+title = "$5$-Smooth Pairs"
+solved = false
+
+[683]
+title = "The Chase II"
+solved = false
+
+[684]
+title = "Inverse Digit Sum"
+solved = false
+
+[685]
+title = "Inverse Digit Sum II"
+solved = false
+
+[686]
+title = "Powers of Two"
+solved = false
+
+[687]
+title = "Shuffling Cards"
+solved = false
+
+[688]
+title = "Piles of Plates"
+solved = false
+
+[689]
+title = "Binary Series"
+solved = false
+
+[690]
+title = "Tom and Jerry"
+solved = false
+
+[691]
+title = "Long Substring with Many Repetitions"
+solved = false
+
+[692]
+title = "Siegbert and Jo"
+solved = false
+
+[693]
+title = "Finite Sequence Generator"
+solved = false
+
+[694]
+title = "Cube-full Divisors"
+solved = false
+
+[695]
+title = "Random Rectangles"
+solved = false
+
+[696]
+title = "Mahjong"
+solved = false
+
+[697]
+title = "Randomly Decaying Sequence"
+solved = false
+
+[698]
+title = "123 Numbers"
+solved = false
+
+[699]
+title = "Triffle Numbers"
+solved = false
+
+[700]
+title = "Eulercoin"
+solved = false
+
+[701]
+title = "Random Connected Area"
+solved = false
+
+[702]
+title = "Jumping Flea"
+solved = false
+
+[703]
+title = "Circular Logic II"
+solved = false
+
+[704]
+title = "Factors of Two in Binomial Coefficients"
+solved = false
+
+[705]
+title = "Total Inversion Count of Divided Sequences"
+solved = false
+
+[706]
+title = "$3$-Like Numbers"
+solved = false
+
+[707]
+title = "Lights Out"
+solved = false
+
+[708]
+title = "Twos Are All You Need"
+solved = false
+
+[709]
+title = "Even Stevens"
+solved = false
+
+[710]
+title = "One Million Members"
+solved = false
+
+[711]
+title = "Binary Blackboard"
+solved = false
+
+[712]
+title = "Exponent Difference"
+solved = false
+
+[713]
+title = "Turán's Water Heating System"
+solved = false
+
+[714]
+title = "Duodigits"
+solved = false
+
+[715]
+title = "Sextuplet Norms"
+solved = false
+
+[716]
+title = "Grid Graphs"
+solved = false
+
+[717]
+title = "Summation of a Modular Formula"
+solved = false
+
+[718]
+title = "Unreachable Numbers"
+solved = false
+
+[719]
+title = "Number Splitting"
+solved = false
+
+[720]
+title = "Unpredictable Permutations"
+solved = false
+
+[721]
+title = "High Powers of Irrational Numbers"
+solved = false
+
+[722]
+title = "Slowly Converging Series"
+solved = false
+
+[723]
+title = "Pythagorean Quadrilaterals"
+solved = false
+
+[724]
+title = "Drone Delivery"
+solved = false
+
+[725]
+title = "Digit Sum Numbers"
+solved = true
+
+[726]
+title = "Falling Bottles"
+solved = false
+
+[727]
+title = "Triangle of Circular Arcs"
+solved = false
+
+[728]
+title = "Circle of Coins"
+solved = false
+
+[729]
+title = "Range of Periodic Sequence"
+solved = false
+
+[730]
+title = "Shifted Pythagorean Triples"
+solved = false
+
+[731]
+title = "A Stoneham Number"
+solved = false
+
+[732]
+title = "Standing on the Shoulders of Trolls"
+solved = false
+
+[733]
+title = "Ascending Subsequences"
+solved = false
+
+[734]
+title = "A Bit of Prime"
+solved = false
+
+[735]
+title = "Divisors of $2n^2$"
+solved = false
+
+[736]
+title = "Paths to Equality"
+solved = false
+
+[737]
+title = "Coin Loops"
+solved = false
+
+[738]
+title = "Counting Ordered Factorisations"
+solved = false
+
+[739]
+title = "Summation of Summations"
+solved = false
+
+[740]
+title = "Secret Santa"
+solved = false
+
+[741]
+title = "Binary Grid Colouring"
+solved = false
+
+[742]
+title = "Minimum Area of a Convex Grid Polygon"
+solved = false
+
+[743]
+title = "Window into a Matrix"
+solved = false
+
+[744]
+title = "What? Where? When?"
+solved = false
+
+[745]
+title = "Sum of Squares II"
+solved = false
+
+[746]
+title = "A Messy Dinner"
+solved = false
+
+[747]
+title = "Triangular Pizza"
+solved = false
+
+[748]
+title = "Upside Down Diophantine Equation"
+solved = false
+
+[749]
+title = "Near Power Sums"
+solved = false
+
+[750]
+title = "Optimal Card Stacking"
+solved = false
+
+[751]
+title = "Concatenation Coincidence"
+solved = false
+
+[752]
+title = "Powers of $1+\sqrt 7$"
+solved = false
+
+[753]
+title = "Fermat Equation"
+solved = false
+
+[754]
+title = "Product of Gauss Factorials"
+solved = false
+
+[755]
+title = "Not Zeckendorf"
+solved = false
+
+[756]
+title = "Approximating a Sum"
+solved = false
+
+[757]
+title = "Stealthy Numbers"
+solved = false
+
+[758]
+title = "Buckets of Water"
+solved = false
+
+[759]
+title = "A Squared Recurrence Relation"
+solved = false
+
+[760]
+title = "Sum over Bitwise Operators"
+solved = false
+
+[761]
+title = "Runner and Swimmer"
+solved = false
+
+[762]
+title = "Amoebas in a 2D Grid"
+solved = false
+
+[763]
+title = "Amoebas in a 3D Grid"
+solved = false
+
+[764]
+title = "Asymmetric Diophantine Equation"
+solved = false
+
+[765]
+title = "Trillionaire"
+solved = false
+
+[766]
+title = "Sliding Block Puzzle"
+solved = false
+
+[767]
+title = "Window into a Matrix II"
+solved = false
+
+[768]
+title = "Chandelier"
+solved = false
+
+[769]
+title = "Binary Quadratic Form II"
+solved = false
+
+[770]
+title = "Delphi Flip"
+solved = false
+
+[771]
+title = "Pseudo Geometric Sequences"
+solved = false
+
+[772]
+title = "Balanceable $k$-bounded Partitions"
+solved = false
+
+[773]
+title = "Ruff Numbers"
+solved = false
+
+[774]
+title = "Conjunctive Sequences"
+solved = false
+
+[775]
+title = "Saving Paper"
+solved = false
+
+[776]
+title = "Digit Sum Division"
+solved = false
+
+[777]
+title = "Lissajous Curves"
+solved = false
+
+[778]
+title = "Freshman's Product"
+solved = false
+
+[779]
+title = "Prime Factor and Exponent"
+solved = false
+
+[780]
+title = "Toriangulations"
+solved = false
+
+[781]
+title = "Feynman Diagrams"
+solved = false
+
+[782]
+title = "Distinct Rows and Columns"
+solved = false
+
+[783]
+title = "Urns"
+solved = false
+
+[784]
+title = "Reciprocal Pairs"
+solved = false
+
+[785]
+title = "Symmetric Diophantine Equation"
+solved = false
+
+[786]
+title = "Billiard"
+solved = false
+
+[787]
+title = "Bézout's Game"
+solved = false
+
+[788]
+title = "Dominating Numbers"
+solved = false
+
+[789]
+title = "Minimal Pairing Modulo $p$"
+solved = false
+
+[790]
+title = "Clock Grid"
+solved = false
+
+[791]
+title = "Average and Variance"
+solved = false
+
+[792]
+title = "Too Many Twos"
+solved = false
+
+[793]
+title = "Median of Products"
+solved = false
+
+[794]
+title = "Seventeen Points"
+solved = false
+
+[795]
+title = "Alternating GCD Sum"
+solved = false
+
+[796]
+title = "A Grand Shuffle"
+solved = false
+
+[797]
+title = "Cyclogenic Polynomials"
+solved = false
+
+[798]
+title = "Card Stacking Game"
+solved = false
+
+[799]
+title = "Pentagonal Puzzle"
+solved = false
+
+[800]
+title = "Hybrid Integers"
+solved = true
+
+[801]
+title = "$x^y \equiv y^x$"
+solved = false
+
+[802]
+title = "Iterated Composition"
+solved = false
+
+[803]
+title = "Pseudorandom Sequence"
+solved = false
+
+[804]
+title = "Counting Binary Quadratic Representations"
+solved = false
+
+[805]
+title = "Shifted Multiples"
+solved = false
+
+[806]
+title = "Nim on Towers of Hanoi"
+solved = false
+
+[807]
+title = "Loops of Ropes"
+solved = false
+
+[808]
+title = "Reversible Prime Squares"
+solved = true
+
+[809]
+title = "Rational Recurrence Relation "
+solved = false
+
+[810]
+title = "XOR-Primes"
+solved = false
+
+[811]
+title = "Bitwise Recursion"
+solved = false
+
+[812]
+title = "Dynamical Polynomials"
+solved = false
+
+[813]
+title = "XOR-Powers"
+solved = false
+
+[814]
+title = "Mezzo-forte"
+solved = false
+
+[815]
+title = "Group by Value"
+solved = false
+
+[816]
+title = "Shortest Distance Among Points"
+solved = false
+
+[817]
+title = "Digits in Squares"
+solved = false
+
+[818]
+title = "SET"
+solved = false
+
+[819]
+title = "Iterative Sampling"
+solved = false
+
+[821]
+title = "123-Separable"
+solved = false
+
+[822]
+title = "Square the Smallest"
+solved = false
+
+[823]
+title = "Factor Shuffle"
+solved = false
+
+[824]
+title = "Chess Sliders"
+solved = false
+
+[825]
+title = "Chasing Game"
+solved = false
+
+[826]
+title = "Birds on a Wire"
+solved = false
+
+[827]
+title = "Pythagorean Triple Occurrence"
+solved = false
+
+[828]
+title = "Numbers Challenge"
+solved = false
+
+[829]
+title = "Integral Fusion"
+solved = false
+
+[830]
+title = "Binomials and Powers"
+solved = false
+
+[831]
+title = "Triple Product"
+solved = true
+
+[832]
+title = "Mex Sequence"
+solved = false
+
+[833]
+title = "Square Triangle Products"
+solved = false
+
+[834]
+title = "Add and Divide"
+solved = false
+
+[835]
+title = "Supernatural Triangles"
+solved = false
+
+[836]
+title = "A Bold Proposition"
+solved = false
+
+[837]
+title = "Amidakuji"
+solved = false
+
+[838]
+title = "Not Coprime"
+solved = false
+
+[839]
+title = "Beans in Bowls"
+solved = false
+
+[840]
+title = "Sum of Products"
+solved = false
+
+[841]
+title = "Regular Star Polygons"
+solved = false
+
+[842]
+title = "Irregular Star Polygons"
+solved = false
+
+[843]
+title = "Periodic Circles"
+solved = false
+
+[844]
+title = "$k$-Markov Numbers"
+solved = false
+
+[845]
+title = "Prime Digit Sum"
+solved = false
+
+[846]
+title = "Magic Bracelets"
+solved = false
+
+[847]
+title = "Jack's Bean"
+solved = false
+
+[848]
+title = "Guessing with Sets"
+solved = false
+
+[849]
+title = "The Tournament"
+solved = true
+
+[850]
+title = "Fractions of Powers"
+solved = false
+
+[851]
+title = "SOP and POS"
+solved = false
+
+[852]
+title = "Coins in a Box"
+solved = false
+
+[853]
+title = "Pisano Periods 1"
+solved = false
+
+[854]
+title = "Pisano Periods 2"
+solved = false
+
+[855]
+title = "Delphi Paper"
+solved = false
+
+[856]
+title = "Waiting for a Pair"
+solved = false
+
+[857]
+title = "Beautiful Graphs"
+solved = false
+
+[858]
+title = "LCM"
+solved = false
+
+[859]
+title = "Cookie Game"
+solved = false
+
+[860]
+title = "Gold and Silver Coin Game"
+solved = false
+
+[861]
+title = "Products of Bi-Unitary Divisors"
+solved = false
+
+[862]
+title = "Larger Digit Permutation"
+solved = false
+
+[863]
+title = "Different Dice"
+solved = false
+
+[864]
+title = "Square + 1 = Squarefree"
+solved = false
+
+[865]
+title = "Triplicate Numbers"
+solved = false
+
+[866]
+title = "Tidying Up B"
+solved = false
+
+[867]
+title = "Tiling Dodecagon"
+solved = false
+
+[868]
+title = "Belfry Maths"
+solved = false
+
+[869]
+title = "Prime Guessing"
+solved = false
+
+[870]
+title = "Stone Game IV"
+solved = false
+
+[871]
+title = "Drifting Subsets"
+solved = false
+
+[872]
+title = "Recursive Tree"
+solved = false
+
+[873]
+title = "Words with Gaps"
+solved = false
+
+[874]
+title = "Maximal Prime Score"
+solved = false
+
+[875]
+title = "Quadruple Congruence"
+solved = false
+
+[876]
+title = "Triplet Tricks"
+solved = false
+
+[877]
+title = "XOR-Equation A"
+solved = false
+
+[878]
+title = "XOR-Equation B"
+solved = false
+
+[879]
+title = "Touch-screen Password"
+solved = false
+
+[880]
+title = "Nested Radicals"
+solved = false
+
+[881]
+title = "Divisor Graph Width"
+solved = false
+
+[882]
+title = "Removing Bits"
+solved = false
+
+[883]
+title = "Remarkable Triangles"
+solved = false
+
+[884]
+title = "Removing Cubes"
+solved = false
+
+[885]
+title = "Sorted Digits"
+solved = false
+
+[886]
+title = "Coprime Permutations"
+solved = false
+
+[887]
+title = "Bounded Binary Search"
+solved = false
+
+[888]
+title = "1249 Nim"
+solved = false
+
+[889]
+title = "Rational Blancmange"
+solved = false
+
+[890]
+title = "Binary Partitions"
+solved = false
+
+[891]
+title = "Ambiguous Clock"
+solved = false
+
+[892]
+title = "Zebra Circles"
+solved = false
+
+[893]
+title = "Matchsticks"
+solved = false
+
+[894]
+title = "Spiral of Circles"
+solved = false
+
+[895]
+title = "Gold &amp; Silver Coin Game II"
+solved = false
+
+[896]
+title = "Divisible Ranges"
+solved = false
+
+[897]
+title = "Maximal $n$-gon in a region"
+solved = false
+
+[898]
+title = "Claire Voyant"
+solved = false
+
+[899]
+title = "DistribuNim I"
+solved = false
+
+[900]
+title = "DistribuNim II"
+solved = false
+
+[901]
+title = "Well Drilling"
+solved = false
+
+[902]
+title = "Permutation Powers"
+solved = false
+
+[903]
+title = "Total Permutation Powers"
+solved = false
+
+[904]
+title = "Pythagorean Angle"
+solved = false
+
+[905]
+title = "Now I Know"
+solved = false
+
+[906]
+title = "A Collective Decision"
+solved = false
+
+[907]
+title = "Stacking Cups"
+solved = false
+
+[908]
+title = "Clock Sequence II"
+solved = false
+
+[909]
+title = "L-expressions I"
+solved = false
+
+[910]
+title = "L-expressions II"
+solved = false
+
+[911]
+title = "Khinchin Exceptions"
+solved = false
+
+[912]
+title = "Where are the Odds?"
+solved = false
+
+[913]
+title = "Row-major vs Column-major"
+solved = false
+
+[914]
+title = "Triangles inside Circles"
+solved = false
+
+[915]
+title = "Giant GCDs"
+solved = false
+
+[916]
+title = "Restricted Permutations"
+solved = false
+
+[917]
+title = "Minimal Path Using Additive Cost"
+solved = false
+
+[918]
+title = "Recursive Sequence Summation"
+solved = false
+
+[919]
+title = "Fortunate Triangles"
+solved = false
+
+[920]
+title = "Tau Numbers"
+solved = false
+
+[921]
+title = "Golden Recurrence"
+solved = false
+
+[922]
+title = "Young's Game A"
+solved = false
+
+[923]
+title = "Young's Game B"
+solved = false
+
+[924]
+title = "Larger Digit Permutation II"
+solved = false
+
+[925]
+title = "Larger Digit Permutation III"
+solved = false
+
+[926]
+title = "Total Roundness"
+solved = false
+
+[927]
+title = "Prime-ary Tree"
+solved = false
+
+[928]
+title = "Cribbage"
+solved = false
+
+[929]
+title = "Odd-Run Compositions"
+solved = false
+
+[930]
+title = "The Gathering"
+solved = false
+
+[931]
+title = "Totient Graph"
+solved = false
+
+[932]
+title = "$2025$"
+solved = false
+
+[933]
+title = "Paper Cutting"
+solved = false
+
+[934]
+title = "Unlucky Primes"
+solved = false
+
+[935]
+title = "Rolling Square"
+solved = false
+
+[936]
+title = "Peerless Trees"
+solved = false
+
+[937]
+title = "Equiproduct Partition"
+solved = false
+
+[938]
+title = "Exhausting a Colour"
+solved = false
+
+[939]
+title = "Partisan Nim"
+solved = false
+
+[940]
+title = "Two-Dimensional Recurrence"
+solved = true
+
+[941]
+title = "de Bruijn's Combination Lock"
+solved = false
+
+[942]
+title = "Mersenne's Square Root"
+solved = false
+
+[943]
+title = "Self Describing Sequences"
+solved = false
+
+[944]
+title = "Sum of Elevisors"
+solved = false
+
+[945]
+title = "XOR-Equation C"
+solved = false
+
+[946]
+title = "Continued Fraction Fraction"
+solved = false
+
+[947]
+title = "Fibonacci Residues"
+solved = false
+
+[948]
+title = "Left vs Right"
+solved = false
+
+[949]
+title = "Left vs Right II"
+solved = false
+
+[950]
+title = "Pirate Treasure"
+solved = false
+
+[951]
+title = "A Game of Chance"
+solved = false
+
+[952]
+title = "Order Modulo Factorial"
+solved = false
+
+[953]
+title = "Factorisation Nim"
+solved = false
+
+[954]
+title = "Heptaphobia"
+solved = false
+
+[955]
+title = "Finding Triangles"
+solved = false
+
+[956]
+title = "Super Duper Sum"
+solved = false
+
+[957]
+title = "Point Genesis"
+solved = false
+
+[958]
+title = "Euclid's Labour"
+solved = false
+
+[959]
+title = "Asymmetric Random Walk"
+solved = false
+
+[960]
+title = "Stone Game Solitaire"
+solved = false
+
+[961]
+title = "Removing Digits"
+solved = false
+
+[962]
+title = "Angular Bisector and Tangent 2"
+solved = false
+
+[963]
+title = "Removing Trits"
+solved = false
+
+[964]
+title = "Musical Chairs Revisited"
+solved = false
+
+[965]
+title = "Expected Minimal Fractional Value"
+solved = false
+
+[966]
+title = "Triangle Circle Intersection"
+solved = false
+
+[967]
+title = "$B$-Trivisible Numbers"
+solved = false
+
+[968]
+title = "5D Summation"
+solved = false
+
+[969]
+title = "Kangaroo Hopping"
+solved = false
+
+[970]
+title = "Kangaroo Hopping over Sixes"
+solved = false
+
+[971]
+title = "Modular Polynomial Composition"
+solved = false
+
+[972]
+title = "Hyperbolic Plane"
+solved = false
+
+[973]
+title = "Random Dealings"
+solved = false
+
+[974]
+title = "Very Odd Numbers"
+solved = false
+
+[975]
+title = "A Winding Path"
+solved = false
+
+[976]
+title = "XO Game"
+solved = false
+
+[977]
+title = "Iterated Functions"
+solved = false
+
+[978]
+title = "Random Walk Skewness"
+solved = false
+
+[979]
+title = "Heptagon Hopping"
+solved = false
+
+[980]
+title = "The Quaternion Group I"
+solved = false
+
+[981]
+title = "The Quaternion Group II"
+solved = false
+
+[982]
+title = "The Third Dice"
+solved = false
+
+[983]
+title = "Consonant Circle Crossing"
+solved = false
+
+[984]
+title = "Knights and Horses"
+solved = false
+
+[985]
+title = "Telescoping Triangles"
+solved = false
+
+[986]
+title = "Another Infinite Game"
+solved = false
+
+[987]
+title = "Straight Eight"
+solved = false
+
+[988]
+title = "Non-attacking Frogs"
+solved = false
+
+[989]
+title = "Fibonacci Sum"
+solved = false
+
+[990]
+title = "Addition Equations"
+solved = false
+
+[991]
+title = "Fruit Salad"
+solved = false
+
+[992]
+title = "Another Frog Jumping"
+solved = false
+
+[993]
+title = "Banana Beaver"
+solved = false
+
+[994]
+title = "Counting Triangles"
+solved = false
+
+[995]
+title = "A Particular Pair of Polynomials"
+solved = false
+
+[996]
+title = "Overtakes"
+solved = false
+
+[997]
+title = "Dice Box"
+solved = false
+
+[998]
+title = "Squaring the Triangle"
+solved = false
+
+[999]
+title = "Alternating Recurrence"
+solved = false
