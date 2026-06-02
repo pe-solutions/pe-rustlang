@@ -110,14 +110,14 @@ Total: ~1,814 lines of duplicated code eliminated. All 83 solutions have `pe-lib
 
 ### Testing
 
-Comprehensive test suite with 185 passing tests across three phases:
+Comprehensive test suite with 343 passing tests across three phases:
 
-**Phase 1: pe-lib Unit Tests (117 tests)**
-- All 12 modules tested: primes, digits, sieve, modular, sequences, divisors, combinatorics, isqrt, number_theory, file_io, and more
+**Phase 1: pe-lib Unit Tests (126 tests)**
+- All 13 modules tested: primes, digits, sieve, modular, sequences, divisors, combinatorics, isqrt, number_theory, file_io, rational, and more
 - Edge cases, known values, mathematical properties (commutativity, associativity, overflow safety)
 
-**Phase 2: Solution-Level Tests (37 solutions, ~152 tests)**
-- 84% coverage of refactored solutions
+**Phase 2: Solution-Level Tests (45 solutions, ~186 tests)**
+- 54.2% coverage of refactored solutions
 - Property-based testing (monotonic growth, symmetry, composition)
 - Avoids hardcoding large answers; verifies correctness via properties
 
@@ -129,8 +129,8 @@ Comprehensive test suite with 185 passing tests across three phases:
 
 **Test commands:**
 ```bash
-cargo test -p pe-lib              # All 148 tests (117 unit + 31 integration)
-cargo test -p pe-lib --lib        # Just unit tests (117)
+cargo test -p pe-lib              # All 157 tests (126 unit + 31 integration)
+cargo test -p pe-lib --lib        # Just unit tests (126)
 cargo test -p pe-lib --test integration_test  # Just integration (31)
 cargo test -p pe-NNNN             # Specific solution tests
 ./test-all.sh                     # Full build/test (84 solutions)
