@@ -1,0 +1,10 @@
+[package]
+name = "pe-0069"
+version = "0.1.0"
+edition = "2021"
+authors = ["menjaraz"]
+
+
+[dependencies]
+pe-lib = { workspace = true }
+pe-utils = { workspace = true }
