@@ -36,15 +36,17 @@ cargo build --workspace
 
 ### `problems.toml`
 
-Tracks every published PE problem with its title and a `solved` flag:
+Tracks every published PE problem with title, full problem statement, and a `solved` flag:
 
 ```toml
 [42]
 title = "Coded Triangle Numbers"
+statement = '''
+The nth term of the sequence of triangle numbers is given by $t_n = n(n+1)/2$ ...'''
 solved = true
 ```
 
-`new-solution.sh` reads this file to insert the problem title as a header comment in `src/main.rs`. Re-running `fetch-problems.sh` preserves manually set `solved` values and auto-detects the flag for new entries (directory exists and `src/main.rs` contains no `todo!()`).
+`new-solution.sh` reads this file to insert the problem title as a header comment in `src/main.rs`. `fetch-problems.sh` scrapes titles from `/archives` and statements from `/minimal=N`; re-running preserves manually set `solved` values and auto-detects the flag for new entries (directory exists and `src/main.rs` contains no `todo!()`).
 
 Mark a problem solved by editing `problems.toml` directly.
 
