@@ -935,82 +935,501 @@ solved = true
 
 [51]
 title = "Prime Digit Replacements"
+statement = '''
+By replacing the 1st digit of the 2-digit number *3, it turns out that six of the nine possible values: 13, 23, 43, 53, 73, and 83, are all prime.
+
+By replacing the 3rd and 4th digits of 56**3 with the same digit, this 5-digit number is the first example having seven primes among the ten generated numbers, yielding the family: 56003, 56113, 56333, 56443, 56663, 56773, and 56993. Consequently 56003, being the first member of this family, is the smallest prime with this property.
+
+Find the smallest prime which, by replacing part of the number (not necessarily adjacent digits) with the same digit, is part of an eight prime value family.'''
 solved = false
 
 [52]
 title = "Permuted Multiples"
+statement = '''
+It can be seen that the number, $125874$, and its double, $251748$, contain exactly the same digits, but in a different order.
+
+Find the smallest positive integer, $x$, such that $2x$, $3x$, $4x$, $5x$, and $6x$, contain the same digits.'''
 solved = false
 
 [53]
 title = "Combinatoric Selections"
+statement = '''
+There are exactly ten ways of selecting three from five, 12345:
+
+123, 124, 125, 134, 135, 145, 234, 235, 245, and 345
+
+In combinatorics, we use the notation, $\displaystyle \binom 5 3 = 10$.
+
+In general, $\displaystyle \binom n r = \dfrac{n!}{r!(n-r)!}$, where $r \le n$, $n! = n \times (n-1) \times ... \times 3 \times 2 \times 1$, and $0! = 1$.
+
+It is not until $n = 23$, that a value exceeds one-million: $\displaystyle \binom {23} {10} = 1144066$.
+
+How many, not necessarily distinct, values of $\displaystyle \binom n r$ for $1 \le n \le 100$, are greater than one-million?'''
 solved = true
 
 [54]
 title = "Poker Hands"
+statement = '''
+In the card game poker, a hand consists of five cards and are ranked, from lowest to highest, in the following way:
+
+- High Card: Highest value card.
+
+- One Pair: Two cards of the same value.
+
+- Two Pairs: Two different pairs.
+
+- Three of a Kind: Three cards of the same value.
+
+- Straight: All cards are consecutive values.
+
+- Flush: All cards of the same suit.
+
+- Full House: Three of a kind and a pair.
+
+- Four of a Kind: Four cards of the same value.
+
+- Straight Flush: All cards are consecutive values of same suit.
+
+- Royal Flush: Ten, Jack, Queen, King, Ace, in same suit.
+
+The cards are valued in the order:
+2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace.
+
+If two players have the same ranked hands then the rank made up of the highest value wins; for example, a pair of eights beats a pair of fives (see example 1 below). But if two ranks tie, for example, both players have a pair of queens, then highest cards in each hand are compared (see example 4 below); if the highest cards tie then the next highest cards are compared, and so on.
+
+Consider the following five hands dealt to two players:
+
+Hand   Player 1   Player 2   Winner
+
+1   5H 5C 6S 7S KD
+Pair of Fives   2C 3S 8S 8D TD
+Pair of Eights   Player 2
+
+2   5D 8C 9S JS AC
+Highest card Ace   2C 5C 7D 8S QH
+Highest card Queen   Player 1
+
+3   2D 9C AS AH AC
+Three Aces   3D 6D 7D TD QD
+Flush with Diamonds   Player 2
+
+4   4D 6S 9H QH QC
+Pair of Queens
+Highest card Nine   3D 6D 7H QD QS
+Pair of Queens
+Highest card Seven   Player 1
+
+5   2H 2D 4C 4D 4S
+Full House
+With Three Fours   3C 3D 3S 9S 9D
+Full House
+with Three Threes   Player 1
+
+The file, poker.txt, contains one-thousand random hands dealt to two players. Each line of the file contains ten cards (separated by a single space): the first five are Player 1's cards and the last five are Player 2's cards. You can assume that all hands are valid (no invalid characters or repeated cards), each player's hand is in no specific order, and in each hand there is a clear winner.
+
+How many hands does Player 1 win?'''
 solved = false
 
 [55]
 title = "Lychrel Numbers"
+statement = '''
+If we take $47$, reverse and add, $47 + 74 = 121$, which is palindromic.
+
+Not all numbers produce palindromes so quickly. For example,
+
+$$\begin{align}
+349 + 943 &= 1292\\
+1292 + 2921 &= 4213\\
+4213 + 3124 &= 7337
+\end{align}$$
+That is, $349$ took three iterations to arrive at a palindrome.
+
+Although no one has proved it yet, it is thought that some numbers, like $196$, never produce a palindrome. A number that never forms a palindrome through the reverse and add process is called a Lychrel number. Due to the theoretical nature of these numbers, and for the purpose of this problem, we shall assume that a number is Lychrel until proven otherwise. In addition you are given that for every number below ten-thousand, it will either (i) become a palindrome in less than fifty iterations, or, (ii) no one, with all the computing power that exists, has managed so far to map it to a palindrome. In fact, $10677$ is the first number to be shown to require over fifty iterations before producing a palindrome: $4668731596684224866951378664$ ($53$ iterations, $28$-digits).
+
+Surprisingly, there are palindromic numbers that are themselves Lychrel numbers; the first example is $4994$.
+
+How many Lychrel numbers are there below ten-thousand?
+
+NOTE: Wording was modified slightly on 24 April 2007 to emphasise the theoretical nature of Lychrel numbers.'''
 solved = true
 
 [56]
 title = "Powerful Digit Sum"
+statement = '''
+A googol ($10^{100}$) is a massive number: one followed by one-hundred zeros; $100^{100}$ is almost unimaginably large: one followed by two-hundred zeros. Despite their size, the sum of the digits in each number is only $1$.
+
+Considering natural numbers of the form, $a^b$, where $a, b \lt 100$, what is the maximum digital sum?'''
 solved = true
 
 [57]
 title = "Square Root Convergents"
+statement = '''
+It is possible to show that the square root of two can be expressed as an infinite continued fraction.
+
+$\sqrt 2 =1+ \frac 1 {2+ \frac 1 {2 +\frac 1 {2+ \dots}}}$
+
+By expanding this for the first four iterations, we get:
+
+$1 + \frac 1 2 = \frac 32 = 1.5$
+
+$1 + \frac 1 {2 + \frac 1 2} = \frac 7 5 = 1.4$
+
+$1 + \frac 1 {2 + \frac 1 {2+\frac 1 2}} = \frac {17}{12} = 1.41666 \dots$
+
+$1 + \frac 1 {2 + \frac 1 {2+\frac 1 {2+\frac 1 2}}} = \frac {41}{29} = 1.41379 \dots$
+
+The next three expansions are $\frac {99}{70}$, $\frac {239}{169}$, and $\frac {577}{408}$, but the eighth expansion, $\frac {1393}{985}$, is the first example where the number of digits in the numerator exceeds the number of digits in the denominator.
+
+In the first one-thousand expansions, how many fractions contain a numerator with more digits than the denominator?'''
 solved = false
 
 [58]
 title = "Spiral Primes"
+statement = '''
+Starting with $1$ and spiralling anticlockwise in the following way, a square spiral with side length $7$ is formed.
+
+37 36 35 34 33 32 31
+
+38 17 16 15 14 13 30
+
+39 18  5  4  3 12 29
+
+40 19  6  1  2 11 28
+
+41 20  7  8  9 10 27
+
+42 21 22 23 24 25 26
+43 44 45 46 47 48 49
+
+It is interesting to note that the odd squares lie along the bottom right diagonal, but what is more interesting is that $8$ out of the $13$ numbers lying along both diagonals are prime; that is, a ratio of $8/13 \approx 62\%$.
+
+If one complete new layer is wrapped around the spiral above, a square spiral with side length $9$ will be formed. If this process is continued, what is the side length of the square spiral for which the ratio of primes along both diagonals first falls below $10\%$?'''
 solved = false
 
 [59]
 title = "XOR Decryption"
+statement = '''
+Each character on a computer is assigned a unique code and the preferred standard is ASCII (American Standard Code for Information Interchange). For example, uppercase A = 65, asterisk (*) = 42, and lowercase k = 107.
+
+A modern encryption method is to take a text file, convert the bytes to ASCII, then XOR each byte with a given value, taken from a secret key. The advantage with the XOR function is that using the same encryption key on the cipher text, restores the plain text; for example, 65 XOR 42 = 107, then 107 XOR 42 = 65.
+
+For unbreakable encryption, the key is the same length as the plain text message, and the key is made up of random bytes. The user would keep the encrypted message and the encryption key in different locations, and without both "halves", it is impossible to decrypt the message.
+
+Unfortunately, this method is impractical for most users, so the modified method is to use a password as a key. If the password is shorter than the message, which is likely, the key is repeated cyclically throughout the message. The balance for this method is using a sufficiently long password key for security, but short enough to be memorable.
+
+Your task has been made easy, as the encryption key consists of three lower case characters. Using 0059_cipher.txt (right click and 'Save Link/Target As...'), a file containing the encrypted ASCII codes, and the knowledge that the plain text must contain common English words, decrypt the message and find the sum of the ASCII values in the original text.'''
 solved = false
 
 [60]
 title = "Prime Pair Sets"
+statement = '''
+The primes $3$, $7$, $109$, and $673$, are quite remarkable. By taking any two primes and concatenating them in any order the result will always be prime. For example, taking $7$ and $109$, both $7109$ and $1097$ are prime. The sum of these four primes, $792$, represents the lowest sum for a set of four primes with this property.
+
+Find the lowest sum for a set of five primes for which any two primes concatenate to produce another prime.'''
 solved = true
 
 [61]
 title = "Cyclical Figurate Numbers"
+statement = '''
+Triangle, square, pentagonal, hexagonal, heptagonal, and octagonal numbers are all figurate (polygonal) numbers and are generated by the following formulae:
+
+Triangle
+
+$P_{3,n}=n(n+1)/2$
+
+$1, 3, 6, 10, 15, \dots$
+
+Square
+
+$P_{4,n}=n^2$
+
+$1, 4, 9, 16, 25, \dots$
+
+Pentagonal
+
+$P_{5,n}=n(3n-1)/2$
+
+$1, 5, 12, 22, 35, \dots$
+
+Hexagonal
+
+$P_{6,n}=n(2n-1)$
+
+$1, 6, 15, 28, 45, \dots$
+
+Heptagonal
+
+$P_{7,n}=n(5n-3)/2$
+
+$1, 7, 18, 34, 55, \dots$
+
+Octagonal
+
+$P_{8,n}=n(3n-2)$
+
+$1, 8, 21, 40, 65, \dots$
+
+The ordered set of three $4$-digit numbers: $8128$, $2882$, $8281$, has three interesting properties.
+
+- The set is cyclic, in that the last two digits of each number is the first two digits of the next number (including the last number with the first).
+
+- Each polygonal type: triangle ($P_{3,127}=8128$), square ($P_{4,91}=8281$), and pentagonal ($P_{5,44}=2882$), is represented by a different number in the set.
+
+- This is the only set of $4$-digit numbers with this property.
+
+Find the sum of the only ordered set of six cyclic $4$-digit numbers for which each polygonal type: triangle, square, pentagonal, hexagonal, heptagonal, and octagonal, is represented by a different number in the set.'''
 solved = true
 
 [62]
 title = "Cubic Permutations"
+statement = '''
+The cube, $41063625$ ($345^3$), can be permuted to produce two other cubes: $56623104$ ($384^3$) and $66430125$ ($405^3$). In fact, $41063625$ is the smallest cube which has exactly three permutations of its digits which are also cube.
+
+Find the smallest cube for which exactly five permutations of its digits are cube.'''
 solved = false
 
 [63]
 title = "Powerful Digit Counts"
+statement = '''
+The $5$-digit number, $16807=7^5$, is also a fifth power. Similarly, the $9$-digit number, $134217728=8^9$, is a ninth power.
+
+How many $n$-digit positive integers exist which are also an $n$th power?'''
 solved = true
 
 [64]
 title = "Odd Period Square Roots"
+statement = '''
+All square roots are periodic when written as continued fractions and can be written in the form:
+
+$$\sqrt{N}=a_0 + \dfrac 1 {a_1 + \dfrac 1 {a_2 + \dfrac 1 {a_3 + \dots}}}$$
+
+For example, let us consider $\sqrt{23}:$
+
+$$\sqrt{23} = 4 + \sqrt{23}-4=4 + \dfrac 1 {\dfrac 1 {\sqrt{23}-4}} = 4+\dfrac 1 {1 + \dfrac{\sqrt{23}-3}7}$$
+
+If we continue we would get the following expansion:
+
+$$\sqrt{23}=4 + \dfrac 1 {1 + \dfrac 1 {3+ \dfrac 1 {1 + \dfrac 1 {8+ \dots}}}}$$
+
+The process can be summarised as follows:
+
+$$\begin{align} \quad \quad a_0 &= 4, \frac 1 {\sqrt{23}-4}=\frac {\sqrt{23}+4} 7=1+\frac {\sqrt{23}-3} 7 \\
+\quad \quad a_1 &= 1, \frac 7 {\sqrt{23}-3}=\frac {7(\sqrt{23}+3)} {14}=3+\frac {\sqrt{23}-3} 2 \\
+\quad \quad a_2 &= 3, \frac 2 {\sqrt{23}-3}=\frac {2(\sqrt{23}+3)} {14}=1+\frac {\sqrt{23}-4} 7 \\
+\quad \quad a_3 &= 1, \frac 7 {\sqrt{23}-4}=\frac {7(\sqrt{23}+4)} 7=8+\sqrt{23}-4 \\
+\quad \quad a_4 &= 8, \frac 1 {\sqrt{23}-4}=\frac {\sqrt{23}+4} 7=1+\frac {\sqrt{23}-3} 7 \\
+\quad \quad a_5 &= 1, \frac 7 {\sqrt{23}-3}=\frac {7 (\sqrt{23}+3)} {14}=3+\frac {\sqrt{23}-3} 2 \\
+\quad \quad a_6 &= 3, \frac 2 {\sqrt{23}-3}=\frac {2(\sqrt{23}+3)} {14}=1+\frac {\sqrt{23}-4} 7 \\
+\quad \quad a_7 &= 1, \frac 7 {\sqrt{23}-4}=\frac {7(\sqrt{23}+4)} {7}=8+\sqrt{23}-4 \end{align}$$
+
+It can be seen that the sequence is repeating. For conciseness, we use the notation $\sqrt{23}=[4;(1,3,1,8)]$, to indicate that the block (1,3,1,8) repeats indefinitely.
+
+The first ten continued fraction representations of (irrational) square roots are:
+
+$\quad \quad \sqrt{2}=[1;(2)]$, period=$1$
+
+$\quad \quad \sqrt{3}=[1;(1,2)]$, period=$2$
+
+$\quad \quad \sqrt{5}=[2;(4)]$, period=$1$
+
+$\quad \quad \sqrt{6}=[2;(2,4)]$, period=$2$
+
+$\quad \quad \sqrt{7}=[2;(1,1,1,4)]$, period=$4$
+
+$\quad \quad \sqrt{8}=[2;(1,4)]$, period=$2$
+
+$\quad \quad \sqrt{10}=[3;(6)]$, period=$1$
+
+$\quad \quad \sqrt{11}=[3;(3,6)]$, period=$2$
+
+$\quad \quad \sqrt{12}=[3;(2,6)]$, period=$2$
+
+$\quad \quad \sqrt{13}=[3;(1,1,1,1,6)]$, period=$5$
+
+Exactly four continued fractions, for $N \le 13$, have an odd period.
+
+How many continued fractions for $N \le 10\,000$ have an odd period?'''
 solved = false
 
 [65]
 title = "Convergents of $e$"
+statement = '''
+The square root of $2$ can be written as an infinite continued fraction.
+
+$$\sqrt{2} = 1 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{2 + ...}}}}$$
+
+The infinite continued fraction can be written, $\sqrt{2} = [1; (2)]$, $(2)$ indicates that $2$ repeats ad infinitum. In a similar way, $\sqrt{23} = [4; (1, 3, 1, 8)]$.
+
+It turns out that the sequence of partial values of continued fractions for square roots provide the best rational approximations. Let us consider the convergents for $\sqrt{2}$.
+
+$$\begin{align}
+&1 + \dfrac{1}{2} &= \dfrac{3}{2} \\
+&1 + \dfrac{1}{2 + \dfrac{1}{2}} &= \dfrac{7}{5}\\
+&1 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{2}}} &= \dfrac{17}{12}\\
+&1 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{2}}}} &= \dfrac{41}{29}
+\end{align}$$
+
+Hence the sequence of the first ten convergents for $\sqrt{2}$ are:
+
+$$1, \dfrac{3}{2}, \dfrac{7}{5}, \dfrac{17}{12}, \dfrac{41}{29}, \dfrac{99}{70}, \dfrac{239}{169}, \dfrac{577}{408}, \dfrac{1393}{985}, \dfrac{3363}{2378}, ...$$
+
+What is most surprising is that the important mathematical constant,
+
+$$e = [2; 1, 2, 1, 1, 4, 1, 1, 6, 1, ... , 1, 2k, 1, ...]$$
+
+The first ten terms in the sequence of convergents for $e$ are:
+
+$$2, 3, \dfrac{8}{3}, \dfrac{11}{4}, \dfrac{19}{7}, \dfrac{87}{32}, \dfrac{106}{39}, \dfrac{193}{71}, \dfrac{1264}{465}, \dfrac{1457}{536}, ...$$
+
+The sum of digits in the numerator of the $10$th convergent is $1 + 4 + 5 + 7 = 17$.
+
+Find the sum of digits in the numerator of the $100$th convergent of the continued fraction for $e$.'''
 solved = false
 
 [66]
 title = "Diophantine Equation"
+statement = '''
+Consider quadratic Diophantine equations of the form:
+$$x^2 - Dy^2 = 1$$
+
+For example, when $D=13$, the minimal solution in $x$ is $649^2 - 13 \times 180^2 = 1$.
+
+It can be assumed that there are no solutions in positive integers when $D$ is square.
+
+By finding minimal solutions in $x$ for $D = \{2, 3, 5, 6, 7\}$, we obtain the following:
+
+$$\begin{align}
+3^2 - 2 \times 2^2 &= 1\\
+2^2 - 3 \times 1^2 &= 1\\
+{\color{red}{\mathbf 9}}^2 - 5 \times 4^2 &= 1\\
+5^2 - 6 \times 2^2 &= 1\\
+8^2 - 7 \times 3^2 &= 1
+\end{align}$$
+Hence, by considering minimal solutions in $x$ for $D \le 7$, the largest $x$ is obtained when $D=5$.
+
+Find the value of $D \le 1000$ in minimal solutions of $x$ for which the largest value of $x$ is obtained.'''
 solved = true
 
 [67]
 title = "Maximum Path Sum II"
+statement = '''
+By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
+
+3
+7 4
+
+2 4 6
+
+8 5 9 3
+
+That is, 3 + 7 + 4 + 9 = 23.
+
+Find the maximum total from top to bottom in triangle.txt (right click and 'Save Link/Target As...'), a 15K text file containing a triangle with one-hundred rows.
+
+NOTE: This is a much more difficult version of Problem 18. It is not possible to try every route to solve this problem, as there are $2^{99}$ altogether! If you could check one trillion ($10^{12}$) routes every second it would take over twenty billion years to check them all. There is an efficient algorithm to solve it. ;o)'''
 solved = false
 
 [68]
 title = "Magic 5-gon Ring"
+statement = '''
+Consider the following "magic" 3-gon ring, filled with the numbers 1 to 6, and each line adding to nine.
+
+Working clockwise, and starting from the group of three with the numerically lowest external node (4,3,2 in this example), each solution can be described uniquely. For example, the above solution can be described by the set: 4,3,2; 6,2,1; 5,1,3.
+
+It is possible to complete the ring with four different totals: 9, 10, 11, and 12. There are eight solutions in total.
+
+Total Solution Set
+
+9 4,2,3; 5,3,1; 6,1,2
+
+9 4,3,2; 6,2,1; 5,1,3
+
+10 2,3,5; 4,5,1; 6,1,3
+
+10 2,5,3; 6,3,1; 4,1,5
+
+11 1,4,6; 3,6,2; 5,2,4
+
+11 1,6,4; 5,4,2; 3,2,6
+
+12 1,5,6; 2,6,4; 3,4,5
+
+12 1,6,5; 3,5,4; 2,4,6
+
+By concatenating each group it is possible to form 9-digit strings; the maximum string for a 3-gon ring is 432621513.
+
+Using the numbers 1 to 10, and depending on arrangements, it is possible to form 16- and 17-digit strings. What is the maximum 16-digit string for a "magic" 5-gon ring?'''
 solved = false
 
 [69]
 title = "Totient Maximum"
+statement = '''
+Euler's totient function, $\phi(n)$ [sometimes called the phi function], is defined as the number of positive integers not exceeding $n$ which are relatively prime to $n$. For example, as $1$, $2$, $4$, $5$, $7$, and $8$, are all less than or equal to nine and relatively prime to nine, $\phi(9)=6$.
+
+$n$
+Relatively Prime
+$\phi(n)$
+$n/\phi(n)$
+
+2
+1
+1
+2
+
+3
+1,2
+2
+1.5
+
+4
+1,3
+2
+2
+
+5
+1,2,3,4
+4
+1.25
+
+6
+1,5
+2
+3
+
+7
+1,2,3,4,5,6
+6
+1.1666...
+
+8
+1,3,5,7
+4
+2
+
+9
+1,2,4,5,7,8
+6
+1.5
+
+10
+1,3,7,9
+4
+2.5
+
+It can be seen that $n = 6$ produces a maximum $n/\phi(n)$ for $n\leq 10$.
+
+Find the value of $n\leq 1\,000\,000$ for which $n/\phi(n)$ is a maximum.'''
 solved = false
 
 [70]
 title = "Totient Permutation"
+statement = '''
+Euler's totient function, $\phi(n)$ [sometimes called the phi function], is used to determine the number of positive numbers less than or equal to $n$ which are relatively prime to $n$. For example, as $1, 2, 4, 5, 7$, and $8$, are all less than nine and relatively prime to nine, $\phi(9)=6$.
+The number $1$ is considered to be relatively prime to every positive number, so $\phi(1)=1$.
+
+Interestingly, $\phi(87109)=79180$, and it can be seen that $87109$ is a permutation of $79180$.
+
+Find the value of $n$, $1 \lt n \lt 10^7$, for which $\phi(n)$ is a permutation of $n$ and the ratio $n/\phi(n)$ produces a minimum.'''
 solved = true
 
 [71]
@@ -1019,118 +1438,494 @@ solved = true
 
 [72]
 title = "Counting Fractions"
+statement = '''
+Consider the fraction, $\dfrac n d$, where $n$ and $d$ are positive integers. If $n \lt d$ and $\operatorname{HCF}(n,d)=1$, it is called a reduced proper fraction.
+
+If we list the set of reduced proper fractions for $d \le 8$ in ascending order of size, we get:
+$$\frac 1 8, \frac 1 7, \frac 1 6, \frac 1 5, \frac 1 4, \frac 2 7, \frac 1 3, \frac 3 8, \frac 2 5, \frac 3 7, \frac 1 2, \frac 4 7, \frac 3 5, \frac 5 8, \frac 2 3, \frac 5 7, \frac 3 4, \frac 4 5, \frac 5 6, \frac 6 7, \frac 7 8$$
+
+It can be seen that there are $21$ elements in this set.
+
+How many elements would be contained in the set of reduced proper fractions for $d \le 1\,000\,000$?'''
 solved = false
 
 [73]
 title = "Counting Fractions in a Range"
+statement = '''
+Consider the fraction, $\dfrac n d$, where $n$ and $d$ are positive integers. If $n \lt d$ and $\operatorname{HCF}(n, d)=1$, it is called a reduced proper fraction.
+
+If we list the set of reduced proper fractions for $d \le 8$ in ascending order of size, we get:
+$$\frac 1 8, \frac 1 7, \frac 1 6, \frac 1 5, \frac 1 4, \frac 2 7, \frac 1 3, \mathbf{\frac 3 8, \frac 2 5, \frac 3 7}, \frac 1 2, \frac 4 7, \frac 3 5, \frac 5 8, \frac 2 3, \frac 5 7, \frac 3 4, \frac 4 5, \frac 5 6, \frac 6 7, \frac 7 8$$
+
+It can be seen that there are $3$ fractions between $\dfrac 1 3$ and $\dfrac 1 2$.
+
+How many fractions lie between $\dfrac 1 3$ and $\dfrac 1 2$ in the sorted set of reduced proper fractions for $d \le 12\,000$?'''
 solved = false
 
 [74]
 title = "Digit Factorial Chains"
+statement = '''
+The number $145$ is well known for the property that the sum of the factorial of its digits is equal to $145$:
+$$1! + 4! + 5! = 1 + 24 + 120 = 145.$$
+
+Perhaps less well known is $169$, in that it produces the longest chain of numbers that link back to $169$; it turns out that there are only three such loops that exist:
+
+$$\begin{align}
+&169 \to 363601 \to 1454 \to 169\\
+&871 \to 45361 \to 871\\
+&872 \to 45362 \to 872
+\end{align}$$
+It is not difficult to prove that EVERY starting number will eventually get stuck in a loop. For example,
+
+$$\begin{align}
+&69 \to 363600 \to 1454 \to 169 \to 363601 (\to 1454)\\
+&78 \to 45360 \to 871 \to 45361 (\to 871)\\
+&540 \to 145 (\to 145)
+\end{align}$$
+Starting with $69$ produces a chain of five non-repeating terms, but the longest non-repeating chain with a starting number below one million is sixty terms.
+
+How many chains, with a starting number below one million, contain exactly sixty non-repeating terms?'''
 solved = false
 
 [75]
 title = "Singular Integer Right Triangles"
+statement = '''
+It turns out that $\pu{12 cm}$ is the smallest length of wire that can be bent to form an integer sided right angle triangle in exactly one way, but there are many more examples.
+
+- $\pu{\mathbf{12} \mathbf{cm}}$: $(3,4,5)$
+
+- $\pu{\mathbf{24} \mathbf{cm}}$: $(6,8,10)$
+
+- $\pu{\mathbf{30} \mathbf{cm}}$: $(5,12,13)$
+
+- $\pu{\mathbf{36} \mathbf{cm}}$: $(9,12,15)$
+
+- $\pu{\mathbf{40} \mathbf{cm}}$: $(8,15,17)$
+
+- $\pu{\mathbf{48} \mathbf{cm}}$: $(12,16,20)$
+
+In contrast, some lengths of wire, like $\pu{20 cm}$, cannot be bent to form an integer sided right angle triangle, and other lengths allow more than one solution to be found; for example, using $\pu{120 cm}$ it is possible to form exactly three different integer sided right angle triangles.
+
+- $\pu{\mathbf{120} \mathbf{cm}}$: $(30,40,50)$, $(20,48,52)$, $(24,45,51)$
+
+Given that $L$ is the length of the wire, for how many values of $L \le 1\,500\,000$ can exactly one integer sided right angle triangle be formed?'''
 solved = false
 
 [76]
 title = "Counting Summations"
+statement = '''
+It is possible to write five as a sum in exactly six different ways:
+
+$$\begin{align}
+&4 + 1\\
+&3 + 2\\
+&3 + 1 + 1\\
+&2 + 2 + 1\\
+&2 + 1 + 1 + 1\\
+&1 + 1 + 1 + 1 + 1
+\end{align}$$
+How many different ways can one hundred be written as a sum of at least two positive integers?'''
 solved = true
 
 [77]
 title = "Prime Summations"
+statement = '''
+It is possible to write ten as the sum of primes in exactly five different ways:
+
+$$\begin{align}
+&7 + 3\\
+&5 + 5\\
+&5 + 3 + 2\\
+&3 + 3 + 2 + 2\\
+&2 + 2 + 2 + 2 + 2
+\end{align}$$
+What is the first value which can be written as the sum of primes in over five thousand different ways?'''
 solved = false
 
 [78]
 title = "Coin Partitions"
+statement = '''
+Let $p(n)$ represent the number of different ways in which $n$ coins can be separated into piles. For example, five coins can be separated into piles in exactly seven different ways, so $p(5)=7$.
+
+OOOOO
+
+OOOO   O
+
+OOO   OO
+
+OOO   O   O
+
+OO   OO   O
+
+OO   O   O   O
+
+O   O   O   O   O
+
+Find the least value of $n$ for which $p(n)$ is divisible by one million.'''
 solved = false
 
 [79]
 title = "Passcode Derivation"
+statement = '''
+A common security method used for online banking is to ask the user for three random characters from a passcode. For example, if the passcode was 531278, they may ask for the 2nd, 3rd, and 5th characters; the expected reply would be: 317.
+
+The text file, keylog.txt, contains fifty successful login attempts.
+
+Given that the three characters are always asked for in order, analyse the file so as to determine the shortest possible secret passcode of unknown length.'''
 solved = false
 
 [80]
 title = "Square Root Digital Expansion"
+statement = '''
+It is well known that if the square root of a natural number is not an integer, then it is irrational. The decimal expansion of such square roots is infinite without any repeating pattern at all.
+
+The square root of two is $1.41421356237309504880\cdots$, and the digital sum of the first one hundred decimal digits is $475$.
+
+For the first one hundred natural numbers, find the total of the digital sums of the first one hundred decimal digits for all the irrational square roots.'''
 solved = false
 
 [81]
 title = "Path Sum: Two Ways"
+statement = '''
+In the $5$ by $5$ matrix below, the minimal path sum from the top left to the bottom right, by only moving to the right and down, is indicated in bold red and is equal to $2427$.
+
+$$
+\begin{pmatrix}
+\color{red}{131} & 673 & 234 & 103 & 18\\
+\color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\
+630 & 803 & \color{red}{746} & \color{red}{422} & 111\\
+537 & 699 & 497 & \color{red}{121} & 956\\
+805 & 732 & 524 & \color{red}{37} & \color{red}{331}
+\end{pmatrix}
+$$
+
+Find the minimal path sum from the top left to the bottom right by only moving right and down in matrix.txt (right click and "Save Link/Target As..."), a 31K text file containing an $80$ by $80$ matrix.'''
 solved = true
 
 [82]
 title = "Path Sum: Three Ways"
+statement = '''
+NOTE: This problem is a more challenging version of Problem 81.
+
+The minimal path sum in the $5$ by $5$ matrix below, by starting in any cell in the left column and finishing in any cell in the right column, and only moving up, down, and right, is indicated in red and bold; the sum is equal to $994$.
+
+$$
+\begin{pmatrix}
+131 & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\
+\color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\
+630 & 803 & 746 & 422 & 111\\
+537 & 699 & 497 & 121 & 956\\
+805 & 732 & 524 & 37 & 331
+\end{pmatrix}
+$$
+
+Find the minimal path sum from the left column to the right column in matrix.txt (right click and "Save Link/Target As..."), a 31K text file containing an $80$ by $80$ matrix.'''
 solved = false
 
 [83]
 title = "Path Sum: Four Ways"
+statement = '''
+NOTE: This problem is a significantly more challenging version of Problem 81.
+
+In the $5$ by $5$ matrix below, the minimal path sum from the top left to the bottom right, by moving left, right, up, and down, is indicated in bold red and is equal to $2297$.
+
+$$
+\begin{pmatrix}
+\color{red}{131} & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\
+\color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & \color{red}{150}\\
+630 & 803 & 746 & \color{red}{422} & \color{red}{111}\\
+537 & 699 & 497 & \color{red}{121} & 956\\
+805 & 732 & 524 & \color{red}{37} & \color{red}{331}
+\end{pmatrix}
+$$
+
+Find the minimal path sum from the top left to the bottom right by moving left, right, up, and down in matrix.txt (right click and "Save Link/Target As..."), a 31K text file containing an $80$ by $80$ matrix.'''
 solved = false
 
 [84]
 title = "Monopoly Odds"
+statement = '''
+In the game, Monopoly, the standard board is set up in the following way:
+
+A player starts on the GO square and adds the scores on two 6-sided dice to determine the number of squares they advance in a clockwise direction. Without any further rules we would expect to visit each square with equal probability: 2.5%. However, landing on G2J (Go To Jail), CC (community chest), and CH (chance) changes this distribution.
+
+In addition to G2J, and one card from each of CC and CH, that orders the player to go directly to jail, if a player rolls three consecutive doubles, they do not advance the result of their 3rd roll. Instead they proceed directly to jail.
+
+At the beginning of the game, the CC and CH cards are shuffled. When a player lands on CC or CH they take a card from the top of the respective pile and, after following the instructions, it is returned to the bottom of the pile. There are sixteen cards in each pile, but for the purpose of this problem we are only concerned with cards that order a movement; any instruction not concerned with movement will be ignored and the player will remain on the CC/CH square.
+
+- Community Chest (2/16 cards):
+
+- Advance to GO
+
+- Go to JAIL
+
+- Chance (10/16 cards):
+
+- Advance to GO
+
+- Go to JAIL
+
+- Go to C1
+
+- Go to E3
+
+- Go to H2
+
+- Go to R1
+
+- Go to next R (railway company)
+
+- Go to next R
+
+- Go to next U (utility company)
+
+- Go back 3 squares.
+
+The heart of this problem concerns the likelihood of visiting a particular square. That is, the probability of finishing at that square after a roll. For this reason it should be clear that, with the exception of G2J for which the probability of finishing on it is zero, the CH squares will have the lowest probabilities, as 5/8 request a movement to another square, and it is the final square that the player finishes at on each roll that we are interested in. We shall make no distinction between "Just Visiting" and being sent to JAIL, and we shall also ignore the rule about requiring a double to "get out of jail", assuming that they pay to get out on their next turn.
+
+By starting at GO and numbering the squares sequentially from 00 to 39 we can concatenate these two-digit numbers to produce strings that correspond with sets of squares.
+
+Statistically it can be shown that the three most popular squares, in order, are JAIL (6.24%) = Square 10, E3 (3.18%) = Square 24, and GO (3.09%) = Square 00. So these three most popular squares can be listed with the six-digit modal string: 102400.
+
+If, instead of using two 6-sided dice, two 4-sided dice are used, find the six-digit modal string.'''
 solved = false
 
 [85]
 title = "Counting Rectangles"
+statement = '''
+By counting carefully it can be seen that a rectangular grid measuring $3$ by $2$ contains eighteen rectangles:
+
+Although there exists no rectangular grid that contains exactly two million rectangles, find the area of the grid with the nearest solution.'''
 solved = false
 
 [86]
 title = "Cuboid Route"
+statement = '''
+A spider, S, sits in one corner of a cuboid room, measuring $6$ by $5$ by $3$, and a fly, F, sits in the opposite corner. By travelling on the surfaces of the room the shortest "straight line" distance from S to F is $10$ and the path is shown on the diagram.
+
+However, there are up to three "shortest" path candidates for any given cuboid and the shortest route doesn't always have integer length.
+
+It can be shown that there are exactly $2060$ distinct cuboids, ignoring rotations, with integer dimensions, up to a maximum size of $M$ by $M$ by $M$, for which the shortest route has integer length when $M = 100$. This is the least value of $M$ for which the number of solutions first exceeds two thousand; the number of solutions when $M = 99$ is $1975$.
+
+Find the least value of $M$ such that the number of solutions first exceeds one million.'''
 solved = false
 
 [87]
 title = "Prime Power Triples"
+statement = '''
+The smallest number expressible as the sum of a prime square, prime cube, and prime fourth power is $28$. In fact, there are exactly four numbers below fifty that can be expressed in such a way:
+
+$$\begin{align}
+28 &= 2^2 + 2^3 + 2^4\\
+33 &= 3^2 + 2^3 + 2^4\\
+49 &= 5^2 + 2^3 + 2^4\\
+47 &= 2^2 + 3^3 + 2^4
+\end{align}$$
+How many numbers below fifty million can be expressed as the sum of a prime square, prime cube, and prime fourth power?'''
 solved = true
 
 [88]
 title = "Product-sum Numbers"
+statement = '''
+A natural number, $N$, that can be written as the sum and product of a given set of at least two natural numbers, $\{a_1, a_2, \dots, a_k\}$ is called a product-sum number: $N = a_1 + a_2 + \cdots + a_k = a_1 \times a_2 \times \cdots \times a_k$.
+
+For example, $6 = 1 + 2 + 3 = 1 \times 2 \times 3$.
+
+For a given set of size, $k$, we shall call the smallest $N$ with this property a minimal product-sum number. The minimal product-sum numbers for sets of size, $k = 2, 3, 4, 5$, and $6$ are as follows.
+
+- $k=2$: $4 = 2 \times 2 = 2 + 2$
+
+- $k=3$: $6 = 1 \times 2 \times 3 = 1 + 2 + 3$
+
+- $k=4$: $8 = 1 \times 1 \times 2 \times 4 = 1 + 1 + 2 + 4$
+
+- $k=5$: $8 = 1 \times 1 \times 2 \times 2 \times 2 = 1 + 1 + 2 + 2 + 2$
+- $k=6$: $12 = 1 \times 1 \times 1 \times 1 \times 2 \times 6 = 1 + 1 + 1 + 1 + 2 + 6$
+
+Hence for $2 \le k \le 6$, the sum of all the minimal product-sum numbers is $4+6+8+12 = 30$; note that $8$ is only counted once in the sum.
+
+In fact, as the complete set of minimal product-sum numbers for $2 \le k \le 12$ is $\{4, 6, 8, 12, 15, 16\}$, the sum is $61$.
+
+What is the sum of all the minimal product-sum numbers for $2 \le k \le 12000$?'''
 solved = false
 
 [89]
 title = "Roman Numerals"
+statement = '''
+For a number written in Roman numerals to be considered valid there are basic rules which must be followed. Even though the rules allow some numbers to be expressed in more than one way there is always a "best" way of writing a particular number.
+
+For example, it would appear that there are at least six ways of writing the number sixteen:
+
+IIIIIIIIIIIIIIII
+
+VIIIIIIIIIII
+
+VVIIIIII
+
+XIIIIII
+
+VVVI
+
+XVI
+
+However, according to the rules only XIIIIII and XVI are valid, and the last example is considered to be the most efficient, as it uses the least number of numerals.
+
+The 11K text file, roman.txt (right click and 'Save Link/Target As...'), contains one thousand numbers written in valid, but not necessarily minimal, Roman numerals; see About... Roman Numerals for the definitive rules for this problem.
+
+Find the number of characters saved by writing each of these in their minimal form.
+
+Note: You can assume that all the Roman numerals in the file contain no more than four consecutive identical units.'''
 solved = false
 
 [90]
 title = "Cube Digit Pairs"
+statement = '''
+Each of the six faces on a cube has a different digit ($0$ to $9$) written on it; the same is done to a second cube. By placing the two cubes side-by-side in different positions we can form a variety of $2$-digit numbers.
+
+For example, the square number $64$ could be formed:
+
+In fact, by carefully choosing the digits on both cubes it is possible to display all of the square numbers below one-hundred: $01$, $04$, $09$, $16$, $25$, $36$, $49$, $64$, and $81$.
+
+For example, one way this can be achieved is by placing $\{0, 5, 6, 7, 8, 9\}$ on one cube and $\{1, 2, 3, 4, 8, 9\}$ on the other cube.
+
+However, for this problem we shall allow the $6$ or $9$ to be turned upside-down so that an arrangement like $\{0, 5, 6, 7, 8, 9\}$ and $\{1, 2, 3, 4, 6, 7\}$ allows for all nine square numbers to be displayed; otherwise it would be impossible to obtain $09$.
+
+In determining a distinct arrangement we are interested in the digits on each cube, not the order.
+
+- $\{1, 2, 3, 4, 5, 6\}$ is equivalent to $\{3, 6, 4, 1, 2, 5\}$
+
+- $\{1, 2, 3, 4, 5, 6\}$ is distinct from $\{1, 2, 3, 4, 5, 9\}$
+
+But because we are allowing $6$ and $9$ to be reversed, the two distinct sets in the last example both represent the extended set $\{1, 2, 3, 4, 5, 6, 9\}$ for the purpose of forming $2$-digit numbers.
+
+How many distinct arrangements of the two cubes allow for all of the square numbers to be displayed?'''
 solved = true
 
 [91]
 title = "Right Triangles with Integer Coordinates"
+statement = '''
+The points $P(x_1, y_1)$ and $Q(x_2, y_2)$ are plotted at integer co-ordinates and are joined to the origin, $O(0,0)$, to form $\triangle OPQ$.
+
+There are exactly fourteen triangles containing a right angle that can be formed when each co-ordinate lies between $0$ and $2$ inclusive; that is, $0 \le x_1, y_1, x_2, y_2 \le 2$.
+
+Given that $0 \le x_1, y_1, x_2, y_2 \le 50$, how many right triangles can be formed?'''
 solved = true
 
 [92]
 title = "Square Digit Chains"
+statement = '''
+A number chain is created by continuously adding the square of the digits in a number to form a new number until it has been seen before.
+
+For example,
+$$\begin{align}
+&44 \to 32 \to 13 \to 10 \to \mathbf 1 \to \mathbf 1\\
+&85 \to \mathbf{89} \to 145 \to 42 \to 20 \to 4 \to 16 \to 37 \to 58 \to \mathbf{89}
+\end{align}$$
+
+Therefore any chain that arrives at $1$ or $89$ will become stuck in an endless loop. What is most amazing is that EVERY starting number will eventually arrive at $1$ or $89$.
+
+How many starting numbers below ten million will arrive at $89$?'''
 solved = true
 
 [93]
 title = "Arithmetic Expressions"
+statement = '''
+By using each of the digits from the set, $\{1, 2, 3, 4\}$, exactly once, and making use of the four arithmetic operations ($+, -, \times, /$) and brackets/parentheses, it is possible to form different positive integer targets.
+
+For example,
+
+$$\begin{align}
+8 &= (4 \times (1 + 3)) / 2\\
+14 &= 4 \times (3 + 1 / 2)\\
+19 &= 4 \times (2 + 3) - 1\\
+36 &= 3 \times 4 \times (2 + 1)
+\end{align}$$
+Note that concatenations of the digits, like $12 + 34$, are not allowed.
+
+Using the set, $\{1, 2, 3, 4\}$, it is possible to obtain thirty-one different target numbers of which $36$ is the maximum, and each of the numbers $1$ to $28$ can be obtained before encountering the first non-expressible number.
+
+Find the set of four distinct digits, $a \lt b \lt c \lt d$, for which the longest set of consecutive positive integers, $1$ to $n$, can be obtained, giving your answer as a string: abcd.'''
 solved = false
 
 [94]
 title = "Almost Equilateral Triangles"
+statement = '''
+It is easily proved that no equilateral triangle exists with integral length sides and integral area. However, the almost equilateral triangle $5$-$5$-$6$ has an area of $12$ square units.
+
+We shall define an almost equilateral triangle to be a triangle for which two sides are equal and the third differs by no more than one unit.
+
+Find the sum of the perimeters of all almost equilateral triangles with integral side lengths and area and whose perimeters do not exceed one billion ($1\,000\,000\,000$).'''
 solved = false
 
 [95]
 title = "Amicable Chains"
+statement = '''
+The proper divisors of a number are all the divisors excluding the number itself. For example, the proper divisors of $28$ are $1$, $2$, $4$, $7$, and $14$. As the sum of these divisors is equal to $28$, we call it a perfect number.
+
+Interestingly the sum of the proper divisors of $220$ is $284$ and the sum of the proper divisors of $284$ is $220$, forming a chain of two numbers. For this reason, $220$ and $284$ are called an amicable pair.
+
+Perhaps less well known are longer chains. For example, starting with $12496$, we form a chain of five numbers:
+$$12496 \to 14288 \to 15472 \to 14536 \to 14264 (\to 12496 \to \cdots)$$
+
+Since this chain returns to its starting point, it is called an amicable chain.
+
+Find the smallest member of the longest amicable chain with no element exceeding one million.'''
 solved = false
 
 [96]
 title = "Su Doku"
+statement = '''
+Su Doku (Japanese meaning number place) is the name given to a popular puzzle concept. Its origin is unclear, but credit must be attributed to Leonhard Euler who invented a similar, and much more difficult, puzzle idea called Latin Squares. The objective of Su Doku puzzles, however, is to replace the blanks (or zeros) in a 9 by 9 grid in such that each row, column, and 3 by 3 box contains each of the digits 1 to 9. Below is an example of a typical starting puzzle grid and its solution grid.
+
+A well constructed Su Doku puzzle has a unique solution and can be solved by logic, although it may be necessary to employ "guess and test" methods in order to eliminate options (there is much contested opinion over this). The complexity of the search determines the difficulty of the puzzle; the example above is considered easy because it can be solved by straight forward direct deduction.
+
+The 6K text file, sudoku.txt (right click and 'Save Link/Target As...'), contains fifty different Su Doku puzzles ranging in difficulty, but all with unique solutions (the first puzzle in the file is the example above).
+
+By solving all fifty puzzles find the sum of the 3-digit numbers found in the top left corner of each solution grid; for example, 483 is the 3-digit number found in the top left corner of the solution grid above.'''
 solved = false
 
 [97]
 title = "Large Non-Mersenne Prime"
+statement = '''
+The first known prime found to exceed one million digits was discovered in 1999, and is a Mersenne prime of the form $2^{6972593} - 1$; it contains exactly $2\,098\,960$ digits. Subsequently other Mersenne primes, of the form $2^p - 1$, have been found which contain more digits.
+
+However, in 2004 there was found a massive non-Mersenne prime which contains $2\,357\,207$ digits: $28433 \times 2^{7830457} + 1$.
+
+Find the last ten digits of this prime number.'''
 solved = true
 
 [98]
 title = "Anagramic Squares"
+statement = '''
+By replacing each of the letters in the word CARE with $1$, $2$, $9$, and $6$ respectively, we form a square number: $1296 = 36^2$. What is remarkable is that, by using the same digital substitutions, the anagram, RACE, also forms a square number: $9216 = 96^2$. We shall call CARE (and RACE) a square anagram word pair and specify further that leading zeroes are not permitted, neither may a different letter have the same digital value as another letter.
+
+Using words.txt (right click and 'Save Link/Target As...'), a 16K text file containing nearly two-thousand common English words, find all the square anagram word pairs (a palindromic word is NOT considered to be an anagram of itself).
+
+What is the largest square number formed by any member of such a pair?
+
+NOTE: All anagrams formed must be contained in the given text file.'''
 solved = false
 
 [99]
 title = "Largest Exponential"
+statement = '''
+Comparing two numbers written in index form like $2^{11}$ and $3^7$ is not difficult, as any calculator would confirm that $2^{11} = 2048 \lt 3^7 = 2187$.
+
+However, confirming that $632382^{518061} \gt 519432^{525806}$ would be much more difficult, as both numbers contain over three million digits.
+
+Using base_exp.txt (right click and 'Save Link/Target As...'), a 22K text file containing one thousand lines with a base/exponent pair on each line, determine which line number has the greatest numerical value.
+
+NOTE: The first two lines in the file represent the numbers in the example given above.'''
 solved = false
 
 [100]
 title = "Arranged Probability"
+statement = '''
+If a box contains twenty-one coloured discs, composed of fifteen blue discs and six red discs, and two discs were taken at random, it can be seen that the probability of taking two blue discs, $P(\text{BB}) = (15/21) \times (14/20) = 1/2$.
+
+The next such arrangement, for which there is exactly $50\%$ chance of taking two blue discs at random, is a box containing eighty-five blue discs and thirty-five red discs.
+
+By finding the first arrangement to contain over $10^{12} = 1\,000\,000\,000\,000$ discs in total, determine the number of blue discs that the box would contain.'''
 solved = false
 
 [101]
