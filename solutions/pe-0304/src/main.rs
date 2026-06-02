@@ -17,55 +17,7 @@ fn fib(n: u64) -> (u128, u128) {
     }
 }
 
-// deterministic Miller-Rabin for u64
-fn is_prime(n: u64) -> bool {
-    if n < 2 {
-        return false;
-    }
-    for &p in &[2, 3, 5, 7, 11, 13] {
-        if n % p == 0 {
-            return n == p;
-        }
-    }
-
-    let d = (n - 1) >> (n - 1).trailing_zeros();
-
-    fn mod_pow(mut a: u128, mut d: u128, n: u128) -> u128 {
-        let mut r = 1;
-        while d > 0 {
-            if d & 1 == 1 {
-                r = r * a % n;
-            }
-            a = a * a % n;
-            d >>= 1;
-        }
-        r
-    }
-
-    for &a in &[2u64, 325, 9375, 28178, 450775, 9780504, 1795265022] {
-        if a % n == 0 {
-            continue;
-        }
-        let mut x = mod_pow(a as u128, d as u128, n as u128);
-        if x == 1 || x == n as u128 - 1 {
-            continue;
-        }
-        let mut dd = d;
-        let mut composite = true;
-        while dd != n - 1 {
-            x = x * x % n as u128;
-            dd <<= 1;
-            if x == n as u128 - 1 {
-                composite = false;
-                break;
-            }
-        }
-        if composite {
-            return false;
-        }
-    }
-    true
-}
+use pe_lib::is_prime;
 
 fn solve() -> u128 {
     let mut primes = Vec::with_capacity(NEED);

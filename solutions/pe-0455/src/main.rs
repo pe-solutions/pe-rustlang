@@ -1,35 +1,18 @@
 // Powers with Trailing Digits
 // https://projecteuler.net/problem=455
 
+use pe_lib::mod_pow;
+
 fn f(n: u64, md: u64) -> u64 {
     let mut r1 = n;
-    let mut r2 = mod_exp(n, r1, md);
-    
+    let mut r2 = mod_pow(n, r1, md);
+
     while r2 != r1 && r2 != 1 {
         r1 = r2;
-        r2 = mod_exp(n, r1, md);
+        r2 = mod_pow(n, r1, md);
     }
-    
+
     if r2 == 1 { 0 } else { r2 }
-}
-
-#[inline]
-fn mod_exp(base: u64, mut exp: u64, modulus: u64) -> u64 {
-    let mut result: u64 = 1;
-    
-    let mut b: u64 = base % modulus;
-
-    while exp > 0 {
-        if exp % 2 == 1 {
-            result = result.wrapping_mul(b) % modulus;
-        }
-        
-        exp /= 2;
-        
-        b = b.wrapping_mul(b) % modulus;
-    }
-    
-    result
 }
 
 fn solve() -> u64 {

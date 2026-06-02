@@ -1,11 +1,7 @@
 // Double-base Palindromes
 // https://projecteuler.net/problem=36
 
-
-fn is_palindrome(s: &str) -> bool {
-    let s_rev: String = s.chars().rev().collect();
-    s == s_rev
-}
+use pe_lib::is_palindrome_str as is_palindrome;
 
 fn solve() -> i32 {
     let mut answer = 0;

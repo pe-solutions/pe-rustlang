@@ -2,14 +2,7 @@
 // https://projecteuler.net/problem=32
 
 use std::collections::HashSet;
-
-fn is_pandigital(s: &str) -> bool {
-    if s.len() != 9 || s.chars().any(|c| c == '0' || s.chars().filter(|&d| d == c).count() != 1) {
-        return false;
-    }
-
-    true
-}
+use pe_lib::is_pandigital;
 
 fn solve() -> i32 {
     let mut products = HashSet::new();

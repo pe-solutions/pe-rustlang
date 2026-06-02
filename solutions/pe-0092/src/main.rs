@@ -2,19 +2,7 @@
 // https://projecteuler.net/problem=92
 
 use std::collections::HashMap;
-
-// Computes the sum of the squares of the digits of `n`.
-fn sum_of_digit_squares(mut n: u64) -> u64 {
-    let mut sum = 0;
-    
-    while n > 0 {
-        let digit = n % 10;
-        sum += digit * digit;
-        n /= 10;
-    }
-    
-    sum
-}
+use pe_lib::digit_sum_sq as sum_of_digit_squares;
 
 // Determines if the number `n` eventually ends up at 89 or 1,
 // using memoization to cache previously computed results.

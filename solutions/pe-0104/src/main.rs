@@ -2,20 +2,7 @@
 // https://projecteuler.net/problem=104
 
 use num::bigint::BigInt;
-
-fn is_pandigital(s: &str) -> bool {
-    if s.len() != 9 {
-        return false;
-    }
-
-    let mut chars: Vec<char> = s.chars().collect();
-
-    chars.sort();
-    
-    let sorted_str: String = chars.iter().collect();
-
-    sorted_str == "123456789"
-}
+use pe_lib::is_pandigital;
 
 fn solve() -> u32 {
     let mut fib_prev = BigInt::from(0u32);

@@ -1,16 +1,7 @@
 // Digit Power Sum
 // https://projecteuler.net/problem=119
 
-fn calculate_digit_sum(mut number: u64) -> u64 {
-    let mut digit_sum = 0;
-
-    while number > 0 {
-        digit_sum += number % 10;
-        number /= 10;
-    }
-
-    digit_sum
-}
+use pe_lib::digit_sum as calculate_digit_sum;
 
 fn calculate_digit_power_sums(n: usize) -> u64 {
     let mut results: Vec<u64> = Vec::new();
