@@ -12,7 +12,7 @@ solutions/
   pe-0001/         one crate per problem
   pe-0002/
   ...
-problems.toml      titles, statements, data URLs, and solved flags (998 problems)
+problems.toml      titles, statements, data fields, and solved flags (998 problems)
 ```
 
 ## Usage
@@ -32,6 +32,14 @@ cargo run -p pe-0042
 ./fetch-problems.sh          # recent problems only
 ./fetch-problems.sh --all    # full re-scrape (first-time setup)
 ```
+
+## problems.toml
+
+Each entry tracks a problem's title, statement, optional data fields, and a `solved` flag.
+
+`data_url` — present for the ~20 problems PE hosts as a separate download (e.g. `0054_poker.txt`). `new-solution.sh` downloads it automatically into `data/NNNN_name.txt`.
+
+`data_embedded = true` — marks problems whose input data is embedded in the problem statement (a grid, triangle, or matrix) rather than hosted as a download. The solutions for these problems (11, 18, 345) read from a `data/NNNN_*.txt` file, same convention as `data_url` problems.
 
 ## Solution pattern
 
