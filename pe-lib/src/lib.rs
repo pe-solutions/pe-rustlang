@@ -12,6 +12,7 @@
 //! - **number_theory**: Euler's totient function, totient sieve
 //! - **file_io**: file reading utilities (CSV, lines, strings)
 //! - **generic_int**: generic integer operations (u64, u128, extensible)
+//! - **rational**: rational number arithmetic (addition, subtraction, multiplication, division)
 //!
 //! All functions are re-exported at crate root via `pub use`.
 
@@ -24,6 +25,7 @@ pub mod isqrt;
 pub mod modular;
 pub mod number_theory;
 pub mod primes;
+pub mod rational;
 pub mod sequences;
 pub mod sieve;
 
@@ -36,5 +38,6 @@ pub use isqrt::*;
 pub use modular::*;
 pub use number_theory::*;
 pub use primes::*;
+pub use rational::*;
 pub use sequences::*;
 pub use sieve::*;
