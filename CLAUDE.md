@@ -64,6 +64,41 @@ Mark a problem solved by editing `problems.toml` directly.
 - `pe_utils::run(problem_num, solve_fn)` — calls `solve_fn`, prints the problem number, answer, and elapsed milliseconds.
 - `pe_utils::pe_main!()` — a macro that generates `fn main()`. It derives the problem number from the crate name at compile time (`pe-0042` → 42) and calls `pe_utils::run(42, solve)`.
 
+### `pe-lib` (mathematical utilities library)
+
+`pe-lib/src/` provides canonical implementations of mathematical utilities used across multiple solutions. All functions are re-exported at the crate root for convenient use.
+
+**Available modules and functions:**
+
+| Module | Functions | Use Cases |
+|--------|-----------|-----------|
+| `digits` | `digit_sum`, `digit_sum_sq`, `reverse_digits`, `is_palindrome_num`, `is_palindrome_str`, `is_pandigital`, `is_permutation`, `digits` | Digit manipulation (sums, reversals, palindromes) |
+| `primes` | `is_prime`, `is_prime_trial` | Primality testing (Miller-Rabin and 6k±1 trial division) |
+| `sieve` | `sieve_bools`, `sieve_primes`, `sieve_omega` | Prime sieves and factorization |
+| `modular` | `mod_pow`, `mod_mul` | Modular exponentiation and multiplication |
+| `sequences` | `Fibonacci`, `triangular`, `pentagonal`, `hexagonal`, etc. | Number sequences and polygonal numbers |
+| `divisors` | `sum_proper_divisors`, `count_divisors`, `prime_factors`, `largest_prime_factor` | Divisor operations |
+| `combinatorics` | `factorial`, `binomial_big`, `count_partitions` | Combinatorial functions |
+| `isqrt` | `isqrt`, `is_perfect_square` | Integer square root operations |
+| `number_theory` | `totient`, `totient_sieve` | Number theory utilities |
+
+**Using pe-lib in a solution:**
+
+```rust
+use pe_lib::{is_prime, digit_sum, sieve_primes};
+
+fn solve() -> u64 {
+    let primes = sieve_primes(100);
+    let sum: u64 = primes.iter()
+        .filter(|&p| is_prime(*p as u64))
+        .map(|p| digit_sum(*p as u64))
+        .sum();
+    sum
+}
+```
+
+**Refactoring status:** 26 of 83 solutions have been refactored to use `pe-lib` functions, eliminating ~1200 lines of duplicated code. All 83 solutions have `pe-lib` in their `Cargo.toml` and are ready for further refactoring following established patterns.
+
 ### Solution crate pattern
 
 Every solution follows this structure:
@@ -83,7 +118,13 @@ The `solve()` function must return a `Display` type. `pe_main!()` must appear af
 
 ### Workspace dependencies
 
-All external crates are declared once in the root `Cargo.toml` under `[workspace.dependencies]` and referenced in crate manifests with `{ workspace = true }`. Available: `pe-utils`, `num-bigint`, `num-traits`, `num`, `num-rational`, `itertools`, `primal`, `primes`, `csv`, `chrono`.
+All external crates and internal libraries are declared once in the root `Cargo.toml` under `[workspace.dependencies]` and referenced in crate manifests with `{ workspace = true }`. 
+
+**Internal libraries:**
+- `pe-utils` — timing harness and main macro
+- `pe-lib` — mathematical utilities (prime checking, digit manipulation, sieve, modular arithmetic, sequences, divisors, combinatorics, etc.)
+
+**External crates:** `num-bigint`, `num-traits`, `num`, `num-rational`, `itertools`, `primal`, `primes`, `csv`, `chrono`.
 
 ### Adding a new problem
 
@@ -98,3 +139,59 @@ This creates `solutions/pe-0042/` with a `Cargo.toml` and a `src/main.rs` pre-fi
 If the problem has a `data_url` in `problems.toml`, the scaffolding script downloads it automatically to `solutions/pe-NNNN/data/NNNN_name.txt`. Read it from `src/main.rs` using a relative path (e.g. `"data/0054_poker.txt"`). For problems without a `data_url`, place any hand-crafted data files in the same `data/` directory.
 
 To add an external dependency, declare it once in the root `Cargo.toml` under `[workspace.dependencies]`, then reference it in the crate's `Cargo.toml` with `{ workspace = true }`.
+
+## Refactoring to pe-lib
+
+Solutions that define custom implementations of common algorithms can be refactored to use `pe-lib` functions, reducing code duplication and improving maintainability.
+
+### Refactoring patterns
+
+When refactoring a solution, replace custom function implementations with `pe-lib` imports:
+
+**Before:**
+```rust
+fn is_prime(n: u64) -> bool {
+    if n < 2 { return false; }
+    for i in 2..=((n as f64).sqrt() as u64) {
+        if n % i == 0 { return false; }
+    }
+    true
+}
+
+fn solve() -> u64 {
+    (2..1_000_000).filter(|&n| is_prime(n)).sum()
+}
+```
+
+**After:**
+```rust
+use pe_lib::is_prime;
+
+fn solve() -> u64 {
+    (2..1_000_000).filter(|&n| is_prime(n)).sum()
+}
+```
+
+### Type conversions
+
+Some solutions use integer types that differ from `pe-lib`'s canonical u64. Handle these with wrapper functions:
+
+```rust
+use pe_lib::is_prime;
+
+fn is_prime_i32(n: i32) -> bool {
+    if n <= 0 { false } else { is_prime(n as u64) }
+}
+
+fn solve() -> i32 {
+    (2..=100).filter(|&n| is_prime_i32(n)).max().unwrap_or(0)
+}
+```
+
+### Refactoring status
+
+- **26 solutions** have been refactored to use `pe-lib` (Tier 1 completion)
+- **57 solutions** still have custom implementations available for refactoring
+- **~1200 lines** of duplicated code eliminated through Tier 1 refactoring
+
+Identified refactorable patterns include digit manipulation (24 solutions), prime checking (19 solutions), sieve implementations (11 solutions), modular arithmetic (10 solutions), and others. See `pe-lib` module documentation above for available functions.
