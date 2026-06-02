@@ -18,37 +18,20 @@
      x
  }
  
- fn is_prime(num: i32) -> bool {
+use pe_lib::is_prime;
+ 
+ fn is_composite(num: i32) -> bool {
      if num <= 1 {
          return true;
      }
-     if num <= 3 {
-         return true;
-     }
-     if num % 2 == 0 || num % 3 == 0 {
-         return false;
-     }
- 
-     let mut i = 5;
-     while i * i <= num {
-         if num % i == 0 || num % (i + 2) == 0 {
-             return false;
-         }
-         i += 6;
-     }
- 
-     true
- }
- 
- fn is_composite(num: i32) -> bool {
-     !is_prime(num)
+     !is_prime(num as u64)
  }
  
  fn is_goldbach_busted(num: i32) -> bool {
      let mut busted = true;
  
      for s in 1..=sqrtint(num / 2) {
-         if is_prime(num - 2 * s * s) {
+         if is_prime((num - 2 * s * s) as u64) {
              busted = false;
              break;
          }

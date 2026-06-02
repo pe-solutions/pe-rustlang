@@ -1,19 +1,7 @@
 // Prime permutations
 // https://projecteuler.net/problem=49
 
-fn is_prime(n: i32) -> bool {
-    if n % 2 == 0 && n != 2 {
-        return false;
-    }
-
-    for i in 3..=(n as f64).sqrt() as i32 + 1 {
-        if n % i == 0 {
-            return false;
-        }
-    }
-
-    true
-}
+use pe_lib::is_prime;
 
 fn is_permutation(n1: i32, n2: i32) -> bool {
     let mut n1_digits: Vec<char> = n1.to_string().chars().collect();
@@ -26,7 +14,7 @@ fn is_permutation(n1: i32, n2: i32) -> bool {
 }
 
 fn prime_list(s: i32, e: i32) -> Vec<i32> {
-    (s..=e).filter(|&n| is_prime(n)).collect()
+    (s..=e).filter(|&n| is_prime(n as u64)).collect()
 }
 
 fn prime_permutations(primes: &Vec<i32>) -> Vec<i32> {

@@ -1,13 +1,7 @@
 // Truncatable Primes
 // https://projecteuler.net/problem=37
 
-fn is_prime(t: usize) -> bool {
-    if t < 2 {
-        return false;
-    }
-
-    (2..=((t as f64).sqrt() as usize)).all(|i| t % i != 0)
-}
+use pe_lib::is_prime;
 
 
 fn is_truncatable(t: usize) -> bool {
@@ -17,13 +11,13 @@ fn is_truncatable(t: usize) -> bool {
         .all(|i| {
             let left = &num_str[..=i];
             let right = &num_str[i + 1..];
-            is_prime(left.parse().unwrap()) && is_prime(right.parse().unwrap())
+            is_prime(left.parse::<u64>().unwrap()) && is_prime(right.parse::<u64>().unwrap())
         })
 }
 
 fn solve() -> usize {
     (10..)
-        .filter(|&i| is_prime(i) && is_truncatable(i))
+        .filter(|&i| is_prime(i as u64) && is_truncatable(i))
         .take(11)
         .sum::<usize>()
 }

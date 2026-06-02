@@ -1,31 +1,7 @@
 // Reversible Prime Squares
 // https://projecteuler.net/problem=808
 
- fn is_prime(u: u64) -> bool {
-     if u <= 1 {
-         return false;
-     }
-
-     if u <= 3 {
-         return true;
-     }
-
-     if u % 2 == 0 || u % 3 == 0 {
-         return false;
-     }
- 
-     let mut i = 5;
-
-     while i * i <= u {
-         if u % i == 0 || u % (i + 2) == 0 {
-             return false;
-         }
-         
-         i += 6;
-     }
- 
-     true
- }
+use pe_lib::is_prime;
  
  fn reverse(n: u64) -> u64 {
      let mut r = 0;

@@ -1,26 +1,14 @@
 // Circular Primes
 // https://projecteuler.net/problem=35
 
-fn is_prime(n: u32) -> bool {
-    let mut i = 2;
-
-    while i * i <= n {
-        if n % i == 0 {
-            return false;
-        }
-
-        i += 1;
-    }
-
-    true
-}
+use pe_lib::is_prime;
 
 fn test_rotation_prime(mut n: u32) -> bool {
     let s = n.to_string();
     let mut t = s.clone();
 
     loop {
-        if !is_prime(n) {
+        if !is_prime(n as u64) {
             return false;
         }
 
