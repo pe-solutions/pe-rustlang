@@ -1,15 +1,17 @@
 // Cyclical Figurate Numbers
 // https://projecteuler.net/problem=61
 
+use pe_lib::{triangular, pentagonal, hexagonal, heptagonal, octagonal};
+
 struct NumberFunctions;
 
 impl NumberFunctions {
-    fn triangle_number(n: i32) -> i32 { n * (n + 1) / 2 }
+    fn triangle_number(n: i32) -> i32 { triangular(n as u64) as i32 }
     fn square_number(n: i32) -> i32 { n * n }
-    fn pentagonal_number(n: i32) -> i32 { n * (3 * n - 1) / 2 }
-    fn hexagonal_number(n: i32) -> i32 { n * (2 * n - 1) }
-    fn heptagonal_number(n: i32) -> i32 { n * (5 * n - 3) / 2 }
-    fn octagonal_number(n: i32) -> i32 { n * (3 * n - 2) }
+    fn pentagonal_number(n: i32) -> i32 { pentagonal(n as u64) as i32 }
+    fn hexagonal_number(n: i32) -> i32 { hexagonal(n as u64) as i32 }
+    fn heptagonal_number(n: i32) -> i32 { heptagonal(n as u64) as i32 }
+    fn octagonal_number(n: i32) -> i32 { octagonal(n as u64) as i32 }
     fn first_two_digits(n: i32) -> i32 { n / 100 }
     fn last_two_digits(n: i32) -> i32 { n % 100 }
 
