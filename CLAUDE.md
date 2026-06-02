@@ -81,6 +81,7 @@ Mark a problem solved by editing `problems.toml` directly.
 | `combinatorics` | `factorial`, `binomial_big`, `count_partitions` | Combinatorial functions |
 | `isqrt` | `isqrt`, `is_perfect_square` | Integer square root operations |
 | `number_theory` | `totient`, `totient_sieve` | Number theory utilities |
+| `file_io` | `read_file_to_string`, `read_csv_matrix`, `read_space_separated_matrix`, `read_lines` | File I/O and parsing utilities |
 
 **Using pe-lib in a solution:**
 
@@ -97,7 +98,13 @@ fn solve() -> u64 {
 }
 ```
 
-**Refactoring status:** 26 of 83 solutions have been refactored to use `pe-lib` functions, eliminating ~1200 lines of duplicated code. All 83 solutions have `pe-lib` in their `Cargo.toml` and are ready for further refactoring following established patterns.
+**Refactoring status:** 42 of 83 solutions (50.6%) have been refactored to use `pe-lib` functions across 4 tiers:
+- **Tier 1** (26 solutions): Primes, digits, sieve, modular arithmetic
+- **Tier 2** (10 solutions): Number theory, sequences, divisors, combinatorics, isqrt
+- **Tier 3** (1 solution): Specialized iterator patterns
+- **Tier 4** (5 solutions): File I/O utilities
+
+Total: ~1550 lines of duplicated code eliminated. All 83 solutions have `pe-lib` in their `Cargo.toml`.
 
 ### Solution crate pattern
 
