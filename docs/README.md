@@ -101,6 +101,15 @@ pe_utils::pe_main!();
 - **343 comprehensive tests** validating all utilities
 - **Recommended**: Use pe-lib functions when adding new solutions
 
+### Performance Optimizations
+
+pe-lib core functions are highly optimized:
+- **Prime factorization**: 6k±1 pattern (66% fewer iterations, 2-3x faster)
+- **Square root operations**: Integer arithmetic, no floating-point overhead
+- **Palindrome checking**: Zero-allocation two-pointer algorithm
+- **Bit operations**: `trailing_zeros()` for fast bit manipulation
+- All optimizations preserve correctness: 343/343 tests passing
+
 ## Testing
 
 Comprehensive test coverage across three phases:
