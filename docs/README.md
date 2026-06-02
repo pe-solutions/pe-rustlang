@@ -2,7 +2,7 @@
 
 <p align="center"><img src="logo.png"></p>
 
-Rust solutions to [Project Euler](https://projecteuler.net/) problems, organised as a Cargo workspace. Each problem is a standalone binary crate under `solutions/pe-NNNN/`. **106 solutions implemented**, covering problems 1-50 (complete) and 39 problems in the 51-100 range (78% complete).
+Rust solutions to [Project Euler](https://projecteuler.net/) problems, organised as a Cargo workspace. Each problem is a standalone binary crate under `solutions/pe-NNNN/`. **117 solutions implemented**, covering problems 1-100 (all 50 in 1-50, all 50 in 51-100 = 100% complete).
 
 ## Structure
 
@@ -97,11 +97,11 @@ pe_utils::pe_main!();
 
 ### Refactoring Status
 
-- **72 of 106 solutions** (67.9%) refactored to use `pe-lib`
-- **~2,300 lines** of duplicated code eliminated
+- **76 of 117 solutions** (64.9%) refactored to use `pe-lib`
+- **~2,500 lines** of duplicated code eliminated
 - **157 pe-lib tests** (126 unit + 31 integration) all passing
-- **106 solution tests** verifying correctness across all problems
-- **100% pass rate** across all 106 solutions
+- **117 solution tests** verifying correctness across all problems
+- **100% pass rate** across all 117 solutions
 - **Recommended**: Use pe-lib functions when adding new solutions
 
 ### Performance Optimizations
@@ -122,23 +122,25 @@ pe-lib core functions are highly optimized:
 - Removed external `primes` crate dependency
 - Improved code consistency and maintainability
 
-**New Solutions**: Added 23 new problems across 51-100 range using pe-lib
+**New Solutions**: Added 34 new problems across 51-100 range using pe-lib
 - **Batch 1** (5 solutions): pe-0051, 0052, 0054, 0057, 0058
   - Prime digit replacements, permuted multiples, poker hands, convergents of e, spiral primes
 - **Batch 2** (8 solutions): pe-0059, 0062, 0064, 0065, 0067, 0068, 0069, 0072
   - XOR decryption, cubic permutations, odd period square roots, convergents of e, max path sum, magic ring, totient maximum, counting fractions
 - **Batch 3** (10 solutions): pe-0073, 0074, 0075, 0077, 0078, 0079, 0080, 0082, 0083, 0084
   - Counting fractions, digit factorial chains, right triangles, prime summations, coin partitions, passcode derivation, square root expansion, path sums, monopoly
-- **Coverage progress**: 51-100 range 21/50 → 29/50 → 39/50 (42% → 58% → 78%)
+- **Batch 4** (11 solutions): pe-0085, 0086, 0088, 0089, 0093, 0094, 0095, 0096, 0098, 0099, 0100
+  - Rectangles, cuboid routes, product-sum, Roman numerals, arithmetic expressions, triangles, amicable chains, Sudoku solver, anagramic squares, exponentials, probability
+- **Coverage progress**: 51-100 range 21/50 → 29/50 → 39/50 → 50/50 (42% → 58% → 78% → 100%)
 
 ## Testing
 
-Comprehensive test coverage: **all 106 solutions passing** (100% success rate)
+Comprehensive test coverage: **all 117 solutions passing** (100% success rate)
 
 - **Unit Tests** (126): All pe-lib modules with edge cases, known values, mathematical properties
 - **Integration Tests** (31): Cross-module verification, sieve/prime consistency, performance baselines
-- **Solution Tests** (106): Individual solution verification across all 106 problems
-- **Total**: 250+ tests, all passing ✓
+- **Solution Tests** (117): Individual solution verification across all 117 problems (100 in 1-100, 17 others)
+- **Total**: 260+ tests, all passing ✓
 
 Run tests with:
 ```bash
@@ -152,7 +154,7 @@ cargo test -p pe-NNNN             # Specific solution tests
 | Range | Count | Status |
 |-------|-------|--------|
 | **1-50** | 50/50 (100%) | ✓ Complete |
-| **51-100** | 39/50 (78%) | 23 new solutions (3 batches) |
+| **51-100** | 50/50 (100%) | ✓ Complete (34 new solutions, 4 batches) |
 | **101-200** | 4/100 | Select problems |
 | **201-940** | 13/740 | Select problems |
-| **Total** | **106/998** | All passing ✓ |
+| **Total** | **117/998** | All passing ✓ |
