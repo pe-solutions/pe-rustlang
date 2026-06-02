@@ -1,21 +1,10 @@
 // Pentagon Numbers
 // https://projecteuler.net/problem=44
 
+use pe_lib::{is_pentagonal as pe_is_pentagonal, isqrt, is_perfect_square};
+
 fn is_pentagonal(n: u32) -> bool {
-    fn int_sqrt(num: u32) -> u32 {
-        let mut x = num >> 1;
-
-        while x != (x + num / x) >> 1 {
-            x = (x + num / x) >> 1;
-        }
-
-        x
-    }
-
-    let num = 24 * n + 1;
-    let sqrt_num = int_sqrt(num);
-
-    sqrt_num * sqrt_num == num && (sqrt_num + 1) % 6 == 0
+    pe_is_pentagonal(n as u64)
 }
 
 fn solve() -> u32 {
