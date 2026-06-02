@@ -39,4 +39,41 @@ fn solve() -> u32 {
     answer
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_single_digit_primes() {
+        // Single digit circular primes: 2, 3, 5, 7
+        assert!(test_rotation_prime(2));
+        assert!(test_rotation_prime(3));
+        assert!(test_rotation_prime(5));
+        assert!(test_rotation_prime(7));
+        assert!(!test_rotation_prime(4));
+        assert!(!test_rotation_prime(6));
+    }
+
+    #[test]
+    fn test_known_circular_primes() {
+        // 13: rotations are 13 and 31 (both prime)
+        assert!(test_rotation_prime(13));
+    }
+
+    #[test]
+    fn test_non_circular_primes() {
+        // 11: rotation gives 11 (same, prime), but let's check
+        // 23: rotations are 23 and 32 (32 is not prime)
+        assert!(!test_rotation_prime(23));
+    }
+
+    #[test]
+    fn test_solve_produces_count() {
+        let result = solve();
+        assert!(result > 0);
+        // There are 55 circular primes below 1 million
+        assert!(result < 100);
+    }
+}
+
 pe_utils::pe_main!();

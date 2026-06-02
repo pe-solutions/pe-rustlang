@@ -59,4 +59,43 @@ fn solve() -> i32 {
     max_d
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_perfect_square_skipping() {
+        // Verify we skip perfect squares
+        assert!(is_perfect_square(4));
+        assert!(is_perfect_square(9));
+        assert!(is_perfect_square(16));
+        assert!(!is_perfect_square(5));
+        assert!(!is_perfect_square(10));
+    }
+
+    #[test]
+    fn test_find_minimal_solution_simple() {
+        // For d=2, find x,y where x^2 - 2*y^2 = 1
+        let (x, y) = find_minimal_solution(2);
+        // Verify the solution satisfies the equation: x^2 - 2*y^2 = 1
+        let lhs = &x * &x - 2 * &y * &y;
+        assert_eq!(lhs, BigInt::one());
+    }
+
+    #[test]
+    fn test_find_minimal_solution_perfect_square() {
+        // For d=4 (perfect square), should return (0,0)
+        let (x, y) = find_minimal_solution(4);
+        assert_eq!(x, BigInt::zero());
+        assert_eq!(y, BigInt::zero());
+    }
+
+    #[test]
+    fn test_solve_produces_output() {
+        let result = solve();
+        assert!(result > 0);
+        assert!(result <= 1000);
+    }
+}
+
 pe_utils::pe_main!();

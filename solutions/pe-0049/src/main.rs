@@ -41,4 +41,40 @@ fn solve() -> String {
     result.iter().map(|&n| n.to_string()).collect()
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_is_permutation_basic() {
+        assert!(is_permutation(123, 321));
+        assert!(is_permutation(1234, 4321));
+        assert!(!is_permutation(123, 124));
+        assert!(!is_permutation(12, 123));
+    }
+
+    #[test]
+    fn test_is_permutation_primes() {
+        // 317 and 371 are both prime and permutations
+        assert!(is_permutation(317, 371));
+    }
+
+    #[test]
+    fn test_prime_list() {
+        let primes = prime_list(10, 25);
+        // Primes between 10 and 25: 11, 13, 17, 19, 23
+        assert!(primes.len() >= 4);
+        assert!(primes.contains(&11));
+        assert!(primes.contains(&13));
+    }
+
+    #[test]
+    fn test_solve_produces_output() {
+        let result = solve();
+        assert!(!result.is_empty());
+        // Result should be concatenation of three numbers
+        assert!(result.len() >= 9);
+    }
+}
+
 pe_utils::pe_main!();
