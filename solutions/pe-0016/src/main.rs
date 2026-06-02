@@ -1,24 +1,14 @@
 // Power Digit Sum
 // https://projecteuler.net/problem=16
 
-use num_bigint::{ToBigUint};
-
-fn calculate_sum_of_digits_of_power(exponent: u32) -> u32 {
-    let base = 2u32.to_biguint().unwrap();
-    let power = base.pow(exponent);
-
-    let digits = power.to_string();
-    
-    let result: u32 = digits
-        .chars()
-        .map(|c| c.to_digit(10).unwrap())
-        .sum();
-    
-    result
-}
+use num_bigint::ToBigUint;
 
 fn solve() -> u32 {
-    calculate_sum_of_digits_of_power(1000)
+    let base = 2u32.to_biguint().unwrap();
+    let power = base.pow(1000);
+    let digits_str = power.to_string();
+
+    digits_str.chars().map(|c| c.to_digit(10).unwrap()).sum()
 }
 
 pe_utils::pe_main!();

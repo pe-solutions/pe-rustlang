@@ -1,39 +1,20 @@
 // Distinct Primes Factors
 // https://projecteuler.net/problem=47
 
- fn generate_omega_sieve(limit: usize) -> Vec<usize> {
-    let mut omega_sieve = vec![0; limit];
+use pe_lib::sieve_omega;
 
-    for i in 2..limit {
-        if omega_sieve[i] == 0 {
-            for j in (i..limit).step_by(i) {
-                omega_sieve[j] += 1;
-            }
-        }
-    }
-
-    omega_sieve
-}
-
-fn find_first_number() -> usize {
-    let limit = 200_000; // Adjust this limit based on your needs
-    let required_factors = 4; // Set the required number of distinct prime factors
-
-    let omega_sieve = generate_omega_sieve(limit);
+fn solve() -> usize {
+    let limit = 200_000;
+    let required_factors = 4;
+    let omega = sieve_omega(limit);
 
     for i in 1..limit - required_factors {
-        let found = (0..required_factors).all(|j| omega_sieve[i + j] == required_factors);
-
-        if found {
+        if (0..required_factors).all(|j| omega[i + j] == required_factors) {
             return i;
         }
     }
 
-    0 // If no such number is found
-}
-
-fn solve() -> usize {
-    find_first_number()
+    0
 }
 
 pe_utils::pe_main!();

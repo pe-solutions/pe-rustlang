@@ -1,34 +1,17 @@
 // Triangular, Pentagonal, and Hexagonal
 // https://projecteuler.net/problem=45
 
-fn find_next_tph() -> i32 {
-    let mut p = 5;
-    let mut p_inc = 7;
+use pe_lib::{is_pentagonal, is_hexagonal};
 
-    let mut h = 6;
-    let mut h_inc = 9;
-
-    let mut equal_amount_found = 0;
-
-    while equal_amount_found <= 1 {
-        if p <= h {
-            p += p_inc;
-            p_inc += 3;
-        } else {
-            h += h_inc;
-            h_inc += 4;
+fn solve() -> u64 {
+    let mut n = 2u64;
+    loop {
+        let t = n * (n + 1) / 2;
+        if is_pentagonal(t) && is_hexagonal(t) {
+            return t;
         }
-
-        if p == h {
-            equal_amount_found += 1;
-        }
+        n += 1;
     }
-
-    return h;
-}
-
-fn solve() -> i32 {
-    find_next_tph()
 }
 
 pe_utils::pe_main!();

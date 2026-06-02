@@ -1,20 +1,15 @@
 // Coded Triangle Numbers
 // https://projecteuler.net/problem=42
 
+use pe_lib::is_triangular;
 use std::fs;
 
 fn is_triangle_word(s: &str) -> bool {
-    let n: u32 = s.chars()
+    let n: u64 = s.chars()
         .filter(|c| c.is_ascii_uppercase())
-        .map(|c| c as u32 - 'A' as u32 + 1)
+        .map(|c| c as u64 - 'A' as u64 + 1)
         .sum();
-    let mut i = 1;
-    let mut triangle_num = 1;
-    while triangle_num < n {
-        i += 1;
-        triangle_num = i * (i + 1) / 2;
-    }
-    n == triangle_num
+    is_triangular(n)
 }
 
 fn solve() -> usize {

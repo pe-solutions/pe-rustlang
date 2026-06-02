@@ -1,7 +1,7 @@
 // Prime Power Triples
 // https://projecteuler.net/problem=87
 
-use primes::is_prime;
+use pe_lib::is_prime;
 
 const LIMIT: u64 = 50_000_000;
 
