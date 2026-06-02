@@ -202,6 +202,8 @@ for num, title in fetched_titles.items():
 # --recent: only fetch statements for newly seen problems
 pool = merged if MODE == "--all" else fetched_titles
 need = sorted(n for n in pool if not merged[n].get("statement"))
+CHECKPOINT = 50  # write problems.toml every N statements
+
 if need:
     print(f"\nFetching {len(need)} missing statements...")
     for i, num in enumerate(need, 1):
@@ -212,6 +214,9 @@ if need:
             print("ok")
         else:
             print("failed")
+        if i % CHECKPOINT == 0:
+            write_toml(merged)
+            print(f"  [checkpoint] problems.toml written ({i}/{len(need)} statements fetched)")
         time.sleep(0.5)
 else:
     print("All statements already present.")
