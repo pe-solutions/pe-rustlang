@@ -2,7 +2,6 @@
 // https://projecteuler.net/problem=104
 
 use num::bigint::BigInt;
-use num::ToPrimitive;
 use pe_lib::is_pandigital;
 
 fn solve() -> u32 {
