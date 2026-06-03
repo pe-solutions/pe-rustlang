@@ -73,14 +73,14 @@ Mark a problem solved by editing `problems.toml` directly.
 | Module | Functions | Use Cases |
 |--------|-----------|-----------|
 | `digits` | `digit_sum`, `digit_sum_sq`, `reverse_digits`, `is_palindrome_num`, `is_palindrome_str`, `is_pandigital`, `is_permutation`, `digits` | Digit manipulation (sums, reversals, palindromes) |
-| `primes` | `is_prime`, `is_prime_trial` | Primality testing (Miller-Rabin and 6k±1 trial division) |
+| `factorization` | `is_prime`, `is_prime_trial`, `prime_factors`, `largest_prime_factor` | Primality testing and integer factorization |
 | `sieve` | `sieve_bools`, `sieve_primes`, `sieve_omega` | Prime sieves and factorization |
 | `modular` | `mod_pow`, `mod_mul` | Modular exponentiation and multiplication |
 | `sequences` | `Fibonacci`, `triangular`, `pentagonal`, `hexagonal`, etc. | Number sequences and polygonal numbers |
-| `divisors` | `sum_proper_divisors`, `count_divisors`, `prime_factors`, `largest_prime_factor` | Divisor operations |
+| `divisors` | `sum_proper_divisors`, `count_divisors` | Divisor enumeration (sum and count) |
 | `combinatorics` | `factorial`, `binomial_big`, `count_partitions` | Combinatorial functions |
 | `isqrt` | `isqrt`, `is_perfect_square` | Integer square root operations |
-| `number_theory` | `totient`, `totient_sieve` | Number theory utilities |
+| `number_theory` | `totient`, `totient_sieve`, `gcd` | Number theory utilities |
 | `file_io` | `read_file_to_string`, `read_csv_matrix`, `read_space_separated_matrix`, `read_lines` | File I/O and parsing utilities |
 | `rational` | `Rational` struct with arithmetic ops | Rational number arithmetic (fractions with automatic GCD reduction) |
 
