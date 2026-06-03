@@ -1,7 +1,7 @@
 // Factorial Digit Sum
 // https://projecteuler.net/problem=20
 
-use pe_lib::{factorial, digit_sum};
+use pe_lib::factorial;
 
 fn solve() -> u64 {
     let fact = factorial(100);
