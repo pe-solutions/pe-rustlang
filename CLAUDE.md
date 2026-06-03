@@ -82,8 +82,10 @@ Mark a problem solved by editing `problems.toml` directly.
 | `combinatorics` | `factorial`, `binomial_big`, `count_partitions` | Combinatorial functions |
 | `isqrt` | `isqrt`, `is_perfect_square` | Integer square root operations |
 | `number_theory` | `totient`, `totient_sieve`, `gcd` | Number theory utilities |
-| `file_io` | `read_file_to_string`, `read_csv_matrix`, `read_space_separated_matrix`, `read_lines` | File I/O and parsing utilities |
 | `rational` | `Rational` struct with arithmetic ops | Rational number arithmetic (fractions with automatic GCD reduction) |
+| `generic_int` | `digit_sum_generic` | Generic integer operations (u64, u128, extensible) |
+
+**File I/O utilities** are provided by `pe-utils`: `read_file_to_string`, `read_csv_matrix`, `read_space_separated_matrix`, `read_lines`.
 
 **Using pe-lib in a solution:**
 
