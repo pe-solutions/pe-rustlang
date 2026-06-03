@@ -3,10 +3,10 @@
 
 fn f_alternate(n: usize) -> usize {
     const MOD: usize = 1_000_000_007;
-    
+
     let maxd = 4 * (n - 1);
     let maxs = 2 * n * (n - 1);
-    
+
     let mut dp = vec![vec![0; maxs + 1]; n + 1];
 
     dp[0][0] = 1;

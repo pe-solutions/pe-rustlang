@@ -1,12 +1,12 @@
 //! Mathematical and utility functions for Project Euler solutions.
 //!
 //! This library provides canonical implementations of common algorithms used across PE problems:
+//! - **factorization**: primality testing and integer factorization
 //! - **digits**: digit sum, reversal, palindrome checking, pandigital validation
-//! - **primes**: Miller-Rabin and trial division primality testing
 //! - **sieve**: Sieve of Eratosthenes variants (bools, primes list, omega)
 //! - **modular**: modular multiplication and exponentiation
 //! - **sequences**: Fibonacci iterator, polygonal numbers
-//! - **divisors**: divisor sum, count, prime factorization
+//! - **divisors**: divisor sum, count
 //! - **combinatorics**: factorial, binomial, partition counting
 //! - **isqrt**: integer square root, perfect square testing
 //! - **number_theory**: Euler's totient function, totient sieve
@@ -19,6 +19,7 @@
 pub mod combinatorics;
 pub mod digits;
 pub mod divisors;
+pub mod factorization;
 pub mod file_io;
 pub mod generic_int;
 pub mod isqrt;
@@ -32,12 +33,12 @@ pub mod sieve;
 pub use combinatorics::*;
 pub use digits::*;
 pub use divisors::*;
+pub use factorization::*;
 pub use file_io::*;
 pub use generic_int::*;
 pub use isqrt::*;
 pub use modular::*;
 pub use number_theory::*;
-pub use primes::*;
 pub use rational::*;
 pub use sequences::*;
 pub use sieve::*;

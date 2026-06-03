@@ -1,4 +1,4 @@
-use crate::divisors::prime_factors;
+use crate::factorization::prime_factors;
 use crate::sieve::sieve_bools;
 
 pub fn gcd(mut a: u64, mut b: u64) -> u64 {

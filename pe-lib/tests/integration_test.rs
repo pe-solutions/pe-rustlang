@@ -3,9 +3,9 @@
 
 use pe_lib::{
     is_prime, sieve_primes, sieve_bools, digit_sum, is_palindrome_num,
-    is_pandigital, triangular, pentagonal, hexagonal, sum_proper_divisors,
-    count_divisors, prime_factors, largest_prime_factor, gcd, totient,
-    mod_pow, mod_mul, Fibonacci, factorial, binomial_big, count_partitions,
+    triangular, pentagonal, hexagonal, sum_proper_divisors,
+    count_divisors, prime_factors, gcd, totient,
+    mod_pow, mod_mul, Fibonacci, binomial_big, count_partitions,
     isqrt, is_perfect_square
 };
 
@@ -184,8 +184,8 @@ fn test_gcd_prime_factorization() {
     let a = 60u64;
     let b = 48u64;
 
-    let factors_a = prime_factors(a);
-    let factors_b = prime_factors(b);
+    let _factors_a = prime_factors(a);
+    let _factors_b = prime_factors(b);
 
     let gcd_val = gcd(a, b);
     assert!(gcd_val > 0);
