@@ -13,7 +13,7 @@ fn solve() -> u64 {
             }
         }
 
-        for i in start..=min(prod - sum + n, 2 * max_k as u64) {
+        for i in start..=std::cmp::min(prod - sum + n, 2 * max_k as u64) {
             if prod / i >= i && prod % i == 0 {
                 generate(prod, sum + i, n + 1, i, max_k, min_ps);
             }
@@ -32,10 +32,6 @@ fn solve() -> u64 {
         }
     }
     sum
-}
-
-fn min(a: u64, b: u64) -> u64 {
-    if a < b { a } else { b }
 }
 
 pe_utils::pe_main!();

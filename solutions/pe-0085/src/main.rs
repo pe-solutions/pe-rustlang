@@ -1,6 +1,10 @@
 // Counting Rectangles
 // https://projecteuler.net/problem=85
 
+fn rectangle_count(m: u64, n: u64) -> i64 {
+    (m * (m + 1) / 2) as i64 * (n * (n + 1) / 2) as i64
+}
+
 fn solve() -> u64 {
     let target = 2_000_000;
     let mut best_area = 0;
@@ -8,7 +12,7 @@ fn solve() -> u64 {
 
     for m in 1..=2000 {
         for n in m..=2000 {
-            let count = (m * (m + 1) / 2) as i64 * (n * (n + 1) / 2) as i64;
+            let count = rectangle_count(m, n);
             let diff = (count - target as i64).abs();
             if diff < best_diff {
                 best_diff = diff;

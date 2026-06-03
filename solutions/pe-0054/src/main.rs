@@ -27,27 +27,31 @@ impl Card {
     }
 }
 
-fn classify_hand(cards: &[Card; 5]) -> (u8, Vec<u8>) {
+fn get_rank_counts(cards: &[Card; 5]) -> [u8; 15] {
     let mut ranks = [0u8; 15];
     for card in cards {
         ranks[card.rank as usize] += 1;
     }
+    ranks
+}
 
-    let mut counts: Vec<u8> = ranks.iter().filter(|&&c| c > 0).copied().collect();
-    counts.sort_by(|a, b| b.cmp(a));
+fn is_flush(cards: &[Card; 5]) -> bool {
+    cards.iter().all(|c| c.suit == cards[0].suit)
+}
 
-    let is_flush = cards.iter().all(|c| c.suit == cards[0].suit);
-    let is_straight = {
-        let sorted: Vec<_> = cards.iter().map(|c| c.rank).collect();
-        sorted[4] - sorted[0] == 4 && counts.len() == 5
-    };
+fn is_straight(cards: &[Card; 5], rank_counts: &[u8; 15]) -> bool {
+    let sorted: Vec<_> = cards.iter().map(|c| c.rank).collect();
+    let has_five_distinct = (0..=14).filter(|&i| rank_counts[i] > 0).count() == 5;
+    sorted[4] - sorted[0] == 4 && has_five_distinct
+}
 
-    let rank_counts: Vec<u8> = (0..=14)
+fn determine_hand_type(rank_counts: &[u8; 15], is_straight: bool, is_flush: bool) -> u8 {
+    let rank_pattern: Vec<u8> = (0..=14)
         .rev()
-        .filter_map(|i| if ranks[i] > 0 { Some(ranks[i]) } else { None })
+        .filter_map(|i| if rank_counts[i] > 0 { Some(rank_counts[i]) } else { None })
         .collect();
 
-    let hand_type = match (&rank_counts[..], is_straight, is_flush) {
+    match (&rank_pattern[..], is_straight, is_flush) {
         ([4, 1], _, _) => 7,           // Four of a kind
         ([3, 2], _, _) => 6,           // Full house
         (_, _, true) => 5,             // Flush
@@ -56,12 +60,22 @@ fn classify_hand(cards: &[Card; 5]) -> (u8, Vec<u8>) {
         ([2, 2, 1], _, _) => 2,        // Two pair
         ([2, 1, 1, 1], _, _) => 1,     // One pair
         _ => 0,                        // High card
-    };
+    }
+}
 
-    let tiebreakers: Vec<u8> = (0..=14)
+fn get_tiebreakers(rank_counts: &[u8; 15]) -> Vec<u8> {
+    (0..=14)
         .rev()
-        .filter_map(|i| if ranks[i] > 0 { Some(ranks[i] * 16 + i as u8) } else { None })
-        .collect();
+        .filter_map(|i| if rank_counts[i] > 0 { Some(rank_counts[i] * 16 + i as u8) } else { None })
+        .collect()
+}
+
+fn classify_hand(cards: &[Card; 5]) -> (u8, Vec<u8>) {
+    let rank_counts = get_rank_counts(cards);
+    let flush = is_flush(cards);
+    let straight = is_straight(cards, &rank_counts);
+    let hand_type = determine_hand_type(&rank_counts, straight, flush);
+    let tiebreakers = get_tiebreakers(&rank_counts);
 
     (hand_type, tiebreakers)
 }
