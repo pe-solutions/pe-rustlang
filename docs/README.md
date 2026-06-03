@@ -97,12 +97,24 @@ pe_utils::pe_main!();
 
 ### Refactoring Status
 
+#### Cross-Solution (pe-lib) Refactoring
 - **76 of 117 solutions** (64.9%) refactored to use `pe-lib`
 - **~2,500 lines** of duplicated code eliminated
 - **157 pe-lib tests** (126 unit + 31 integration) all passing
 - **117 solution tests** verifying correctness across all problems
 - **100% pass rate** across all 117 solutions
-- **Recommended**: Use pe-lib functions when adding new solutions
+
+#### Local Code Refactoring (2026)
+High-ROI improvements to code clarity and testability via helper extraction:
+- **9 of 33 unrefactored solutions** refactored (27% coverage)
+- **8 helper functions** extracted from complex solve() implementations
+- **~110 lines** of complexity reduced through decomposition
+- **Quick Wins** (3): pe-0008 data extraction, pe-0831 wrapper removal, pe-0094 pe-lib integration
+- **Tier 1** (5): pe-0098 (3 helpers), pe-0093 (1), pe-0068 (2), pe-0026 (struct→function), pe-0160 (1)
+- **Tier 2** (1): pe-0084 (2 helpers: roll_dice, find_top_3_positions)
+- **Tier 3 Analysis** (24 solutions): 20 already well-structured or trivial; 4 large solutions pre-existing helpers
+
+**Recommended**: Use pe-lib functions when adding new solutions; extract helpers when solve() exceeds ~20 lines
 
 ### Performance Optimizations
 
@@ -114,6 +126,49 @@ pe-lib core functions are highly optimized:
 - **Decompose**: Bit-based decomposition for Miller-Rabin primality test
 - All optimizations preserve correctness: 245+ tests passing
 
+### Local Refactoring Patterns
+
+When a solution's `solve()` function becomes complex (>20 lines), extract cohesive helpers to improve clarity:
+
+**Pattern 1: Data Extraction**
+```rust
+// Before: Hardcoded data in source
+fn solve() -> u64 {
+    let data = "73167176531330624919...";  // 1000 digits
+    // ... process
+}
+
+// After: Read from external file
+fn solve() -> u64 {
+    let data = fs::read_to_string("data/0008_digits.txt")?;
+    // ... process
+}
+```
+
+**Pattern 2: Helper Extraction**
+```rust
+// Before: Mixed concerns in solve()
+fn solve() -> u64 {
+    let (dice_sum, is_double) = /* RNG logic + dice logic */;
+    // ... winner tracking logic mixed in
+}
+
+// After: Separate helpers
+fn roll_dice(rng_state: &mut u64) -> (u64, bool) { /* RNG + dice */ }
+fn find_top_3_positions(visits: &[u64; 40]) -> u64 { /* winner tracking */ }
+
+fn solve() -> u64 {
+    let (dice_sum, is_double) = roll_dice(&mut rng_state);
+    // ... orchestrate calls
+    find_top_3_positions(&visits)
+}
+```
+
+**Extraction Threshold**: 
+- Extract when solve() exceeds ~20 lines
+- Keep helpers local (not in pe-lib) unless 2+ solutions need them
+- Preserve domain-specific logic; avoid over-engineering
+
 ### Recent Improvements
 
 **Refactoring Campaign**: Consolidated duplicated code into pe-lib
@@ -121,6 +176,12 @@ pe-lib core functions are highly optimized:
 - Refactored 24 solutions to use pe-lib (45 → 69 solutions, 54.2% → 71.9%)
 - Removed external `primes` crate dependency
 - Improved code consistency and maintainability
+
+**Local Code Refactoring** (June 2026)
+- Improved 9 solutions via helper extraction and data externalization
+- Categorized 33 unrefactored solutions by refactoring ROI (3 tiers)
+- Identified that 20/24 Tier 3 solutions are already well-structured
+- Achieved 27% coverage on high-complexity unrefactored solutions
 
 **New Solutions**: Added 34 new problems across 51-100 range using pe-lib
 - **Batch 1** (5 solutions): pe-0051, 0052, 0054, 0057, 0058
