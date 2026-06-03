@@ -1,3 +1,7 @@
+pub mod file_io;
+
+pub use file_io::{read_csv_matrix, read_file_to_string, read_lines, read_space_separated_matrix};
+
 pub fn run<T: std::fmt::Display>(num: u16, f: impl FnOnce() -> T) {
     let start = std::time::Instant::now();
     let answer = f();

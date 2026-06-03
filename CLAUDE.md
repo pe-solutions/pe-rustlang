@@ -57,16 +57,17 @@ Mark a problem solved by editing `problems.toml` directly.
 
 ## Architecture
 
-### `pe-utils` (shared library)
+### `pe-utils` (shared utilities)
 
-`pe-utils/src/lib.rs` provides two things:
+`pe-utils/src/lib.rs` provides timing harness and file I/O utilities:
 
 - `pe_utils::run(problem_num, solve_fn)` — calls `solve_fn`, prints the problem number, answer, and elapsed milliseconds.
 - `pe_utils::pe_main!()` — a macro that generates `fn main()`. It derives the problem number from the crate name at compile time (`pe-0042` → 42) and calls `pe_utils::run(42, solve)`.
+- `file_io` module — utilities for reading problem data files (`read_file_to_string`, `read_csv_matrix`, `read_space_separated_matrix`, `read_lines`).
 
 ### `pe-lib` (mathematical utilities library)
 
-`pe-lib/src/` provides canonical implementations of mathematical utilities used across multiple solutions. All functions are re-exported at the crate root for convenient use.
+`pe-lib/src/` provides canonical implementations of mathematical utilities used across multiple solutions. All functions (including file I/O utilities re-exported from `pe-utils`) are re-exported at the crate root for convenient use.
 
 **Available modules and functions:**
 

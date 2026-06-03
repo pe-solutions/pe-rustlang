@@ -56,11 +56,20 @@ fn solve() -> u64 {
 pe_utils::pe_main!();
 ```
 
-## pe-lib: Shared Utilities Library
+## Shared Utilities
 
-A centralized library of 40+ canonical mathematical and utility functions used across solutions, eliminating ~1,814 lines of duplicated code.
+### pe-utils: Infrastructure Library
 
-### Available Modules (14 total)
+Provides timing harness and file I/O utilities:
+- `run()` function for timing problem solutions
+- `pe_main!()` macro for auto-generating `main()`
+- `file_io` module for reading problem data (CSV, space-separated, text lines)
+
+### pe-lib: Mathematical Utilities Library
+
+A centralized library of 40+ canonical mathematical functions used across solutions, eliminating ~1,814 lines of duplicated code. Re-exports file I/O utilities from pe-utils for convenience.
+
+### Available Modules (13 total in pe-lib)
 
 | Module | Purpose | Examples |
 |--------|---------|----------|
@@ -74,9 +83,10 @@ A centralized library of 40+ canonical mathematical and utility functions used a
 | `combinatorics` | Combinatorial functions | `factorial`, `binomial_big`, `count_partitions` |
 | `isqrt` | Integer square root | `isqrt`, `is_perfect_square` |
 | `number_theory` | Number theory | `gcd`, `totient`, `totient_sieve` |
-| `file_io` | File utilities | `read_file_to_string`, `read_csv_matrix`, `read_lines` |
 | `rational` | Rational numbers | `Rational` struct with full arithmetic (add, subtract, multiply, divide) |
 | `generic_int` | Generic integer ops | `digit_sum_generic` for u64, u128, and extensible types |
+
+**pe-utils modules:** `file_io` (available via re-export in pe-lib: `read_file_to_string`, `read_csv_matrix`, `read_space_separated_matrix`, `read_lines`)
 
 ### Using pe-lib
 

@@ -10,17 +10,16 @@
 //! - **combinatorics**: factorial, binomial, partition counting
 //! - **isqrt**: integer square root, perfect square testing
 //! - **number_theory**: Euler's totient function, totient sieve
-//! - **file_io**: file reading utilities (CSV, lines, strings)
 //! - **generic_int**: generic integer operations (u64, u128, extensible)
 //! - **rational**: rational number arithmetic (addition, subtraction, multiplication, division)
 //!
+//! File I/O utilities are available via pe-utils (which pe-lib re-exports for convenience).
 //! All functions are re-exported at crate root via `pub use`.
 
 pub mod combinatorics;
 pub mod digits;
 pub mod divisors;
 pub mod factorization;
-pub mod file_io;
 pub mod generic_int;
 pub mod isqrt;
 pub mod modular;
@@ -34,7 +33,6 @@ pub use combinatorics::*;
 pub use digits::*;
 pub use divisors::*;
 pub use factorization::*;
-pub use file_io::*;
 pub use generic_int::*;
 pub use isqrt::*;
 pub use modular::*;
@@ -42,3 +40,4 @@ pub use number_theory::*;
 pub use rational::*;
 pub use sequences::*;
 pub use sieve::*;
+pub use pe_utils::file_io::*;
