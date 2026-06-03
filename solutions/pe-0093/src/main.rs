@@ -39,6 +39,16 @@ fn eval_all(nums: &[f64]) -> HashSet<u64> {
     results
 }
 
+fn count_consecutive_sequence(results: &HashSet<u64>) -> u64 {
+    let mut consecutive = 0;
+    let mut n = 1;
+    while results.contains(&n) {
+        consecutive += 1;
+        n += 1;
+    }
+    consecutive
+}
+
 fn solve() -> u64 {
     let mut best_consecutive = 0;
     let mut best_num = 0;
@@ -49,13 +59,7 @@ fn solve() -> u64 {
                 for d in c + 1..=9 {
                     let nums = vec![a as f64, b as f64, c as f64, d as f64];
                     let results = eval_all(&nums);
-
-                    let mut consecutive = 0;
-                    let mut n = 1;
-                    while results.contains(&n) {
-                        consecutive += 1;
-                        n += 1;
-                    }
+                    let consecutive = count_consecutive_sequence(&results);
 
                     if consecutive > best_consecutive {
                         best_consecutive = consecutive;

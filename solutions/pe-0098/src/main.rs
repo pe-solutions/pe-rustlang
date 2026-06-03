@@ -32,17 +32,22 @@ fn can_map(word: &str, num_str: &str, mapping: &mut HashMap<char, char>) -> bool
     true
 }
 
-fn solve() -> u64 {
+fn read_word_list() -> Vec<String> {
     let words_str = std::fs::read_to_string("data/0098_words.txt").unwrap_or_default();
     let cleaned = words_str.replace("\"", "");
-    let words: Vec<&str> = cleaned.split(',').collect();
+    cleaned.split(',').map(|s| s.to_string()).collect()
+}
 
+fn group_anagrams(words: &[String]) -> HashMap<String, Vec<&str>> {
     let mut anagrams: HashMap<String, Vec<&str>> = HashMap::new();
-    for word in &words {
+    for word in words {
         let key = sorted_chars(word);
         anagrams.entry(key).or_insert_with(Vec::new).push(word);
     }
+    anagrams
+}
 
+fn find_largest_mapping(anagrams: HashMap<String, Vec<&str>>) -> u64 {
     let mut max_value = 0u64;
     for (_, word_group) in anagrams {
         if word_group.len() < 2 {
@@ -73,8 +78,13 @@ fn solve() -> u64 {
             num += 1;
         }
     }
-
     max_value
+}
+
+fn solve() -> u64 {
+    let words = read_word_list();
+    let anagrams = group_anagrams(&words);
+    find_largest_mapping(anagrams)
 }
 
 pe_utils::pe_main!();

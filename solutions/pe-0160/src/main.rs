@@ -1,16 +1,18 @@
 // Factorial Trailing Digits
 // https://projecteuler.net/problem=160
 
+fn remove_trailing_zeros(n: &mut u64) {
+    while *n % 10 == 0 {
+        *n /= 10;
+    }
+}
+
 fn f(n: u64) -> u64 {
     let mut result: u64 = 1u64;
 
     for i in 1..=n {
         result *= i;
-
-        while result % 10 == 0 {
-            result /= 10;
-        }
-
+        remove_trailing_zeros(&mut result);
         result %= 1_000_000_000_000;
     }
 
