@@ -110,6 +110,23 @@ fn solve() -> u64 {
 pe_utils::pe_main!();
 ```
 
+### Using pe-utils (File I/O)
+
+For file reading operations, import from `pe-utils`:
+
+```rust
+use pe_utils::read_csv_matrix;
+use pe_lib::is_prime;
+
+fn solve() -> u64 {
+    let matrix = read_csv_matrix("data/input.csv").unwrap();
+    // process matrix...
+    0
+}
+
+pe_utils::pe_main!();
+```
+
 ### Refactoring Status
 
 #### Cross-Solution (pe-lib) Refactoring
