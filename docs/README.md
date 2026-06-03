@@ -69,7 +69,7 @@ Provides timing harness and file I/O utilities:
 
 A centralized library of 40+ canonical mathematical functions used across solutions, eliminating ~1,814 lines of duplicated code.
 
-### pe-lib Modules (13 total)
+### pe-lib Modules (12 total)
 
 | Module | Purpose | Examples |
 |--------|---------|----------|
