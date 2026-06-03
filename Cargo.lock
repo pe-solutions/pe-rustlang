@@ -1034,6 +1034,7 @@ dependencies = [
 name = "pe-0094"
 version = "0.1.0"
 dependencies = [
+ "pe-lib",
  "pe-utils",
 ]
 
