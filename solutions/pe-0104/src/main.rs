@@ -2,20 +2,33 @@
 // https://projecteuler.net/problem=104
 
 use num::bigint::BigInt;
+use num::ToPrimitive;
 use pe_lib::is_pandigital;
 
 fn solve() -> u32 {
     let mut fib_prev = BigInt::from(0u32);
     let mut fib_curr = BigInt::from(1u32);
+    let mut last_9_prev = 0u64;
+    let mut last_9_curr = 1u64;
     let mut index = 1u32;
+    const MOD_9: u64 = 1_000_000_000;
+
     loop {
         let fib_next: BigInt = &fib_prev + &fib_curr;
-        fib_prev = fib_curr.clone();
+        let last_9_next = (last_9_prev + last_9_curr) % MOD_9;
+
+        fib_prev = fib_curr;
         fib_curr = fib_next.clone();
+        last_9_prev = last_9_curr;
+        last_9_curr = last_9_next;
         index += 1;
-        if is_pandigital(&format!("{}", fib_next.clone() % 1_000_000_000u64)) {
-            let fib_str = format!("{}", fib_next);
-            if is_pandigital(&fib_str[0..9]) {
+
+        // Check last 9 digits first (cheap operation)
+        if is_pandigital(&format!("{:09}", last_9_next)) {
+            // Only format full number if last 9 digits are pandigital
+            let fib_str = fib_next.to_string();
+            // Check first 9 digits (if number is long enough)
+            if fib_str.len() >= 9 && is_pandigital(&fib_str[0..9]) {
                 return index;
             }
         }
