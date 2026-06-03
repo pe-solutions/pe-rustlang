@@ -60,16 +60,17 @@ pe_utils::pe_main!();
 
 A centralized library of 40+ canonical mathematical and utility functions used across solutions, eliminating ~1,814 lines of duplicated code.
 
-### Available Modules (13 total)
+### Available Modules (14 total)
 
 | Module | Purpose | Examples |
 |--------|---------|----------|
 | `digits` | Digit manipulation | `digit_sum`, `reverse_digits`, `is_palindrome_num`, `is_pandigital` |
-| `primes` | Primality testing | `is_prime` (Miller-Rabin), `is_prime_trial` (6k±1) |
+| `factorization` | Primality & factorization | `is_prime` (Miller-Rabin), `is_prime_trial` (6k±1), `prime_factors`, `largest_prime_factor` |
+| `primes` | Primality testing (deprecated) | Re-exports from `factorization` for backward compatibility |
 | `sieve` | Prime generation | `sieve_primes`, `sieve_bools`, `sieve_omega` |
 | `modular` | Modular arithmetic | `mod_pow`, `mod_mul` |
 | `sequences` | Number sequences | `Fibonacci` iterator, `triangular`, `pentagonal`, `hexagonal` |
-| `divisors` | Divisor operations | `sum_proper_divisors`, `count_divisors`, `prime_factors` |
+| `divisors` | Divisor enumeration | `sum_proper_divisors`, `count_divisors` |
 | `combinatorics` | Combinatorial functions | `factorial`, `binomial_big`, `count_partitions` |
 | `isqrt` | Integer square root | `isqrt`, `is_perfect_square` |
 | `number_theory` | Number theory | `gcd`, `totient`, `totient_sieve` |
