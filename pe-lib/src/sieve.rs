@@ -124,20 +124,20 @@ mod tests {
         assert_eq!(result0.len(), 1);
         let result1 = sieve_bools(1);
         assert_eq!(result1.len(), 2);
-        assert_eq!(result1[0], false); // 0 is not prime
-        assert_eq!(result1[1], true);  // 1 is marked as prime (degenerate case, guard doesn't apply)
+        assert!(!result1[0]); // 0 is not prime
+        assert!(result1[1]);  // 1 is marked as prime (degenerate case, guard doesn't apply)
     }
 
     #[test]
     fn test_sieve_bools_small() {
         let sieve = sieve_bools(10);
-        assert_eq!(sieve[0], false); // 0 is not prime
-        assert_eq!(sieve[1], false); // 1 is not prime
-        assert_eq!(sieve[2], true);  // 2 is prime
-        assert_eq!(sieve[3], true);  // 3 is prime
-        assert_eq!(sieve[4], false); // 4 is not prime
-        assert_eq!(sieve[5], true);  // 5 is prime
-        assert_eq!(sieve[10], false); // 10 is not prime
+        assert!(!sieve[0]); // 0 is not prime
+        assert!(!sieve[1]); // 1 is not prime
+        assert!(sieve[2]);  // 2 is prime
+        assert!(sieve[3]);  // 3 is prime
+        assert!(!sieve[4]); // 4 is not prime
+        assert!(sieve[5]);  // 5 is prime
+        assert!(!sieve[10]); // 10 is not prime
     }
 
     #[test]
@@ -152,7 +152,7 @@ mod tests {
     fn test_sieve_bools_known_composite() {
         let sieve = sieve_bools(20);
         for &n in &[4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20] {
-            assert_eq!(sieve[n], false, "{} should not be prime", n);
+            assert!(!sieve[n], "{} should not be prime", n);
         }
     }
 
