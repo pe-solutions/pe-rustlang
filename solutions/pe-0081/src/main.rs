@@ -2,7 +2,7 @@
 // https://projecteuler.net/problem=81
 
 use std::io;
-use pe_lib::read_csv_matrix;
+use pe_utils::read_csv_matrix;
 
 type MatrixError = io::Error;
 

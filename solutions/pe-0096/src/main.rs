@@ -1,7 +1,7 @@
 // Su Doku
 // https://projecteuler.net/problem=96
 
-use pe_lib::read_lines;
+use pe_utils::read_lines;
 
 fn is_valid(board: &[[u8; 9]; 9], row: usize, col: usize, num: u8) -> bool {
     for i in 0..9 {

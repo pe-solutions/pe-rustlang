@@ -4,6 +4,5 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-pe-utils = { workspace = true }
 num-bigint = { workspace = true }
 num-traits = { workspace = true }

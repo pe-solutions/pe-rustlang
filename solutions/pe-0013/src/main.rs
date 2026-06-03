@@ -2,7 +2,7 @@
 // https://projecteuler.net/problem=13
 
 use num_bigint::BigUint;
-use pe_lib::read_lines;
+use pe_utils::read_lines;
 
 fn large_sum(arr: Vec<String>) -> Result<BigUint, num_bigint::ParseBigIntError> {
     let mut sum = BigUint::from(0u32);

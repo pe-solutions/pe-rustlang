@@ -1,7 +1,7 @@
 // Matrix Sum
 // https://projecteuler.net/problem=345
 
-use pe_lib::read_space_separated_matrix;
+use pe_utils::read_space_separated_matrix;
 
 const N: usize = 15;
 const N2: usize = 1 << N;

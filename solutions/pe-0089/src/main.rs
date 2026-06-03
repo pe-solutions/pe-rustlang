@@ -1,7 +1,7 @@
 // Roman Numerals
 // https://projecteuler.net/problem=89
 
-use pe_lib::read_lines;
+use pe_utils::read_lines;
 
 fn roman_to_int(s: &str) -> i32 {
     let mut result = 0;

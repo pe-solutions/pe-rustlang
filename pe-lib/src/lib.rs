@@ -13,8 +13,7 @@
 //! - **generic_int**: generic integer operations (u64, u128, extensible)
 //! - **rational**: rational number arithmetic (addition, subtraction, multiplication, division)
 //!
-//! File I/O utilities are available via pe-utils (which pe-lib re-exports for convenience).
-//! All functions are re-exported at crate root via `pub use`.
+//! File I/O utilities are provided by pe-utils. All functions are re-exported at crate root via `pub use`.
 
 pub mod combinatorics;
 pub mod digits;
@@ -40,4 +39,3 @@ pub use number_theory::*;
 pub use rational::*;
 pub use sequences::*;
 pub use sieve::*;
-pub use pe_utils::file_io::*;

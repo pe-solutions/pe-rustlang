@@ -1,7 +1,7 @@
 // Maximum Path Sum I
 // https://projecteuler.net/problem=18
 
-use pe_lib::read_space_separated_matrix;
+use pe_utils::read_space_separated_matrix;
 
 fn solve() -> u64 {
     let mut triangle = read_space_separated_matrix::<u64>("data/0018_triangle.txt")

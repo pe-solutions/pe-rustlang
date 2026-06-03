@@ -1,7 +1,7 @@
 // Names scores
 // https://projecteuler.net/problem=22
 
-use pe_lib::read_file_to_string;
+use pe_utils::read_file_to_string;
 
 fn name_value(name: &str) -> u32 {
     name.chars().map(|c| c as u32 - 'A' as u32 + 1).sum()

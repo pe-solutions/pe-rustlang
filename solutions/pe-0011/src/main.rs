@@ -1,7 +1,7 @@
 // Largest Product in a Grid
 // https://projecteuler.net/problem=11
 
-use pe_lib::read_space_separated_matrix;
+use pe_utils::read_space_separated_matrix;
 
 fn max_product_in_grid(grid: &Vec<Vec<i32>>) -> i32 {
     let rows = grid.len();

@@ -1,7 +1,7 @@
 // XOR Decryption
 // https://projecteuler.net/problem=59
 
-use pe_lib::read_file_to_string;
+use pe_utils::read_file_to_string;
 
 fn solve() -> u64 {
     let content = read_file_to_string("data/0059_cipher.txt").unwrap();

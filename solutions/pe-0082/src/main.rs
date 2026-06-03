@@ -1,7 +1,7 @@
 // Path Sum: Two Ways
 // https://projecteuler.net/problem=82
 
-use pe_lib::read_space_separated_matrix;
+use pe_utils::read_space_separated_matrix;
 
 fn solve() -> u64 {
     let matrix = read_space_separated_matrix::<u64>("data/0082_matrix.txt")

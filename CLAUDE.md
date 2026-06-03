@@ -67,7 +67,7 @@ Mark a problem solved by editing `problems.toml` directly.
 
 ### `pe-lib` (mathematical utilities library)
 
-`pe-lib/src/` provides canonical implementations of mathematical utilities used across multiple solutions. All functions (including file I/O utilities re-exported from `pe-utils`) are re-exported at the crate root for convenient use.
+`pe-lib/src/` provides canonical implementations of mathematical utilities used across multiple solutions. All functions are re-exported at the crate root for convenient use.
 
 **Available modules and functions:**
 

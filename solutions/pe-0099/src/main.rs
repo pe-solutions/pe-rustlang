@@ -1,7 +1,7 @@
 // Largest Exponential
 // https://projecteuler.net/problem=99
 
-use pe_lib::read_lines;
+use pe_utils::read_lines;
 
 fn solve() -> u64 {
     let lines = read_lines("data/0099_base_exp.txt").unwrap_or_default();

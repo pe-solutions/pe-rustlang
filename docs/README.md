@@ -67,9 +67,9 @@ Provides timing harness and file I/O utilities:
 
 ### pe-lib: Mathematical Utilities Library
 
-A centralized library of 40+ canonical mathematical functions used across solutions, eliminating ~1,814 lines of duplicated code. Re-exports file I/O utilities from pe-utils for convenience.
+A centralized library of 40+ canonical mathematical functions used across solutions, eliminating ~1,814 lines of duplicated code.
 
-### Available Modules (13 total in pe-lib)
+### pe-lib Modules (13 total)
 
 | Module | Purpose | Examples |
 |--------|---------|----------|
@@ -86,7 +86,11 @@ A centralized library of 40+ canonical mathematical functions used across soluti
 | `rational` | Rational numbers | `Rational` struct with full arithmetic (add, subtract, multiply, divide) |
 | `generic_int` | Generic integer ops | `digit_sum_generic` for u64, u128, and extensible types |
 
-**pe-utils modules:** `file_io` (available via re-export in pe-lib: `read_file_to_string`, `read_csv_matrix`, `read_space_separated_matrix`, `read_lines`)
+### pe-utils Modules
+
+| Module | Purpose | Examples |
+|--------|---------|----------|
+| `file_io` | File reading utilities | `read_file_to_string`, `read_csv_matrix`, `read_space_separated_matrix`, `read_lines` |
 
 ### Using pe-lib
 

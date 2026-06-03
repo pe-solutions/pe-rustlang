@@ -1,7 +1,7 @@
 // Path Sum: Four Ways
 // https://projecteuler.net/problem=83
 
-use pe_lib::read_space_separated_matrix;
+use pe_utils::read_space_separated_matrix;
 use std::collections::BinaryHeap;
 use std::cmp::Reverse;
 
