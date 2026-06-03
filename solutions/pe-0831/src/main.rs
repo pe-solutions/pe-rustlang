@@ -12,21 +12,12 @@ fn g_m(m: BigInt) -> BigInt {
     result
 }
 
-fn pe0831() -> BigInt {
+fn solve() -> num_bigint::BigInt {
     let g_m_result = g_m(BigInt::from(142857));
-
     let g_str7 = g_m_result.to_str_radix(7);
-
     let g_digits = &g_str7.chars().collect::<Vec<char>>()[0..10];
     let g_string = g_digits.iter().collect::<String>();
-
-    let result = BigInt::from_str_radix(&g_string, 10).unwrap();
-
-    result
-}
-
-fn solve() -> num_bigint::BigInt {
-    pe0831()
+    BigInt::from_str_radix(&g_string, 10).unwrap()
 }
 
 #[cfg(test)]
@@ -50,12 +41,6 @@ mod tests {
         let num = BigInt::from(49); // 100 in base 7
         let base7 = num.to_str_radix(7);
         assert_eq!(base7, "100");
-    }
-
-    #[test]
-    fn test_pe0831_produces_result() {
-        let result = pe0831();
-        assert!(result > BigInt::from(0));
     }
 
     #[test]

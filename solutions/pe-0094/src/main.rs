@@ -1,10 +1,7 @@
 // Almost Equilateral Triangles
 // https://projecteuler.net/problem=94
 
-fn is_perfect_square(n: u64) -> bool {
-    let root = (n as f64).sqrt() as u64;
-    root * root == n
-}
+use pe_lib::is_perfect_square;
 
 fn solve() -> u64 {
     let mut sum = 0u64;

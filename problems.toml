@@ -67,6 +67,8 @@ solved = true
 
 [8]
 title = "Largest Product in a Series"
+data_embedded = true
+data_file = "0008_digits.txt"
 statement = '''
 The four adjacent digits in the $1000$-digit number that have the greatest product are $9 \times 9 \times 8 \times 9 = 5832$.
 
