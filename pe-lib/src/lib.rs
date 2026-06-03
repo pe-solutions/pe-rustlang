@@ -23,7 +23,6 @@ pub mod generic_int;
 pub mod isqrt;
 pub mod modular;
 pub mod number_theory;
-pub mod primes;
 pub mod rational;
 pub mod sequences;
 pub mod sieve;

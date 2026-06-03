@@ -75,7 +75,7 @@ Mark a problem solved by editing `problems.toml` directly.
 |--------|-----------|-----------|
 | `digits` | `digit_sum`, `digit_sum_sq`, `reverse_digits`, `is_palindrome_num`, `is_palindrome_str`, `is_pandigital`, `is_permutation`, `digits` | Digit manipulation (sums, reversals, palindromes) |
 | `factorization` | `is_prime`, `is_prime_trial`, `prime_factors`, `largest_prime_factor` | Primality testing and integer factorization |
-| `sieve` | `sieve_bools`, `sieve_primes`, `sieve_omega` | Prime sieves and factorization |
+| `sieve` | `sieve_bools`, `sieve_primes`, `sieve_omega` | Prime sieves and prime generation |
 | `modular` | `mod_pow`, `mod_mul` | Modular exponentiation and multiplication |
 | `sequences` | `Fibonacci`, `triangular`, `pentagonal`, `hexagonal`, etc. | Number sequences and polygonal numbers |
 | `divisors` | `sum_proper_divisors`, `count_divisors` | Divisor enumeration (sum and count) |

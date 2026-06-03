@@ -75,7 +75,6 @@ A centralized library of 40+ canonical mathematical functions used across soluti
 |--------|---------|----------|
 | `digits` | Digit manipulation | `digit_sum`, `reverse_digits`, `is_palindrome_num`, `is_pandigital` |
 | `factorization` | Primality & factorization | `is_prime` (Miller-Rabin), `is_prime_trial` (6k±1), `prime_factors`, `largest_prime_factor` |
-| `primes` | Primality testing (deprecated) | Re-exports from `factorization` for backward compatibility |
 | `sieve` | Prime generation | `sieve_primes`, `sieve_bools`, `sieve_omega` |
 | `modular` | Modular arithmetic | `mod_pow`, `mod_mul` |
 | `sequences` | Number sequences | `Fibonacci` iterator, `triangular`, `pentagonal`, `hexagonal` |
