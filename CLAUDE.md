@@ -111,6 +111,13 @@ fn solve() -> u64 {
 
 Total: ~2,500 lines of duplicated code eliminated. All 117 solutions have `pe-lib` in their `Cargo.toml`.
 
+**Local Code Refactoring** (June 2026): 9 of 33 unrefactored solutions refactored (27% coverage)
+- **Quick Wins** (3): pe-0008 (data extraction), pe-0831 (wrapper removal), pe-0094 (pe-lib integration)
+- **Tier 1** (5): pe-0098, pe-0093, pe-0068, pe-0026, pe-0160 — 7 helpers extracted
+- **Tier 2** (1): pe-0084 — 2 helpers extracted (roll_dice, find_top_3_positions)
+- **Tier 3** (24 candidates): 20 already well-structured; 4 large solutions with pre-existing helpers
+- **Impact**: ~110 lines of complexity reduced; solve() functions simplified to pure orchestration
+
 ### Testing
 
 Comprehensive test suite with 260+ passing tests across three phases:
@@ -241,9 +248,79 @@ fn solve() -> i32 {
 
 ### Refactoring progress
 
-- **45 solutions** refactored across all tiers (54.2% of 83 total)
-- **38 solutions** remain (mostly domain-specific algorithms)
-- **~1,814 lines** of duplicated code eliminated
-- **343 tests** covering refactored code (126 unit + 31 integration + ~186 solution)
+**Cross-Solution (pe-lib) Refactoring:**
+- **76 solutions** refactored to use pe-lib (64.9% of 117 total)
+- **41 solutions** remain (33 unrefactored + 8 local refactoring candidates completed)
+- **~2,500 lines** of duplicated code eliminated
+- **260+ tests** covering refactored code (126 unit + 31 integration + 117 solution)
 
-Remaining solutions are primarily domain-specific algorithms unsuitable for library extraction. See `pe-lib` module documentation for available functions.
+**Local Code Refactoring:**
+- **9 of 33 unrefactored** solutions improved via helper extraction and data externalization (27% coverage)
+- **8 helpers** extracted from complex solve() implementations
+- **~110 lines** of complexity reduced through decomposition
+
+Remaining solutions are primarily domain-specific algorithms unsuitable for library extraction. See `pe-lib` module documentation for available functions. For local refactoring, extract helpers when solve() exceeds ~20 lines.
+
+## Local Code Refactoring
+
+Complementary to pe-lib extraction, local refactoring improves individual solution clarity through helper extraction and data externalization.
+
+### When to apply
+
+- **solve() exceeds ~20 lines**: Multiple concerns mixed (I/O + logic + output formatting)
+- **Nested logic**: Complex conditionals, nested loops, recursive helper functions
+- **Hardcoded data**: Large digit sequences, embedded datasets, multi-line constants
+- **Single-use helpers**: Already extracted but can be further decomposed
+
+### Patterns
+
+**Pattern 1: Data Extraction**
+Move embedded data to external files (same convention as data_url problems):
+```rust
+// Before
+fn solve() -> u64 {
+    let digits = "73167176531330624919...";  // 1000 chars
+    digits.chars().map(|c| c.to_digit(10)).sum()
+}
+
+// After
+fn solve() -> u64 {
+    let data = fs::read_to_string("data/0008_digits.txt")?;
+    data.chars().map(|c| c.to_digit(10)).sum()
+}
+```
+
+**Pattern 2: Helper Extraction**
+Extract cohesive sub-tasks into separate functions:
+```rust
+// Before: Mixed concerns
+fn solve() -> u64 {
+    // RNG logic (10 lines)
+    // Winner tracking logic (15 lines)
+}
+
+// After: Separated concerns
+fn roll_dice(rng_state: &mut u64) -> (u64, bool) { /* ... */ }
+fn find_winners(visits: &[u64; 40]) -> u64 { /* ... */ }
+
+fn solve() -> u64 {
+    let (sum, is_double) = roll_dice(&mut state);
+    // ... orchestrate
+    find_winners(&visits)
+}
+```
+
+### Extraction Threshold
+
+- **Code smell**: solve() >20 lines with mixed concerns
+- **Extraction depth**: 1-2 levels (don't over-engineer)
+- **Helper scope**: Keep local to solution unless 2+ solutions need it (then add to pe-lib)
+- **Domain preservation**: Respect problem-specific patterns; don't extract generic utilities
+
+### Refactoring analysis approach
+
+1. **Categorize**: Group unrefactored solutions by domain (math, simulation, parsing)
+2. **Scan for duplication**: Look for repeated patterns across solutions
+3. **Estimate ROI**: Count lines saved vs. complexity of extraction
+4. **Tier by complexity**: Quick wins (data), Tier 1 (helper extraction), Tier 2+ (diminishing returns)
+5. **Verify**: All tests passing, output unchanged
