@@ -74,6 +74,17 @@ pub fn digits(n: u64) -> Vec<u32> {
     result
 }
 
+pub fn digit_factorial_sum(n: u64) -> u64 {
+    const FACTORIALS: [u64; 10] = [1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880];
+    let mut sum = 0u64;
+    let mut m = n;
+    while m > 0 {
+        sum += FACTORIALS[(m % 10) as usize];
+        m /= 10;
+    }
+    sum
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -109,5 +120,13 @@ mod tests {
     fn test_is_permutation() {
         assert!(is_permutation(123, 321));
         assert!(!is_permutation(123, 124));
+    }
+
+    #[test]
+    fn test_digit_factorial_sum() {
+        assert_eq!(digit_factorial_sum(1), 1);
+        assert_eq!(digit_factorial_sum(2), 2);
+        assert_eq!(digit_factorial_sum(145), 1 + 24 + 120); // 1! + 4! + 5!
+        assert_eq!(digit_factorial_sum(40585), 24 + 1 + 120 + 40320 + 120);
     }
 }

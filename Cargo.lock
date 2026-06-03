@@ -687,7 +687,31 @@ dependencies = [
 ]
 
 [[package]]
+name = "pe-0051"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0052"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
 name = "pe-0053"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0054"
 version = "0.1.0"
 dependencies = [
  "pe-lib",
@@ -713,6 +737,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "pe-0057"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0058"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0059"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
 name = "pe-0060"
 version = "0.1.0"
 dependencies = [
@@ -729,7 +777,31 @@ dependencies = [
 ]
 
 [[package]]
+name = "pe-0062"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
 name = "pe-0063"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0064"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0065"
 version = "0.1.0"
 dependencies = [
  "pe-lib",
@@ -742,6 +814,29 @@ version = "0.1.0"
 dependencies = [
  "num-bigint",
  "num-traits",
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0067"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0068"
+version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0069"
+version = "0.1.0"
+dependencies = [
  "pe-lib",
  "pe-utils",
 ]
@@ -763,7 +858,70 @@ dependencies = [
 ]
 
 [[package]]
+name = "pe-0072"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0073"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0074"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0075"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
 name = "pe-0076"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0077"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0078"
+version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0079"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0080"
 version = "0.1.0"
 dependencies = [
  "pe-lib",
@@ -779,12 +937,65 @@ dependencies = [
 ]
 
 [[package]]
+name = "pe-0082"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0083"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0084"
+version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0085"
+version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0086"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
 name = "pe-0087"
 version = "0.1.0"
 dependencies = [
  "pe-lib",
  "pe-utils",
  "primes",
+]
+
+[[package]]
+name = "pe-0088"
+version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0089"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
 ]
 
 [[package]]
@@ -813,10 +1024,62 @@ dependencies = [
 ]
 
 [[package]]
+name = "pe-0093"
+version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0094"
+version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0095"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0096"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
 name = "pe-0097"
 version = "0.1.0"
 dependencies = [
  "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0098"
+version = "0.1.0"
+dependencies = [
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0099"
+version = "0.1.0"
+dependencies = [
+ "pe-lib",
+ "pe-utils",
+]
+
+[[package]]
+name = "pe-0100"
+version = "0.1.0"
+dependencies = [
  "pe-utils",
 ]
 

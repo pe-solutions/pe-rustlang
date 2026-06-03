@@ -32,6 +32,31 @@ pub fn count_partitions(n: usize) -> usize {
     partitions[n]
 }
 
+pub fn combinations<T: Clone>(items: &[T], k: usize) -> Vec<Vec<T>> {
+    let mut result = Vec::new();
+    let mut combo = Vec::new();
+    backtrack_combinations(0, items, k, &mut combo, &mut result);
+    result
+}
+
+fn backtrack_combinations<T: Clone>(
+    start: usize,
+    items: &[T],
+    k: usize,
+    combo: &mut Vec<T>,
+    result: &mut Vec<Vec<T>>,
+) {
+    if combo.len() == k {
+        result.push(combo.clone());
+        return;
+    }
+    for i in start..items.len() {
+        combo.push(items[i].clone());
+        backtrack_combinations(i + 1, items, k, combo, result);
+        combo.pop();
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -124,5 +149,42 @@ mod tests {
         for n in 1..20 {
             assert!(count_partitions(n) < count_partitions(n + 1));
         }
+    }
+
+    #[test]
+    fn test_combinations_basic() {
+        let items = vec![1, 2, 3];
+        let combos = combinations(&items, 2);
+        assert_eq!(combos.len(), 3); // C(3,2) = 3
+        assert!(combos.contains(&vec![1, 2]));
+        assert!(combos.contains(&vec![1, 3]));
+        assert!(combos.contains(&vec![2, 3]));
+    }
+
+    #[test]
+    fn test_combinations_k_equals_n() {
+        let items = vec![1, 2, 3];
+        let combos = combinations(&items, 3);
+        assert_eq!(combos.len(), 1);
+        assert_eq!(combos[0], vec![1, 2, 3]);
+    }
+
+    #[test]
+    fn test_combinations_k_equals_1() {
+        let items = vec![1, 2, 3];
+        let combos = combinations(&items, 1);
+        assert_eq!(combos.len(), 3);
+        assert!(combos.contains(&vec![1]));
+        assert!(combos.contains(&vec![2]));
+        assert!(combos.contains(&vec![3]));
+    }
+
+    #[test]
+    fn test_combinations_generic_types() {
+        let items = vec!['a', 'b', 'c', 'd'];
+        let combos = combinations(&items, 2);
+        assert_eq!(combos.len(), 6); // C(4,2) = 6
+        assert!(combos.contains(&vec!['a', 'b']));
+        assert!(combos.contains(&vec!['c', 'd']));
     }
 }
